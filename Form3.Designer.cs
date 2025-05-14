@@ -31,11 +31,11 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form3));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.helpProvider1 = new System.Windows.Forms.HelpProvider();
-            this.label1 = new System.Windows.Forms.Label();
             this.GreetingTextBox = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.textBox2 = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.help_button = new System.Windows.Forms.Button();
@@ -45,7 +45,7 @@
             // pictureBox1
             // 
             this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.helpProvider1.SetHelpKeyword(this.pictureBox1, "Результат");
+            this.helpProvider1.SetHelpKeyword(this.pictureBox1, "Варианты образов");
             this.helpProvider1.SetHelpNavigator(this.pictureBox1, System.Windows.Forms.HelpNavigator.KeywordIndex);
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(780, 28);
@@ -56,20 +56,9 @@
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
-            // label1
+            // helpProvider1
             // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.White;
-            this.label1.Font = new System.Drawing.Font("Bahnschrift Light", 13F);
-            this.label1.Location = new System.Drawing.Point(66, 87);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(0, 31);
-            this.label1.TabIndex = 1;
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+            this.helpProvider1.HelpNamespace = "Help.chm";
             // 
             // GreetingTextBox
             // 
@@ -78,8 +67,8 @@
             this.GreetingTextBox.BackColor = System.Drawing.Color.White;
             this.GreetingTextBox.Font = new System.Drawing.Font("Bahnschrift Light", 14F);
             this.GreetingTextBox.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.helpProvider1.SetHelpKeyword(this.GreetingTextBox, "Возможности");
-            this.helpProvider1.SetHelpNavigator(this.GreetingTextBox, System.Windows.Forms.HelpNavigator.Find);
+            this.helpProvider1.SetHelpKeyword(this.GreetingTextBox, "54");
+            this.helpProvider1.SetHelpNavigator(this.GreetingTextBox, System.Windows.Forms.HelpNavigator.TopicId);
             this.GreetingTextBox.Location = new System.Drawing.Point(42, 146);
             this.GreetingTextBox.Multiline = true;
             this.GreetingTextBox.Name = "GreetingTextBox";
@@ -97,7 +86,7 @@
             this.textBox1.BackColor = System.Drawing.Color.White;
             this.textBox1.Font = new System.Drawing.Font("Bahnschrift Light", 14F);
             this.textBox1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.helpProvider1.SetHelpKeyword(this.textBox1, "21");
+            this.helpProvider1.SetHelpKeyword(this.textBox1, "54");
             this.helpProvider1.SetHelpNavigator(this.textBox1, System.Windows.Forms.HelpNavigator.TopicId);
             this.textBox1.Location = new System.Drawing.Point(42, 578);
             this.textBox1.Multiline = true;
@@ -135,8 +124,8 @@
             this.textBox2.BackColor = System.Drawing.Color.White;
             this.textBox2.Font = new System.Drawing.Font("Bahnschrift Light", 14F);
             this.textBox2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.helpProvider1.SetHelpKeyword(this.textBox2, "Содержание");
-            this.helpProvider1.SetHelpNavigator(this.textBox2, System.Windows.Forms.HelpNavigator.TableOfContents);
+            this.helpProvider1.SetHelpKeyword(this.textBox2, "Варианты образов");
+            this.helpProvider1.SetHelpNavigator(this.textBox2, System.Windows.Forms.HelpNavigator.Topic);
             this.textBox2.Location = new System.Drawing.Point(313, 28);
             this.textBox2.Multiline = true;
             this.textBox2.Name = "textBox2";
@@ -147,6 +136,21 @@
             this.textBox2.Text = "Спасибо за ответы!";
             this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            // 
+            // label1
+            // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.White;
+            this.label1.Font = new System.Drawing.Font("Bahnschrift Light", 13F);
+            this.label1.Location = new System.Drawing.Point(66, 87);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(0, 31);
+            this.label1.TabIndex = 1;
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // button5
             // 
@@ -199,8 +203,8 @@
             this.Controls.Add(this.GreetingTextBox);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
-            this.helpProvider1.SetHelpKeyword(this, "Содержание");
-            this.helpProvider1.SetHelpNavigator(this, System.Windows.Forms.HelpNavigator.TableOfContents);
+            this.helpProvider1.SetHelpKeyword(this, "54");
+            this.helpProvider1.SetHelpNavigator(this, System.Windows.Forms.HelpNavigator.TopicId);
             this.Name = "Form3";
             this.helpProvider1.SetShowHelp(this, true);
             this.Text = "Form3";

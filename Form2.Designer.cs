@@ -47,8 +47,8 @@
             this.GreetingTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.GreetingTextBox.Font = new System.Drawing.Font("Bahnschrift Light", 14F);
             this.GreetingTextBox.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.helpProvider1.SetHelpKeyword(this.GreetingTextBox, "Содержание");
-            this.helpProvider1.SetHelpNavigator(this.GreetingTextBox, System.Windows.Forms.HelpNavigator.TableOfContents);
+            this.helpProvider1.SetHelpKeyword(this.GreetingTextBox, "45");
+            this.helpProvider1.SetHelpNavigator(this.GreetingTextBox, System.Windows.Forms.HelpNavigator.TopicId);
             this.GreetingTextBox.Location = new System.Drawing.Point(287, 26);
             this.GreetingTextBox.Multiline = true;
             this.GreetingTextBox.Name = "GreetingTextBox";
@@ -64,7 +64,8 @@
             // 
             this.Снежно.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.Снежно.Font = new System.Drawing.Font("Bahnschrift Light", 13F);
-            this.helpProvider1.SetHelpKeyword(this.Снежно, "вопросы");
+            this.helpProvider1.SetHelpKeyword(this.Снежно, "45");
+            this.helpProvider1.SetHelpNavigator(this.Снежно, System.Windows.Forms.HelpNavigator.TopicId);
             this.Снежно.Location = new System.Drawing.Point(287, 182);
             this.Снежно.Name = "Снежно";
             this.helpProvider1.SetShowHelp(this.Снежно, true);
@@ -72,11 +73,12 @@
             this.Снежно.TabIndex = 3;
             this.Снежно.Text = "Снежно";
             this.Снежно.UseVisualStyleBackColor = true;
+            this.Снежно.Click += new System.EventHandler(this.Снежно_Click);
             // 
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("Bahnschrift Light", 13F);
-            this.helpProvider1.SetHelpKeyword(this.button2, "вопросы");
+            this.helpProvider1.SetHelpKeyword(this.button2, "анкеты");
             this.button2.Location = new System.Drawing.Point(793, 182);
             this.button2.Name = "button2";
             this.helpProvider1.SetShowHelp(this.button2, true);
@@ -84,11 +86,12 @@
             this.button2.TabIndex = 4;
             this.button2.Text = "Дождливо";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button3
             // 
             this.button3.Font = new System.Drawing.Font("Bahnschrift Light", 13F);
-            this.helpProvider1.SetHelpKeyword(this.button3, "вопросы");
+            this.helpProvider1.SetHelpKeyword(this.button3, "анкеты");
             this.button3.Location = new System.Drawing.Point(287, 451);
             this.button3.Name = "button3";
             this.helpProvider1.SetShowHelp(this.button3, true);
@@ -101,7 +104,7 @@
             // Ветренно
             // 
             this.Ветренно.Font = new System.Drawing.Font("Bahnschrift Light", 13F);
-            this.helpProvider1.SetHelpKeyword(this.Ветренно, "вопросы");
+            this.helpProvider1.SetHelpKeyword(this.Ветренно, "анкеты");
             this.Ветренно.Location = new System.Drawing.Point(793, 451);
             this.Ветренно.Name = "Ветренно";
             this.helpProvider1.SetShowHelp(this.Ветренно, true);
@@ -109,6 +112,7 @@
             this.Ветренно.TabIndex = 6;
             this.Ветренно.Text = "Ветренно";
             this.Ветренно.UseVisualStyleBackColor = true;
+            this.Ветренно.Click += new System.EventHandler(this.Ветренно_Click);
             // 
             // helpProvider1
             // 
@@ -131,7 +135,7 @@
             // 
             this.button5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button5.BackgroundImage")));
             this.button5.Font = new System.Drawing.Font("Bahnschrift Light", 8F);
-            this.button5.Location = new System.Drawing.Point(144, 28);
+            this.button5.Location = new System.Drawing.Point(142, 28);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(117, 32);
             this.button5.TabIndex = 9;
@@ -164,8 +168,8 @@
             this.Controls.Add(this.button2);
             this.Controls.Add(this.Снежно);
             this.Controls.Add(this.GreetingTextBox);
-            this.helpProvider1.SetHelpKeyword(this, "Описание возможностей");
-            this.helpProvider1.SetHelpNavigator(this, System.Windows.Forms.HelpNavigator.Topic);
+            this.helpProvider1.SetHelpKeyword(this, "45");
+            this.helpProvider1.SetHelpNavigator(this, System.Windows.Forms.HelpNavigator.TopicId);
             this.Name = "Form2";
             this.helpProvider1.SetShowHelp(this, true);
             this.Text = "Form2";

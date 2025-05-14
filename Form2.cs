@@ -20,7 +20,6 @@ namespace AcademicYearProject
         public Form2(Form1 f)
         {
             InitializeComponent();
-            f.BackColor = Color.Pink;
         }
 
         private void GreetingTextBox_TextChanged(object sender, EventArgs e)
@@ -35,7 +34,8 @@ namespace AcademicYearProject
 
         private void button3_Click(object sender, EventArgs e)
         {
-
+            Form3 form3 = new Form3(this);
+            form3.Show();
         }
 
         private void help_button_Click_1(object sender, EventArgs e)
@@ -53,6 +53,24 @@ namespace AcademicYearProject
 
             HelpNavigator navigator = HelpNavigator.Find;
             Help.ShowHelp(this, "Help.chm", navigator, "Аннотация");
+        }
+
+        private void Снежно_Click(object sender, EventArgs e)
+        {
+            Form3 form3 = new Form3(this);
+            form3.Show();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Form3 form3 = new Form3(this);
+            form3.Show();
+        }
+
+        private void Ветренно_Click(object sender, EventArgs e)
+        {
+            Form3 form3 = new Form3(this);
+            form3.Show();
         }
     }
 }

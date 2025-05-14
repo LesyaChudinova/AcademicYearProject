@@ -16,6 +16,10 @@ namespace AcademicYearProject
         {
             InitializeComponent();
         }
+        public Form3(Form2 f)
+        {
+            InitializeComponent();
+        }
 
         private void Form3_Load(object sender, EventArgs e)
         {

@@ -32,7 +32,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.GreetingTextBox = new System.Windows.Forms.TextBox();
             this.help_button = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
@@ -52,7 +51,7 @@
             this.GreetingTextBox.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             helpProvider1.SetHelpKeyword(this.GreetingTextBox, "13");
             helpProvider1.SetHelpNavigator(this.GreetingTextBox, System.Windows.Forms.HelpNavigator.TopicId);
-            this.GreetingTextBox.Location = new System.Drawing.Point(71, 237);
+            this.GreetingTextBox.Location = new System.Drawing.Point(71, 243);
             this.GreetingTextBox.Multiline = true;
             this.GreetingTextBox.Name = "GreetingTextBox";
             this.GreetingTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
@@ -76,17 +75,6 @@
             this.help_button.UseVisualStyleBackColor = false;
             this.help_button.Click += new System.EventHandler(this.button1_Click_1);
             // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.button1.Font = new System.Drawing.Font("Bahnschrift Light", 13F);
-            this.button1.Location = new System.Drawing.Point(450, 850);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(1078, 90);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Поехали!";
-            this.button1.UseVisualStyleBackColor = false;
-            // 
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("Bahnschrift Light", 8F);
@@ -100,7 +88,7 @@
             // 
             // button3
             // 
-            this.button3.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.button3.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.button3.Font = new System.Drawing.Font("Bahnschrift", 10F);
             this.button3.Location = new System.Drawing.Point(466, 498);
             this.button3.Name = "button3";
@@ -108,6 +96,7 @@
             this.button3.TabIndex = 4;
             this.button3.Text = "Поехали!";
             this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button4
             // 
@@ -126,11 +115,10 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(230)))), ((int)(((byte)(241)))));
-            this.ClientSize = new System.Drawing.Size(1233, 738);
+            this.ClientSize = new System.Drawing.Size(1233, 751);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.GreetingTextBox);
             this.Controls.Add(this.help_button);
             helpProvider1.SetHelpKeyword(this, "Аннотация");
@@ -148,7 +136,6 @@
 
         private System.Windows.Forms.Button help_button;
         private System.Windows.Forms.TextBox GreetingTextBox;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;

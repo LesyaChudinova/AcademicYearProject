@@ -16,7 +16,7 @@ namespace AcademicYearProject
         {
             InitializeComponent();
         }
-        public Form3(Form2 f)
+        public Form3(AppForm3 f)
         {
             InitializeComponent();
         }

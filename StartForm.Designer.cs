@@ -45,6 +45,7 @@
             // GreetingTextBox
             // 
             this.GreetingTextBox.AcceptsTab = true;
+            this.GreetingTextBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.GreetingTextBox.BackColor = System.Drawing.Color.White;
             this.GreetingTextBox.Font = new System.Drawing.Font("Bahnschrift Light", 14F);
             this.GreetingTextBox.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;

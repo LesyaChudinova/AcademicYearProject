@@ -22,11 +22,6 @@ namespace AcademicYearProject
             InitializeComponent();
         }
 
-        private void GreetingTextBox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void help_button_Click(object sender, EventArgs e)
         {
             Help.ShowHelp(this, "Help.chm");

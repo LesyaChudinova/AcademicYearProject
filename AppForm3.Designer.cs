@@ -52,13 +52,13 @@
             this.GreetingTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.GreetingTextBox.Multiline = true;
             this.GreetingTextBox.Name = "GreetingTextBox";
+            this.GreetingTextBox.ReadOnly = true;
             this.GreetingTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
             this.helpProvider1.SetShowHelp(this.GreetingTextBox, true);
             this.GreetingTextBox.Size = new System.Drawing.Size(848, 67);
             this.GreetingTextBox.TabIndex = 2;
             this.GreetingTextBox.Text = "Ответьте, пожалуйста, на вопросы: \r\n3) Какая сегодня погода?";
             this.GreetingTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.GreetingTextBox.TextChanged += new System.EventHandler(this.GreetingTextBox_TextChanged);
             // 
             // SnowButton
             // 

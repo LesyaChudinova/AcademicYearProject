@@ -23,11 +23,6 @@ namespace AcademicYearProject
         {
             this.appForm2 = appForm2;
         }
-
-        private void GreetingTextBox_TextChanged(object sender, EventArgs e)
-        {
-            
-        }
                
 
         private void AgainButton_Click(object sender, EventArgs e)

@@ -44,18 +44,19 @@
             // 
             this.GreetingTextBox.AcceptsTab = true;
             this.GreetingTextBox.BackColor = System.Drawing.Color.White;
+            this.GreetingTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.GreetingTextBox.Font = new System.Drawing.Font("Bahnschrift Light", 14F);
             this.GreetingTextBox.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.GreetingTextBox.Location = new System.Drawing.Point(255, 22);
             this.GreetingTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.GreetingTextBox.Multiline = true;
             this.GreetingTextBox.Name = "GreetingTextBox";
+            this.GreetingTextBox.ReadOnly = true;
             this.GreetingTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
             this.GreetingTextBox.Size = new System.Drawing.Size(848, 67);
             this.GreetingTextBox.TabIndex = 3;
             this.GreetingTextBox.Text = "Ответьте, пожалуйста, на вопросы: \r\n1) Ваш пол:";
             this.GreetingTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.GreetingTextBox.TextChanged += new System.EventHandler(this.GreetingTextBox_TextChanged);
             // 
             // help_button
             // 

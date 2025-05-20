@@ -52,6 +52,7 @@
             this.GreetingTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.GreetingTextBox.Multiline = true;
             this.GreetingTextBox.Name = "GreetingTextBox";
+            this.GreetingTextBox.ReadOnly = true;
             this.GreetingTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
             this.GreetingTextBox.Size = new System.Drawing.Size(848, 67);
             this.GreetingTextBox.TabIndex = 4;

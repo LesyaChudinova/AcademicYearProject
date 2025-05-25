@@ -28,19 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.HelpProvider helpProvider1;
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StartScreen));
+            this.helpProvider1 = new System.Windows.Forms.HelpProvider();
             this.GreetingTextBox = new System.Windows.Forms.TextBox();
             this.help_button = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.GoButton = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
-            helpProvider1 = new System.Windows.Forms.HelpProvider();
             this.SuspendLayout();
             // 
             // helpProvider1
             // 
-            helpProvider1.HelpNamespace = "Help.chm";
+            this.helpProvider1.HelpNamespace = "Help.chm";
             // 
             // GreetingTextBox
             // 
@@ -49,17 +47,16 @@
             this.GreetingTextBox.BackColor = System.Drawing.Color.White;
             this.GreetingTextBox.Font = new System.Drawing.Font("Bahnschrift Light", 14F);
             this.GreetingTextBox.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            helpProvider1.SetHelpKeyword(this.GreetingTextBox, "13");
-            helpProvider1.SetHelpNavigator(this.GreetingTextBox, System.Windows.Forms.HelpNavigator.TopicId);
+            this.helpProvider1.SetHelpKeyword(this.GreetingTextBox, "13");
+            this.helpProvider1.SetHelpNavigator(this.GreetingTextBox, System.Windows.Forms.HelpNavigator.TopicId);
             this.GreetingTextBox.Location = new System.Drawing.Point(56, 189);
             this.GreetingTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.GreetingTextBox.Multiline = true;
             this.GreetingTextBox.Name = "GreetingTextBox";
             this.GreetingTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
-            helpProvider1.SetShowHelp(this.GreetingTextBox, true);
+            this.helpProvider1.SetShowHelp(this.GreetingTextBox, true);
             this.GreetingTextBox.Size = new System.Drawing.Size(1030, 121);
             this.GreetingTextBox.TabIndex = 1;
-            this.GreetingTextBox.Text = resources.GetString("GreetingTextBox.Text");
             this.GreetingTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.GreetingTextBox.TextChanged += new System.EventHandler(this.GreetingTextBox_TextChanged);
             // 
@@ -101,11 +98,10 @@
             this.GoButton.TabIndex = 4;
             this.GoButton.Text = "Поехали!";
             this.GoButton.UseVisualStyleBackColor = false;
-            this.GoButton.Click += new System.EventHandler(this.button3_Click);
+            this.GoButton.Click += new System.EventHandler(this.startButton_Click);
             // 
             // button4
             // 
-            this.button4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button4.BackgroundImage")));
             this.button4.Font = new System.Drawing.Font("Bahnschrift Light", 8F);
             this.button4.Location = new System.Drawing.Point(126, 22);
             this.button4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -128,11 +124,11 @@
             this.Controls.Add(this.button2);
             this.Controls.Add(this.GreetingTextBox);
             this.Controls.Add(this.help_button);
-            helpProvider1.SetHelpKeyword(this, "Аннотация");
-            helpProvider1.SetHelpNavigator(this, System.Windows.Forms.HelpNavigator.Find);
+            this.helpProvider1.SetHelpKeyword(this, "Аннотация");
+            this.helpProvider1.SetHelpNavigator(this, System.Windows.Forms.HelpNavigator.Find);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "StartScreen";
-            helpProvider1.SetShowHelp(this, true);
+            this.helpProvider1.SetShowHelp(this, true);
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
@@ -147,6 +143,7 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button GoButton;
         private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.HelpProvider helpProvider1;
     }
 }
 

@@ -55,7 +55,7 @@
             this.GreetingTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
             this.GreetingTextBox.Size = new System.Drawing.Size(848, 67);
             this.GreetingTextBox.TabIndex = 3;
-            this.GreetingTextBox.Text = "Ответьте, пожалуйста, на вопросы: \r\n1) Ваш пол:";
+            this.GreetingTextBox.Text = "Ответьте, пожалуйста, на вопрос: \r\n1) Ваш пол:";
             this.GreetingTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // help_button
@@ -175,7 +175,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(153)))), ((int)(((byte)(204)))));
-            this.ClientSize = new System.Drawing.Size(1183, 671);
+            this.ClientSize = new System.Drawing.Size(1171, 680);
             this.Controls.Add(this.AgainButton);
             this.Controls.Add(this.BackButton);
             this.Controls.Add(this.ForwardButton);

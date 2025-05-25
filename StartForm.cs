@@ -12,6 +12,7 @@ namespace AcademicYearProject
 {
     public partial class StartScreen: Form
     {
+        private AppForm1 appForm1;
         public StartScreen(AppForm2 appForm2)
         {
             InitializeComponent();
@@ -56,10 +57,12 @@ namespace AcademicYearProject
             Help.ShowHelp(this, "Help.chm", navigator, "Аннотация");
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void startButton_Click(object sender, EventArgs e)
         {
-            AppForm1 form1 = new AppForm1(this);
-            form1.Show();
+            if (appForm1 == null)
+                appForm1 = new AppForm1();
+            appForm1.Show();
+            this.Hide();
         }
     }
 }

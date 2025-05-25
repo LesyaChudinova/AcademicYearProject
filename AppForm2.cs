@@ -12,10 +12,18 @@ namespace AcademicYearProject
 {
     public partial class AppForm2 : Form
     {
+        private AppForm3 appForm3;
+
         public AppForm2()
         {
             InitializeComponent();
         }
+
+        public AppForm2(AppForm1 appForm1)
+        {
+            InitializeComponent();
+        }
+                
 
         private void AppForm2_Load(object sender, EventArgs e)
         {
@@ -50,7 +58,7 @@ namespace AcademicYearProject
 
         private void BackButton_Click(object sender, EventArgs e)
         {
-            AppForm1 form1 = new AppForm1(this);
+            AppForm1 form1 = new AppForm1();
             form1.Show();
         }
 

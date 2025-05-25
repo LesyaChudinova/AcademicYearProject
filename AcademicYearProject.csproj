@@ -90,6 +90,18 @@
     <Compile Include="AppForm2.Designer.cs">
       <DependentUpon>AppForm2.cs</DependentUpon>
     </Compile>
+    <Compile Include="AppForm4.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AppForm4.Designer.cs">
+      <DependentUpon>AppForm4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AppForm5.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AppForm5.Designer.cs">
+      <DependentUpon>AppForm5.cs</DependentUpon>
+    </Compile>
     <Compile Include="ExcelDataLoader.cs" />
     <Compile Include="StartForm.cs">
       <SubType>Form</SubType>
@@ -118,6 +130,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AppForm2.resx">
       <DependentUpon>AppForm2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppForm4.resx">
+      <DependentUpon>AppForm4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppForm5.resx">
+      <DependentUpon>AppForm5.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="StartForm.resx">
       <DependentUpon>StartForm.cs</DependentUpon>

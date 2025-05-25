@@ -38,6 +38,9 @@
             this.help_button = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
+            this.BackButton = new System.Windows.Forms.Button();
+            this.AgainButton = new System.Windows.Forms.Button();
+            this.ForwardButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // GreetingTextBox
@@ -57,7 +60,7 @@
             this.helpProvider1.SetShowHelp(this.GreetingTextBox, true);
             this.GreetingTextBox.Size = new System.Drawing.Size(848, 67);
             this.GreetingTextBox.TabIndex = 2;
-            this.GreetingTextBox.Text = "Ответьте, пожалуйста, на вопросы: \r\n3) Какая сегодня погода?";
+            this.GreetingTextBox.Text = "Ответьте, пожалуйста, на вопрос: \r\n3) Какая сегодня погода?";
             this.GreetingTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // SnowButton
@@ -177,12 +180,56 @@
             this.button6.UseVisualStyleBackColor = true;
             this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
+            // BackButton
+            // 
+            this.BackButton.BackColor = System.Drawing.Color.White;
+            this.BackButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BackButton.BackgroundImage")));
+            this.BackButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.BackButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.BackButton.Location = new System.Drawing.Point(255, 563);
+            this.BackButton.Name = "BackButton";
+            this.BackButton.Size = new System.Drawing.Size(226, 82);
+            this.BackButton.TabIndex = 18;
+            this.BackButton.UseVisualStyleBackColor = false;
+            this.BackButton.Click += new System.EventHandler(this.BackButton_Click);
+            // 
+            // AgainButton
+            // 
+            this.AgainButton.BackColor = System.Drawing.Color.White;
+            this.AgainButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("AgainButton.BackgroundImage")));
+            this.AgainButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.AgainButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.AgainButton.Font = new System.Drawing.Font("Bahnschrift Light", 13F);
+            this.AgainButton.Location = new System.Drawing.Point(564, 563);
+            this.AgainButton.Name = "AgainButton";
+            this.AgainButton.Size = new System.Drawing.Size(226, 82);
+            this.AgainButton.TabIndex = 20;
+            this.AgainButton.Text = "Пройти заново";
+            this.AgainButton.UseVisualStyleBackColor = false;
+            this.AgainButton.Click += new System.EventHandler(this.AgainButton_Click);
+            // 
+            // ForwardButton
+            // 
+            this.ForwardButton.BackColor = System.Drawing.Color.White;
+            this.ForwardButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("ForwardButton.BackgroundImage")));
+            this.ForwardButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.ForwardButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.ForwardButton.Location = new System.Drawing.Point(864, 563);
+            this.ForwardButton.Name = "ForwardButton";
+            this.ForwardButton.Size = new System.Drawing.Size(226, 82);
+            this.ForwardButton.TabIndex = 21;
+            this.ForwardButton.UseVisualStyleBackColor = false;
+            this.ForwardButton.Click += new System.EventHandler(this.ForwardButton_Click);
+            // 
             // AppForm3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(170)))), ((int)(((byte)(221)))));
             this.ClientSize = new System.Drawing.Size(1249, 665);
+            this.Controls.Add(this.ForwardButton);
+            this.Controls.Add(this.AgainButton);
+            this.Controls.Add(this.BackButton);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.help_button);
@@ -213,5 +260,8 @@
         private System.Windows.Forms.Button help_button;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button BackButton;
+        private System.Windows.Forms.Button AgainButton;
+        private System.Windows.Forms.Button ForwardButton;
     }
 }

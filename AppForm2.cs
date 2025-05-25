@@ -13,17 +13,13 @@ namespace AcademicYearProject
     public partial class AppForm2 : Form
     {
         private AppForm3 appForm3;
+        private AppForm1 appForm1;
+        private StartScreen startForm;
 
         public AppForm2()
         {
             InitializeComponent();
-        }
-
-        public AppForm2(AppForm1 appForm1)
-        {
-            InitializeComponent();
-        }
-                
+        }              
 
         private void AppForm2_Load(object sender, EventArgs e)
         {
@@ -52,20 +48,26 @@ namespace AcademicYearProject
 
         private void ForwardButton_Click(object sender, EventArgs e)
         {
-            AppForm3 form3 = new AppForm3(this);
-            form3.Show();
+            if (appForm3 == null)
+                appForm3 = new AppForm3();
+            appForm3.Show();
+            this.Close();            
         }
 
         private void BackButton_Click(object sender, EventArgs e)
         {
-            AppForm1 form1 = new AppForm1();
-            form1.Show();
+            if (appForm1 == null)
+                appForm1 = new AppForm1();
+            appForm1.Show();
+            this.Close();            
         }
 
         private void AgainButton_Click(object sender, EventArgs e)
         {
-            StartScreen screen = new StartScreen(this);
-            screen.Show();
+            if (startForm == null)
+                startForm = new StartScreen();
+            startForm.Show();
+            this.Close();
         }
     }
 }

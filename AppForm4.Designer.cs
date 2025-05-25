@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AppForm4));
-            this.GreetingTextBox = new System.Windows.Forms.TextBox();
             this.help_button = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
@@ -40,24 +39,8 @@
             this.BackButton = new System.Windows.Forms.Button();
             this.AgainButton = new System.Windows.Forms.Button();
             this.ForwardButton = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
-            // 
-            // GreetingTextBox
-            // 
-            this.GreetingTextBox.AcceptsTab = true;
-            this.GreetingTextBox.BackColor = System.Drawing.Color.White;
-            this.GreetingTextBox.Font = new System.Drawing.Font("Bahnschrift Light", 14F);
-            this.GreetingTextBox.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.GreetingTextBox.Location = new System.Drawing.Point(255, 22);
-            this.GreetingTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.GreetingTextBox.Multiline = true;
-            this.GreetingTextBox.Name = "GreetingTextBox";
-            this.GreetingTextBox.ReadOnly = true;
-            this.GreetingTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
-            this.GreetingTextBox.Size = new System.Drawing.Size(848, 67);
-            this.GreetingTextBox.TabIndex = 3;
-            this.GreetingTextBox.Text = "Ответьте, пожалуйста, на вопрос: \r\n4) Какое сейчас время года?";
-            this.GreetingTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // help_button
             // 
@@ -97,6 +80,7 @@
             // 
             // SnowButton
             // 
+            this.SnowButton.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.SnowButton.BackColor = System.Drawing.Color.White;
             this.SnowButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("SnowButton.BackgroundImage")));
             this.SnowButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
@@ -107,12 +91,13 @@
             this.SnowButton.Name = "SnowButton";
             this.SnowButton.Size = new System.Drawing.Size(398, 151);
             this.SnowButton.TabIndex = 12;
-            this.SnowButton.Text = "Лето";
+            this.SnowButton.Text = "Солнечно";
             this.SnowButton.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             this.SnowButton.UseVisualStyleBackColor = false;
             // 
             // RainButton
             // 
+            this.RainButton.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.RainButton.BackColor = System.Drawing.Color.White;
             this.RainButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("RainButton.BackgroundImage")));
             this.RainButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
@@ -124,12 +109,13 @@
             this.RainButton.Name = "RainButton";
             this.RainButton.Size = new System.Drawing.Size(398, 151);
             this.RainButton.TabIndex = 13;
-            this.RainButton.Text = "Зима";
+            this.RainButton.Text = "Снежно";
             this.RainButton.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             this.RainButton.UseVisualStyleBackColor = false;
             // 
             // SunnyButton
             // 
+            this.SunnyButton.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.SunnyButton.BackColor = System.Drawing.Color.White;
             this.SunnyButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("SunnyButton.BackgroundImage")));
             this.SunnyButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
@@ -141,12 +127,13 @@
             this.SunnyButton.Name = "SunnyButton";
             this.SunnyButton.Size = new System.Drawing.Size(398, 151);
             this.SunnyButton.TabIndex = 14;
-            this.SunnyButton.Text = "Весна";
+            this.SunnyButton.Text = "Дождливо";
             this.SunnyButton.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             this.SunnyButton.UseVisualStyleBackColor = false;
             // 
             // WindyButton
             // 
+            this.WindyButton.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.WindyButton.BackColor = System.Drawing.Color.White;
             this.WindyButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("WindyButton.BackgroundImage")));
             this.WindyButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
@@ -158,12 +145,13 @@
             this.WindyButton.Name = "WindyButton";
             this.WindyButton.Size = new System.Drawing.Size(398, 151);
             this.WindyButton.TabIndex = 15;
-            this.WindyButton.Text = "Осень";
+            this.WindyButton.Text = "Ветренно";
             this.WindyButton.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             this.WindyButton.UseVisualStyleBackColor = false;
             // 
             // BackButton
             // 
+            this.BackButton.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.BackButton.BackColor = System.Drawing.Color.White;
             this.BackButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BackButton.BackgroundImage")));
             this.BackButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
@@ -177,6 +165,7 @@
             // 
             // AgainButton
             // 
+            this.AgainButton.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.AgainButton.BackColor = System.Drawing.Color.White;
             this.AgainButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("AgainButton.BackgroundImage")));
             this.AgainButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
@@ -192,6 +181,7 @@
             // 
             // ForwardButton
             // 
+            this.ForwardButton.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.ForwardButton.BackColor = System.Drawing.Color.White;
             this.ForwardButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("ForwardButton.BackgroundImage")));
             this.ForwardButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
@@ -203,12 +193,29 @@
             this.ForwardButton.UseVisualStyleBackColor = false;
             this.ForwardButton.Click += new System.EventHandler(this.ForwardButton_Click);
             // 
+            // label1
+            // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label1.BackColor = System.Drawing.Color.White;
+            this.label1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label1.Cursor = System.Windows.Forms.Cursors.Default;
+            this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.label1.Font = new System.Drawing.Font("Bahnschrift Light", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.ForeColor = System.Drawing.Color.Black;
+            this.label1.Location = new System.Drawing.Point(255, 22);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(848, 67);
+            this.label1.TabIndex = 23;
+            this.label1.Text = "Ответьте, пожалуйста, на вопрос:\r\n4) Какая сейчас погода?";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // AppForm4
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(170)))), ((int)(((byte)(221)))));
             this.ClientSize = new System.Drawing.Size(1234, 664);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.ForwardButton);
             this.Controls.Add(this.AgainButton);
             this.Controls.Add(this.BackButton);
@@ -219,18 +226,15 @@
             this.Controls.Add(this.button6);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.help_button);
-            this.Controls.Add(this.GreetingTextBox);
             this.Name = "AppForm4";
             this.Text = "AppForm4";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.AppForm4_Load);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox GreetingTextBox;
         private System.Windows.Forms.Button help_button;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button6;
@@ -241,5 +245,6 @@
         private System.Windows.Forms.Button BackButton;
         private System.Windows.Forms.Button AgainButton;
         private System.Windows.Forms.Button ForwardButton;
+        private System.Windows.Forms.Label label1;
     }
 }

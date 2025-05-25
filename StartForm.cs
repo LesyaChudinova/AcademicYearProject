@@ -42,7 +42,7 @@ namespace AcademicYearProject
 
         private void SkipInstruction_Click(object sender, EventArgs e)
         {
-            AppForm1 form1 = new AppForm1(this);
+            AppForm1 form1 = new AppForm1();
             form1.Show();
         }
 
@@ -62,7 +62,7 @@ namespace AcademicYearProject
             if (appForm1 == null)
                 appForm1 = new AppForm1();
             appForm1.Show();
-            this.Hide();
+            //this.Hide();
         }
     }
 }

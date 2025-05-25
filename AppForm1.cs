@@ -12,25 +12,14 @@ namespace AcademicYearProject
 {
     public partial class AppForm1 : Form
     {
+        
         private AppForm2 appForm2;
-        private StartScreen startForm;
-
-        public AppForm1(StartScreen startScreen)
-        {
-            InitializeComponent();
-        }
+        private StartScreen startForm;        
 
         public AppForm1()
         {
             InitializeComponent();
-        }             
-               
-
-        private void AgainButton_Click(object sender, EventArgs e)
-        {
-            StartScreen form = new StartScreen();
-            form.Show();
-        }
+        }                 
 
         private void Women_Click(object sender, EventArgs e)
         {
@@ -45,9 +34,9 @@ namespace AcademicYearProject
         private void ForwardButton_Click(object sender, EventArgs e)
         {
             if (appForm2 == null)
-                appForm2 = new AppForm2(this);
+                appForm2 = new AppForm2();
             appForm2.Show();
-            this.Hide();
+            this.Close();
         }
 
         private void BackButton_Click(object sender, EventArgs e)
@@ -55,10 +44,28 @@ namespace AcademicYearProject
             if (startForm == null)
                 startForm = new StartScreen();
             startForm.Show();
-            this.Hide();
+            this.Close();
+        }
+
+        private void AgainButton_Click(object sender, EventArgs e)
+        {
+            if (startForm == null)
+                startForm = new StartScreen();
+            startForm.Show();
+            this.Close();
         }
 
         private void AppForm1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void GreetingTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
         {
 
         }

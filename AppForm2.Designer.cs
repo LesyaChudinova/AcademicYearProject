@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AppForm2));
-            this.GreetingTextBox = new System.Windows.Forms.TextBox();
             this.help_button = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
@@ -40,24 +39,8 @@
             this.BackButton = new System.Windows.Forms.Button();
             this.ForwardButton = new System.Windows.Forms.Button();
             this.AgainButton = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
-            // 
-            // GreetingTextBox
-            // 
-            this.GreetingTextBox.AcceptsTab = true;
-            this.GreetingTextBox.BackColor = System.Drawing.Color.White;
-            this.GreetingTextBox.Font = new System.Drawing.Font("Bahnschrift Light", 14F);
-            this.GreetingTextBox.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.GreetingTextBox.Location = new System.Drawing.Point(255, 22);
-            this.GreetingTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.GreetingTextBox.Multiline = true;
-            this.GreetingTextBox.Name = "GreetingTextBox";
-            this.GreetingTextBox.ReadOnly = true;
-            this.GreetingTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
-            this.GreetingTextBox.Size = new System.Drawing.Size(848, 67);
-            this.GreetingTextBox.TabIndex = 4;
-            this.GreetingTextBox.Text = "Ответьте, пожалуйста, на вопрос: \r\n2) Ваш возраст:";
-            this.GreetingTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // help_button
             // 
@@ -99,6 +82,7 @@
             // 
             // TeenagersButton
             // 
+            this.TeenagersButton.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.TeenagersButton.BackColor = System.Drawing.Color.White;
             this.TeenagersButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("TeenagersButton.BackgroundImage")));
             this.TeenagersButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
@@ -116,6 +100,7 @@
             // 
             // YoungstersButton
             // 
+            this.YoungstersButton.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.YoungstersButton.BackColor = System.Drawing.Color.White;
             this.YoungstersButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("YoungstersButton.BackgroundImage")));
             this.YoungstersButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
@@ -134,6 +119,7 @@
             // 
             // AdultsButton
             // 
+            this.AdultsButton.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.AdultsButton.BackColor = System.Drawing.Color.White;
             this.AdultsButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("AdultsButton.BackgroundImage")));
             this.AdultsButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
@@ -152,6 +138,7 @@
             // 
             // OlderButton
             // 
+            this.OlderButton.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.OlderButton.BackColor = System.Drawing.Color.White;
             this.OlderButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("OlderButton.BackgroundImage")));
             this.OlderButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
@@ -171,6 +158,7 @@
             // 
             // BackButton
             // 
+            this.BackButton.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.BackButton.BackColor = System.Drawing.Color.White;
             this.BackButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BackButton.BackgroundImage")));
             this.BackButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
@@ -184,6 +172,7 @@
             // 
             // ForwardButton
             // 
+            this.ForwardButton.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.ForwardButton.BackColor = System.Drawing.Color.White;
             this.ForwardButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("ForwardButton.BackgroundImage")));
             this.ForwardButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
@@ -197,6 +186,7 @@
             // 
             // AgainButton
             // 
+            this.AgainButton.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.AgainButton.BackColor = System.Drawing.Color.White;
             this.AgainButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("AgainButton.BackgroundImage")));
             this.AgainButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
@@ -210,12 +200,28 @@
             this.AgainButton.UseVisualStyleBackColor = false;
             this.AgainButton.Click += new System.EventHandler(this.AgainButton_Click);
             // 
+            // label1
+            // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label1.BackColor = System.Drawing.Color.White;
+            this.label1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label1.Cursor = System.Windows.Forms.Cursors.Default;
+            this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.label1.Font = new System.Drawing.Font("Bahnschrift Light", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.Location = new System.Drawing.Point(264, 22);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(848, 67);
+            this.label1.TabIndex = 20;
+            this.label1.Text = "Ответьте, пожалуйста, на вопрос:\r\n2) Ваш возраст";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // AppForm2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(153)))), ((int)(((byte)(204)))));
             this.ClientSize = new System.Drawing.Size(1132, 687);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.AgainButton);
             this.Controls.Add(this.ForwardButton);
             this.Controls.Add(this.BackButton);
@@ -226,19 +232,16 @@
             this.Controls.Add(this.button6);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.help_button);
-            this.Controls.Add(this.GreetingTextBox);
             this.ForeColor = System.Drawing.Color.Black;
             this.Name = "AppForm2";
             this.Text = "AppForm3";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.AppForm2_Load);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox GreetingTextBox;
         private System.Windows.Forms.Button help_button;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button6;
@@ -249,5 +252,6 @@
         private System.Windows.Forms.Button BackButton;
         private System.Windows.Forms.Button ForwardButton;
         private System.Windows.Forms.Button AgainButton;
+        private System.Windows.Forms.Label label1;
     }
 }

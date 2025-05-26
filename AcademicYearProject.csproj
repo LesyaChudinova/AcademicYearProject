@@ -143,6 +143,9 @@
     <EmbeddedResource Include="AppForm5.resx">
       <DependentUpon>AppForm5.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="InstructionForm.resx">
+      <DependentUpon>InstructionForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="StartForm.resx">
       <DependentUpon>StartForm.cs</DependentUpon>
     </EmbeddedResource>

@@ -12,7 +12,7 @@ namespace AcademicYearProject
 {
     public partial class StartScreen: Form
     {
-        private AppForm1 appForm1;
+        private InstructionForm instructionForm;
         public StartScreen(AppForm2 appForm2)
         {
             InitializeComponent();
@@ -59,9 +59,9 @@ namespace AcademicYearProject
 
         private void startButton_Click(object sender, EventArgs e)
         {
-            if (appForm1 == null)
-                appForm1 = new AppForm1();
-            appForm1.Show();
+            if (instructionForm == null)
+                instructionForm = new InstructionForm();
+            instructionForm.Show();
             //this.Hide();
         }
     }

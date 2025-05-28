@@ -1,8 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using System;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace AcademicYearProject
 {
@@ -39,6 +37,29 @@ namespace AcademicYearProject
         public override string ToString()
         {
             return $"{Name} \n(Слой: {Layer}\nПол: {Gender}\nВозрастная категория: {AgeGroup}\nНастроение: {Mood}\nНазначение: {Occasion}\nСтль: {Style}\nВремя года: {Season}\nПогода: {Weather})";
+        }
+
+        public List<string> GetSplitValues(string propertyName)
+        {
+            var property = GetType().GetProperty(propertyName);
+            if (property == null) return new List<string>();
+
+            string value = property.GetValue(this) as string;
+            if (string.IsNullOrEmpty(value)) return new List<string>();
+
+            return value.Split(new[] { '/' }, StringSplitOptions.RemoveEmptyEntries)
+                        .Select(x => x.Trim())
+                        .ToList();
+        }
+
+        public bool MatchesCriteria(string propertyName, string searchValue)
+        {
+            var propertyValues = GetSplitValues(propertyName);
+            var searchValues = searchValue.Split(new[] { '/' }, StringSplitOptions.RemoveEmptyEntries)
+                                         .Select(x => x.Trim())
+                                         .ToList();
+
+            return propertyValues.Any(pv => searchValues.Any(sv => pv.Equals(sv, StringComparison.OrdinalIgnoreCase)));
         }
     }
 }

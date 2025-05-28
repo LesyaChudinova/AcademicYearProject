@@ -1,81 +1,41 @@
-﻿using AcademicYearProject.Properties;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace AcademicYearProject
 {
-    public class OutfitTree
+    public class OutfitTree : BinaryTree<int, Outfit>
     {
-        public OutfitNode Root { get; private set; }
+        // Добавим методы, специфичные для работы с одеждой
 
-
-        public void Add(Outfit outfit)
+        public List<Outfit> FindByCriteria(Func<Outfit, bool> predicate)
         {
-            Root = AddRecursive(Root, outfit);
+            var results = new List<Outfit>();
+            FindByCriteria(root, predicate, results);
+            return results;
         }
 
-        private OutfitNode AddRecursive(OutfitNode current, Outfit outfit)
+        private void FindByCriteria(TreePoint<int, Outfit> node, Func<Outfit, bool> predicate, List<Outfit> results)
         {
-            if (current == null)
-            {
-                return new OutfitNode(outfit);
-            }
+            if (node == null) return;
 
-            if (outfit.Id < current.Outfit.Id)
-            {
-                current.Left = AddRecursive(current.Left, outfit);
-            }
-            else if (outfit.Id > current.Outfit.Id)
-            {
-                current.Right = AddRecursive(current.Right, outfit);
-            }
+            if (predicate(node.Value))
+                results.Add(node.Value);
 
-            return current;
+            FindByCriteria(node.Left, predicate, results);
+            FindByCriteria(node.Right, predicate, results);
         }
 
-        public void Balance()
+        // Метод для генерации полных образов (комбинации верх+низ)
+        public List<List<Outfit>> GenerateCompleteOutfits(Func<Outfit, bool> criteria)
         {
-            List<Outfit> outfits = new List<Outfit>();
-            StoreInOrder(Root, outfits);
-            Root = BuildBalancedTree(outfits, 0, outfits.Count - 1);
-        }
+            var tops = FindByCriteria(o => criteria(o) && o.BodyPart == "верх");
+            var bottoms = FindByCriteria(o => criteria(o) && o.BodyPart == "низ");
 
-        private void StoreInOrder(OutfitNode node, List<Outfit> outfits)
-        {
-            if (node != null)
-            {
-                StoreInOrder(node.Left, outfits);
-                outfits.Add(node.Outfit);
-                StoreInOrder(node.Right, outfits);
-            }
-        }
-
-        private OutfitNode BuildBalancedTree(List<Outfit> outfits, int start, int end)
-        {
-            if (start > end)
-            {
-                return null;
-            }
-
-            int mid = (start + end) / 2;
-            OutfitNode node = new OutfitNode(outfits[mid]);
-
-            node.Left = BuildBalancedTree(outfits, start, mid - 1);
-            node.Right = BuildBalancedTree(outfits, mid + 1, end);
-
-            return node;
-        }
-        public void PrintInOrder(OutfitNode node)
-        {
-            if (node != null)
-            {
-                PrintInOrder(node.Left);
-                Console.WriteLine(node.Outfit);
-                PrintInOrder(node.Right);
-            }
+            return tops.SelectMany(top =>
+                   bottoms.Select(bottom =>
+                   new List<Outfit> { top, bottom })).ToList();
         }
     }
 }
+

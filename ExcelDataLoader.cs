@@ -1,10 +1,6 @@
-﻿/*using System;
+﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using OfficeOpenXml;
 
 namespace AcademicYearProject
@@ -21,8 +17,7 @@ namespace AcademicYearProject
                 throw new FileNotFoundException("Файл базы данных не найден!");
             }
 
-
-            ExcelPackage.License = License.NonCommercial;
+            ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
 
             using (var package = new ExcelPackage(fileInfo))
             {
@@ -33,41 +28,55 @@ namespace AcademicYearProject
                 }
 
                 int rowCount = worksheet.Dimension.Rows;
-                int colCount = worksheet.Dimension.Columns;
 
-                var headers = new List<string>();
-                for (int col = 2; col <= colCount; col++)
-                {
-                    headers.Add(worksheet.Cells[1, col].Text);
-                }
-
+                // Начинаем с 2 строки, так как первая - заголовки
                 for (int row = 2; row <= rowCount; row++)
                 {
-                    string itemName = worksheet.Cells[row, 1].Text;
-                    var attributes = new Dictionary<string, List<string>>();
-
-                    for (int col = 2; col <= colCount; col++)
+                    try
                     {
-                        string header = headers[col - 2];
-                        string cellValue = worksheet.Cells[row, col].Text;
+                        var outfit = new Outfit(
+                            id: row - 1, // Используем номер строки как ID
+                            name: GetCellValue(worksheet, row, 1),
+                            layer: GetMultiValues(worksheet, row, 2),
+                            bodyPart: GetMultiValues(worksheet, row, 3),
+                            gender: GetMultiValues(worksheet, row, 4),
+                            ageGroup: GetMultiValues(worksheet, row, 5),
+                            mood: GetMultiValues(worksheet, row, 6),
+                            occasion: GetMultiValues(worksheet, row, 7),
+                            style: GetMultiValues(worksheet, row, 8),
+                            season: GetMultiValues(worksheet, row, 9),
+                            weather: GetMultiValues(worksheet, row, 10)
+                        );
 
-                        var values = cellValue.Split(new[] { '/' }, StringSplitOptions.RemoveEmptyEntries);
-                        var trimmedValues = new List<string>();
-
-                        foreach (var value in values)
-                        {
-                            trimmedValues.Add(value.Trim());
-                        }
-
-                        attributes.Add(header, trimmedValues);
+                        items.Add(outfit);
                     }
-
-                    items.Add(new Outfit(itemName, attributes));
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine($"Ошибка при обработке строки {row}: {ex.Message}");
+                    }
                 }
             }
 
             return items;
         }
+
+        private string GetCellValue(ExcelWorksheet worksheet, int row, int col)
+        {
+            var cell = worksheet.Cells[row, col];
+            return cell.Text?.Trim() ?? string.Empty;
+        }
+
+        private string GetMultiValues(ExcelWorksheet worksheet, int row, int col)
+        {
+            string value = GetCellValue(worksheet, row, col);
+
+            // Заменяем переносы строк и множественные пробелы
+            value = value.Replace("\n", "/").Replace("  ", " ").Trim();
+
+            // Удаляем лишние пробелы вокруг слэшей
+            value = System.Text.RegularExpressions.Regex.Replace(value, @"\s*/\s*", "/");
+
+            return value;
+        }
     }
 }
-*/

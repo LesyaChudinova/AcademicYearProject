@@ -61,8 +61,7 @@ namespace AcademicYearProject
         {
             if (instructionForm == null)
                 instructionForm = new InstructionForm();
-            instructionForm.Show();
-            //this.Hide();
+            instructionForm.Show();           
         }
     }
 }

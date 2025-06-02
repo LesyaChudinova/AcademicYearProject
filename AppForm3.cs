@@ -14,7 +14,7 @@ namespace AcademicYearProject
     {
         private AppForm4 appForm4;
         private AppForm2 appForm2;
-        private StartScreen startForm;
+        private InstructionForm instructionForm;
 
         public AppForm3(AppForm2 appForm2)
         {
@@ -95,9 +95,9 @@ namespace AcademicYearProject
 
         private void AgainButton_Click(object sender, EventArgs e)
         {
-            if (startForm == null)
-                startForm = new StartScreen();
-            startForm.Show();
+            if (instructionForm == null)
+                instructionForm = new InstructionForm();
+            instructionForm.Show();
             this.Close();
         }
     }

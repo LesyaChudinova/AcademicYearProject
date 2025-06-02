@@ -86,7 +86,7 @@
             this.SnowButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.SnowButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.SnowButton.Font = new System.Drawing.Font("Bahnschrift Light", 13F);
-            this.SnowButton.Location = new System.Drawing.Point(255, 146);
+            this.SnowButton.Location = new System.Drawing.Point(253, 144);
             this.SnowButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.SnowButton.Name = "SnowButton";
             this.SnowButton.Size = new System.Drawing.Size(398, 151);
@@ -104,7 +104,7 @@
             this.RainButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.RainButton.Font = new System.Drawing.Font("Bahnschrift Light", 13F);
             this.RainButton.ForeColor = System.Drawing.Color.Black;
-            this.RainButton.Location = new System.Drawing.Point(705, 146);
+            this.RainButton.Location = new System.Drawing.Point(703, 144);
             this.RainButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.RainButton.Name = "RainButton";
             this.RainButton.Size = new System.Drawing.Size(398, 151);
@@ -122,7 +122,7 @@
             this.SunnyButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.SunnyButton.Font = new System.Drawing.Font("Bahnschrift Light", 13F);
             this.SunnyButton.ForeColor = System.Drawing.Color.Black;
-            this.SunnyButton.Location = new System.Drawing.Point(255, 361);
+            this.SunnyButton.Location = new System.Drawing.Point(253, 359);
             this.SunnyButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.SunnyButton.Name = "SunnyButton";
             this.SunnyButton.Size = new System.Drawing.Size(398, 151);
@@ -140,7 +140,7 @@
             this.WindyButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.WindyButton.Font = new System.Drawing.Font("Bahnschrift Light", 13F);
             this.WindyButton.ForeColor = System.Drawing.Color.Black;
-            this.WindyButton.Location = new System.Drawing.Point(705, 361);
+            this.WindyButton.Location = new System.Drawing.Point(703, 359);
             this.WindyButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.WindyButton.Name = "WindyButton";
             this.WindyButton.Size = new System.Drawing.Size(398, 151);
@@ -156,7 +156,7 @@
             this.BackButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BackButton.BackgroundImage")));
             this.BackButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.BackButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.BackButton.Location = new System.Drawing.Point(255, 563);
+            this.BackButton.Location = new System.Drawing.Point(253, 561);
             this.BackButton.Name = "BackButton";
             this.BackButton.Size = new System.Drawing.Size(226, 82);
             this.BackButton.TabIndex = 19;
@@ -171,7 +171,7 @@
             this.AgainButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.AgainButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.AgainButton.Font = new System.Drawing.Font("Bahnschrift Light", 13F);
-            this.AgainButton.Location = new System.Drawing.Point(564, 563);
+            this.AgainButton.Location = new System.Drawing.Point(562, 561);
             this.AgainButton.Name = "AgainButton";
             this.AgainButton.Size = new System.Drawing.Size(226, 82);
             this.AgainButton.TabIndex = 21;
@@ -186,7 +186,7 @@
             this.ForwardButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("ForwardButton.BackgroundImage")));
             this.ForwardButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ForwardButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.ForwardButton.Location = new System.Drawing.Point(864, 563);
+            this.ForwardButton.Location = new System.Drawing.Point(862, 561);
             this.ForwardButton.Name = "ForwardButton";
             this.ForwardButton.Size = new System.Drawing.Size(226, 82);
             this.ForwardButton.TabIndex = 22;
@@ -202,7 +202,7 @@
             this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.label1.Font = new System.Drawing.Font("Bahnschrift Light", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(255, 22);
+            this.label1.Location = new System.Drawing.Point(253, 20);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(848, 67);
             this.label1.TabIndex = 23;
@@ -214,7 +214,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(170)))), ((int)(((byte)(221)))));
-            this.ClientSize = new System.Drawing.Size(1234, 664);
+            this.ClientSize = new System.Drawing.Size(1230, 661);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.ForwardButton);
             this.Controls.Add(this.AgainButton);

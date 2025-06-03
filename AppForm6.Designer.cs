@@ -33,9 +33,9 @@
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.TeenagersButton = new System.Windows.Forms.Button();
-            this.YoungstersButton = new System.Windows.Forms.Button();
-            this.AdultsButton = new System.Windows.Forms.Button();
+            this.ClassicButton = new System.Windows.Forms.Button();
+            this.SportsButton = new System.Windows.Forms.Button();
+            this.UsualDayButton = new System.Windows.Forms.Button();
             this.BackButton = new System.Windows.Forms.Button();
             this.AgainButton = new System.Windows.Forms.Button();
             this.ForwardButton = new System.Windows.Forms.Button();
@@ -59,7 +59,7 @@
             this.button5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button5.BackgroundImage")));
             this.button5.Font = new System.Drawing.Font("Bahnschrift Light", 8F);
             this.button5.ForeColor = System.Drawing.Color.Black;
-            this.button5.Location = new System.Drawing.Point(126, 22);
+            this.button5.Location = new System.Drawing.Point(126, 21);
             this.button5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(104, 26);
@@ -87,65 +87,65 @@
             this.label1.Cursor = System.Windows.Forms.Cursors.Default;
             this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.label1.Font = new System.Drawing.Font("Bahnschrift Light", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(282, 23);
+            this.label1.Location = new System.Drawing.Point(264, 21);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(848, 67);
+            this.label1.Size = new System.Drawing.Size(848, 63);
             this.label1.TabIndex = 21;
             this.label1.Text = "Ответьте, пожалуйста, на вопрос:\r\n6) Будет ли сегодня мероприятие?";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // TeenagersButton
+            // ClassicButton
             // 
-            this.TeenagersButton.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.TeenagersButton.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.TeenagersButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("TeenagersButton.BackgroundImage")));
-            this.TeenagersButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.TeenagersButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.TeenagersButton.Font = new System.Drawing.Font("Bahnschrift Light", 13F);
-            this.TeenagersButton.Location = new System.Drawing.Point(273, 147);
-            this.TeenagersButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.TeenagersButton.Name = "TeenagersButton";
-            this.TeenagersButton.Size = new System.Drawing.Size(398, 151);
-            this.TeenagersButton.TabIndex = 22;
-            this.TeenagersButton.Text = "Да,\r\nв классическом стиле";
-            this.TeenagersButton.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.TeenagersButton.UseVisualStyleBackColor = false;
+            this.ClassicButton.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.ClassicButton.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.ClassicButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("ClassicButton.BackgroundImage")));
+            this.ClassicButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.ClassicButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.ClassicButton.Font = new System.Drawing.Font("Bahnschrift Light", 13F);
+            this.ClassicButton.Location = new System.Drawing.Point(264, 120);
+            this.ClassicButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.ClassicButton.Name = "ClassicButton";
+            this.ClassicButton.Size = new System.Drawing.Size(398, 151);
+            this.ClassicButton.TabIndex = 22;
+            this.ClassicButton.Text = "Да,\r\nв классическом стиле";
+            this.ClassicButton.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.ClassicButton.UseVisualStyleBackColor = false;
             // 
-            // YoungstersButton
+            // SportsButton
             // 
-            this.YoungstersButton.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.YoungstersButton.BackColor = System.Drawing.Color.White;
-            this.YoungstersButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("YoungstersButton.BackgroundImage")));
-            this.YoungstersButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.YoungstersButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.YoungstersButton.Font = new System.Drawing.Font("Bahnschrift Light", 13F);
-            this.YoungstersButton.ForeColor = System.Drawing.Color.Black;
-            this.YoungstersButton.Location = new System.Drawing.Point(723, 147);
-            this.YoungstersButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.YoungstersButton.Name = "YoungstersButton";
-            this.YoungstersButton.Size = new System.Drawing.Size(398, 151);
-            this.YoungstersButton.TabIndex = 23;
-            this.YoungstersButton.Text = "Да,\r\nв спортивном стиле\r\n";
-            this.YoungstersButton.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.YoungstersButton.UseVisualStyleBackColor = false;
+            this.SportsButton.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.SportsButton.BackColor = System.Drawing.Color.White;
+            this.SportsButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("SportsButton.BackgroundImage")));
+            this.SportsButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.SportsButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.SportsButton.Font = new System.Drawing.Font("Bahnschrift Light", 13F);
+            this.SportsButton.ForeColor = System.Drawing.Color.Black;
+            this.SportsButton.Location = new System.Drawing.Point(714, 120);
+            this.SportsButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.SportsButton.Name = "SportsButton";
+            this.SportsButton.Size = new System.Drawing.Size(398, 151);
+            this.SportsButton.TabIndex = 23;
+            this.SportsButton.Text = "Да,\r\nв спортивном стиле\r\n";
+            this.SportsButton.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.SportsButton.UseVisualStyleBackColor = false;
             // 
-            // AdultsButton
+            // UsualDayButton
             // 
-            this.AdultsButton.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.AdultsButton.BackColor = System.Drawing.Color.White;
-            this.AdultsButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("AdultsButton.BackgroundImage")));
-            this.AdultsButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.AdultsButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.AdultsButton.Font = new System.Drawing.Font("Bahnschrift Light", 13F);
-            this.AdultsButton.ForeColor = System.Drawing.Color.Black;
-            this.AdultsButton.Location = new System.Drawing.Point(501, 347);
-            this.AdultsButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.AdultsButton.Name = "AdultsButton";
-            this.AdultsButton.Size = new System.Drawing.Size(398, 151);
-            this.AdultsButton.TabIndex = 24;
-            this.AdultsButton.Text = "Нет, обычный день";
-            this.AdultsButton.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.AdultsButton.UseVisualStyleBackColor = false;
+            this.UsualDayButton.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.UsualDayButton.BackColor = System.Drawing.Color.White;
+            this.UsualDayButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("UsualDayButton.BackgroundImage")));
+            this.UsualDayButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.UsualDayButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.UsualDayButton.Font = new System.Drawing.Font("Bahnschrift Light", 13F);
+            this.UsualDayButton.ForeColor = System.Drawing.Color.Black;
+            this.UsualDayButton.Location = new System.Drawing.Point(487, 330);
+            this.UsualDayButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.UsualDayButton.Name = "UsualDayButton";
+            this.UsualDayButton.Size = new System.Drawing.Size(398, 151);
+            this.UsualDayButton.TabIndex = 24;
+            this.UsualDayButton.Text = "Нет, обычный день";
+            this.UsualDayButton.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.UsualDayButton.UseVisualStyleBackColor = false;
             // 
             // BackButton
             // 
@@ -154,11 +154,12 @@
             this.BackButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BackButton.BackgroundImage")));
             this.BackButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.BackButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.BackButton.Location = new System.Drawing.Point(273, 564);
+            this.BackButton.Location = new System.Drawing.Point(264, 535);
             this.BackButton.Name = "BackButton";
             this.BackButton.Size = new System.Drawing.Size(226, 82);
             this.BackButton.TabIndex = 26;
             this.BackButton.UseVisualStyleBackColor = false;
+            this.BackButton.Click += new System.EventHandler(this.BackButton_Click);
             // 
             // AgainButton
             // 
@@ -168,12 +169,13 @@
             this.AgainButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.AgainButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.AgainButton.Font = new System.Drawing.Font("Bahnschrift Light", 13F);
-            this.AgainButton.Location = new System.Drawing.Point(582, 564);
+            this.AgainButton.Location = new System.Drawing.Point(584, 535);
             this.AgainButton.Name = "AgainButton";
             this.AgainButton.Size = new System.Drawing.Size(226, 82);
             this.AgainButton.TabIndex = 27;
             this.AgainButton.Text = "Пройти заново";
             this.AgainButton.UseVisualStyleBackColor = false;
+            this.AgainButton.Click += new System.EventHandler(this.AgainButton_Click);
             // 
             // ForwardButton
             // 
@@ -182,30 +184,34 @@
             this.ForwardButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("ForwardButton.BackgroundImage")));
             this.ForwardButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ForwardButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.ForwardButton.Location = new System.Drawing.Point(882, 564);
+            this.ForwardButton.Location = new System.Drawing.Point(886, 535);
             this.ForwardButton.Name = "ForwardButton";
             this.ForwardButton.Size = new System.Drawing.Size(226, 82);
             this.ForwardButton.TabIndex = 28;
             this.ForwardButton.UseVisualStyleBackColor = false;
+            this.ForwardButton.Click += new System.EventHandler(this.ForwardButton_Click);
             // 
             // AppForm6
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(170)))), ((int)(((byte)(221)))));
-            this.ClientSize = new System.Drawing.Size(1167, 645);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(153)))), ((int)(((byte)(204)))));
+            this.ClientSize = new System.Drawing.Size(1178, 624);
             this.Controls.Add(this.ForwardButton);
             this.Controls.Add(this.AgainButton);
             this.Controls.Add(this.BackButton);
-            this.Controls.Add(this.AdultsButton);
-            this.Controls.Add(this.YoungstersButton);
-            this.Controls.Add(this.TeenagersButton);
+            this.Controls.Add(this.UsualDayButton);
+            this.Controls.Add(this.SportsButton);
+            this.Controls.Add(this.ClassicButton);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.help_button);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "AppForm6";
             this.Text = "AppForm6";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.AppForm6_Load);
             this.ResumeLayout(false);
 
         }
@@ -216,9 +222,9 @@
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button TeenagersButton;
-        private System.Windows.Forms.Button YoungstersButton;
-        private System.Windows.Forms.Button AdultsButton;
+        private System.Windows.Forms.Button ClassicButton;
+        private System.Windows.Forms.Button SportsButton;
+        private System.Windows.Forms.Button UsualDayButton;
         private System.Windows.Forms.Button BackButton;
         private System.Windows.Forms.Button AgainButton;
         private System.Windows.Forms.Button ForwardButton;

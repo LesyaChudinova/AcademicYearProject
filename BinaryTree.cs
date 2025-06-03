@@ -1,4 +1,6 @@
-﻿namespace AcademicYearProject
+﻿using System;
+using System.Collections.Generic;
+namespace AcademicYearProject
 {
     public class BinaryTree<TKey, TValue> 
     {

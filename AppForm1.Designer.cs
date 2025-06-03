@@ -57,7 +57,7 @@
             // 
             this.button5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button5.BackgroundImage")));
             this.button5.Font = new System.Drawing.Font("Bahnschrift Light", 8F);
-            this.button5.Location = new System.Drawing.Point(126, 22);
+            this.button5.Location = new System.Drawing.Point(126, 21);
             this.button5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(104, 26);
@@ -85,7 +85,7 @@
             this.Women.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.Women.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.Women.Font = new System.Drawing.Font("Bahnschrift Light", 13F);
-            this.Women.Location = new System.Drawing.Point(301, 250);
+            this.Women.Location = new System.Drawing.Point(264, 222);
             this.Women.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Women.Name = "Women";
             this.Women.Size = new System.Drawing.Size(398, 151);
@@ -103,7 +103,7 @@
             this.Men.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.Men.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.Men.Font = new System.Drawing.Font("Bahnschrift Light", 13F);
-            this.Men.Location = new System.Drawing.Point(751, 250);
+            this.Men.Location = new System.Drawing.Point(714, 222);
             this.Men.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Men.Name = "Men";
             this.Men.Size = new System.Drawing.Size(398, 151);
@@ -120,7 +120,7 @@
             this.ForwardButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("ForwardButton.BackgroundImage")));
             this.ForwardButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ForwardButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.ForwardButton.Location = new System.Drawing.Point(910, 563);
+            this.ForwardButton.Location = new System.Drawing.Point(886, 535);
             this.ForwardButton.Name = "ForwardButton";
             this.ForwardButton.Size = new System.Drawing.Size(226, 82);
             this.ForwardButton.TabIndex = 14;
@@ -134,7 +134,7 @@
             this.BackButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BackButton.BackgroundImage")));
             this.BackButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.BackButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.BackButton.Location = new System.Drawing.Point(301, 563);
+            this.BackButton.Location = new System.Drawing.Point(264, 535);
             this.BackButton.Name = "BackButton";
             this.BackButton.Size = new System.Drawing.Size(226, 82);
             this.BackButton.TabIndex = 15;
@@ -149,7 +149,7 @@
             this.AgainButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.AgainButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.AgainButton.Font = new System.Drawing.Font("Bahnschrift Light", 13F);
-            this.AgainButton.Location = new System.Drawing.Point(610, 563);
+            this.AgainButton.Location = new System.Drawing.Point(569, 535);
             this.AgainButton.Name = "AgainButton";
             this.AgainButton.Size = new System.Drawing.Size(226, 82);
             this.AgainButton.TabIndex = 16;
@@ -165,9 +165,9 @@
             this.label1.Cursor = System.Windows.Forms.Cursors.Default;
             this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.label1.Font = new System.Drawing.Font("Bahnschrift Light", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(301, 22);
+            this.label1.Location = new System.Drawing.Point(264, 21);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(848, 67);
+            this.label1.Size = new System.Drawing.Size(848, 63);
             this.label1.TabIndex = 17;
             this.label1.Text = "Укажите, пожалуйста:\r\n1) Ваш пол";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -178,7 +178,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(153)))), ((int)(((byte)(204)))));
-            this.ClientSize = new System.Drawing.Size(1263, 681);
+            this.ClientSize = new System.Drawing.Size(1178, 624);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.AgainButton);
             this.Controls.Add(this.BackButton);

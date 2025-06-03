@@ -60,7 +60,7 @@
             this.button5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button5.BackgroundImage")));
             this.button5.Font = new System.Drawing.Font("Bahnschrift Light", 8F);
             this.button5.ForeColor = System.Drawing.Color.Black;
-            this.button5.Location = new System.Drawing.Point(126, 22);
+            this.button5.Location = new System.Drawing.Point(126, 21);
             this.button5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(104, 26);
@@ -88,7 +88,7 @@
             this.TeenagersButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.TeenagersButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.TeenagersButton.Font = new System.Drawing.Font("Bahnschrift Light", 13F);
-            this.TeenagersButton.Location = new System.Drawing.Point(273, 147);
+            this.TeenagersButton.Location = new System.Drawing.Point(264, 120);
             this.TeenagersButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TeenagersButton.Name = "TeenagersButton";
             this.TeenagersButton.Size = new System.Drawing.Size(398, 151);
@@ -107,7 +107,7 @@
             this.YoungstersButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.YoungstersButton.Font = new System.Drawing.Font("Bahnschrift Light", 13F);
             this.YoungstersButton.ForeColor = System.Drawing.Color.Black;
-            this.YoungstersButton.Location = new System.Drawing.Point(723, 147);
+            this.YoungstersButton.Location = new System.Drawing.Point(714, 120);
             this.YoungstersButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.YoungstersButton.Name = "YoungstersButton";
             this.YoungstersButton.Size = new System.Drawing.Size(398, 151);
@@ -126,7 +126,7 @@
             this.AdultsButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.AdultsButton.Font = new System.Drawing.Font("Bahnschrift Light", 13F);
             this.AdultsButton.ForeColor = System.Drawing.Color.Black;
-            this.AdultsButton.Location = new System.Drawing.Point(273, 362);
+            this.AdultsButton.Location = new System.Drawing.Point(264, 330);
             this.AdultsButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.AdultsButton.Name = "AdultsButton";
             this.AdultsButton.Size = new System.Drawing.Size(398, 151);
@@ -146,7 +146,7 @@
             this.OlderButton.Font = new System.Drawing.Font("Bahnschrift Light", 13F);
             this.OlderButton.ForeColor = System.Drawing.Color.Black;
             this.OlderButton.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.OlderButton.Location = new System.Drawing.Point(723, 362);
+            this.OlderButton.Location = new System.Drawing.Point(714, 330);
             this.OlderButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.OlderButton.Name = "OlderButton";
             this.OlderButton.Size = new System.Drawing.Size(398, 151);
@@ -163,7 +163,7 @@
             this.BackButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BackButton.BackgroundImage")));
             this.BackButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.BackButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.BackButton.Location = new System.Drawing.Point(273, 564);
+            this.BackButton.Location = new System.Drawing.Point(264, 535);
             this.BackButton.Name = "BackButton";
             this.BackButton.Size = new System.Drawing.Size(226, 82);
             this.BackButton.TabIndex = 17;
@@ -177,7 +177,7 @@
             this.ForwardButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("ForwardButton.BackgroundImage")));
             this.ForwardButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ForwardButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.ForwardButton.Location = new System.Drawing.Point(882, 564);
+            this.ForwardButton.Location = new System.Drawing.Point(886, 535);
             this.ForwardButton.Name = "ForwardButton";
             this.ForwardButton.Size = new System.Drawing.Size(226, 82);
             this.ForwardButton.TabIndex = 18;
@@ -192,7 +192,7 @@
             this.AgainButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.AgainButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.AgainButton.Font = new System.Drawing.Font("Bahnschrift Light", 13F);
-            this.AgainButton.Location = new System.Drawing.Point(582, 564);
+            this.AgainButton.Location = new System.Drawing.Point(577, 535);
             this.AgainButton.Name = "AgainButton";
             this.AgainButton.Size = new System.Drawing.Size(226, 82);
             this.AgainButton.TabIndex = 19;
@@ -208,9 +208,9 @@
             this.label1.Cursor = System.Windows.Forms.Cursors.Default;
             this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.label1.Font = new System.Drawing.Font("Bahnschrift Light", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(282, 23);
+            this.label1.Location = new System.Drawing.Point(264, 21);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(848, 67);
+            this.label1.Size = new System.Drawing.Size(848, 63);
             this.label1.TabIndex = 20;
             this.label1.Text = "Укажите, пожалуйста:\r\n2) Ваш возраст";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -220,7 +220,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(153)))), ((int)(((byte)(204)))));
-            this.ClientSize = new System.Drawing.Size(1168, 689);
+            this.ClientSize = new System.Drawing.Size(1182, 628);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.AgainButton);
             this.Controls.Add(this.ForwardButton);

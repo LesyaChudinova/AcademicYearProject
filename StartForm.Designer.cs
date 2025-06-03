@@ -49,7 +49,7 @@
             this.GreetingTextBox.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.helpProvider1.SetHelpKeyword(this.GreetingTextBox, "13");
             this.helpProvider1.SetHelpNavigator(this.GreetingTextBox, System.Windows.Forms.HelpNavigator.TopicId);
-            this.GreetingTextBox.Location = new System.Drawing.Point(56, 189);
+            this.GreetingTextBox.Location = new System.Drawing.Point(85, 231);
             this.GreetingTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.GreetingTextBox.Multiline = true;
             this.GreetingTextBox.Name = "GreetingTextBox";
@@ -57,6 +57,9 @@
             this.helpProvider1.SetShowHelp(this.GreetingTextBox, true);
             this.GreetingTextBox.Size = new System.Drawing.Size(1030, 121);
             this.GreetingTextBox.TabIndex = 1;
+            this.GreetingTextBox.Text = "Привет! Нас зовут Аня и Леся, и сегодня мы будем твоими проводниками в мир стиля!" +
+    "\r\nСейчас мы научим тебя, как пользоваться системой,\r\nа затем, подберем тебе потр" +
+    "ясающий образ!\r\nНачнем?";
             this.GreetingTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.GreetingTextBox.TextChanged += new System.EventHandler(this.GreetingTextBox_TextChanged);
             // 
@@ -91,7 +94,7 @@
             this.GoButton.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.GoButton.BackColor = System.Drawing.Color.White;
             this.GoButton.Font = new System.Drawing.Font("Bahnschrift", 12F);
-            this.GoButton.Location = new System.Drawing.Point(459, 360);
+            this.GoButton.Location = new System.Drawing.Point(488, 402);
             this.GoButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.GoButton.Name = "GoButton";
             this.GoButton.Size = new System.Drawing.Size(272, 63);
@@ -117,8 +120,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(170)))), ((int)(((byte)(221)))));
-            this.ClientSize = new System.Drawing.Size(1124, 544);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(153)))), ((int)(((byte)(204)))));
+            this.ClientSize = new System.Drawing.Size(1182, 628);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.GoButton);
             this.Controls.Add(this.button2);

@@ -12,9 +12,38 @@ namespace AcademicYearProject
 {
     public partial class AppForm7 : Form
     {
+        private AppForm6 appForm6;
+        private InstructionForm instructionForm;
+
         public AppForm7()
         {
             InitializeComponent();
+        }
+
+        private void AppForm7_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ForwardButton_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void BackButton_Click(object sender, EventArgs e)
+        {
+            if (appForm6 == null)
+                appForm6 = new AppForm6();
+            appForm6.Show();
+            this.Close();
+        }
+
+        private void AgainButton_Click(object sender, EventArgs e)
+        {
+            if (instructionForm == null)
+                instructionForm = new InstructionForm();
+            instructionForm.Show();
+            this.Close();
         }
     }
 }

@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AppForm3));
-            this.SnowButton = new System.Windows.Forms.Button();
-            this.RainButton = new System.Windows.Forms.Button();
-            this.SunnyButton = new System.Windows.Forms.Button();
-            this.WindyButton = new System.Windows.Forms.Button();
+            this.SummerButton = new System.Windows.Forms.Button();
+            this.WinterButton = new System.Windows.Forms.Button();
+            this.SpringButton = new System.Windows.Forms.Button();
+            this.FallButton = new System.Windows.Forms.Button();
             this.helpProvider1 = new System.Windows.Forms.HelpProvider();
             this.help_button = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
@@ -43,91 +43,91 @@
             this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // SnowButton
+            // SummerButton
             // 
-            this.SnowButton.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.SnowButton.BackColor = System.Drawing.Color.White;
-            this.SnowButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("SnowButton.BackgroundImage")));
-            this.SnowButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.SnowButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.SnowButton.Font = new System.Drawing.Font("Bahnschrift Light", 13F);
-            this.helpProvider1.SetHelpKeyword(this.SnowButton, "45");
-            this.helpProvider1.SetHelpNavigator(this.SnowButton, System.Windows.Forms.HelpNavigator.TopicId);
-            this.SnowButton.Location = new System.Drawing.Point(255, 146);
-            this.SnowButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.SnowButton.Name = "SnowButton";
-            this.helpProvider1.SetShowHelp(this.SnowButton, true);
-            this.SnowButton.Size = new System.Drawing.Size(398, 151);
-            this.SnowButton.TabIndex = 3;
-            this.SnowButton.Text = "Лето";
-            this.SnowButton.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.SnowButton.UseVisualStyleBackColor = false;
-            this.SnowButton.Click += new System.EventHandler(this.SnowButton_Click);
+            this.SummerButton.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.SummerButton.BackColor = System.Drawing.Color.White;
+            this.SummerButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("SummerButton.BackgroundImage")));
+            this.SummerButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.SummerButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.SummerButton.Font = new System.Drawing.Font("Bahnschrift Light", 13F);
+            this.helpProvider1.SetHelpKeyword(this.SummerButton, "45");
+            this.helpProvider1.SetHelpNavigator(this.SummerButton, System.Windows.Forms.HelpNavigator.TopicId);
+            this.SummerButton.Location = new System.Drawing.Point(264, 120);
+            this.SummerButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.SummerButton.Name = "SummerButton";
+            this.helpProvider1.SetShowHelp(this.SummerButton, true);
+            this.SummerButton.Size = new System.Drawing.Size(398, 151);
+            this.SummerButton.TabIndex = 3;
+            this.SummerButton.Text = "Лето";
+            this.SummerButton.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.SummerButton.UseVisualStyleBackColor = false;
+            this.SummerButton.Click += new System.EventHandler(this.SnowButton_Click);
             // 
-            // RainButton
+            // WinterButton
             // 
-            this.RainButton.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.RainButton.BackColor = System.Drawing.Color.White;
-            this.RainButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("RainButton.BackgroundImage")));
-            this.RainButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.RainButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.RainButton.Font = new System.Drawing.Font("Bahnschrift Light", 13F);
-            this.RainButton.ForeColor = System.Drawing.Color.Black;
-            this.helpProvider1.SetHelpKeyword(this.RainButton, "анкеты");
-            this.RainButton.Location = new System.Drawing.Point(705, 146);
-            this.RainButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.RainButton.Name = "RainButton";
-            this.helpProvider1.SetShowHelp(this.RainButton, true);
-            this.RainButton.Size = new System.Drawing.Size(398, 151);
-            this.RainButton.TabIndex = 4;
-            this.RainButton.Text = "Зима";
-            this.RainButton.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.RainButton.UseVisualStyleBackColor = false;
-            this.RainButton.Click += new System.EventHandler(this.RainButton_Click);
+            this.WinterButton.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.WinterButton.BackColor = System.Drawing.Color.White;
+            this.WinterButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("WinterButton.BackgroundImage")));
+            this.WinterButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.WinterButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.WinterButton.Font = new System.Drawing.Font("Bahnschrift Light", 13F);
+            this.WinterButton.ForeColor = System.Drawing.Color.Black;
+            this.helpProvider1.SetHelpKeyword(this.WinterButton, "анкеты");
+            this.WinterButton.Location = new System.Drawing.Point(714, 120);
+            this.WinterButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.WinterButton.Name = "WinterButton";
+            this.helpProvider1.SetShowHelp(this.WinterButton, true);
+            this.WinterButton.Size = new System.Drawing.Size(398, 151);
+            this.WinterButton.TabIndex = 4;
+            this.WinterButton.Text = "Зима";
+            this.WinterButton.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.WinterButton.UseVisualStyleBackColor = false;
+            this.WinterButton.Click += new System.EventHandler(this.RainButton_Click);
             // 
-            // SunnyButton
+            // SpringButton
             // 
-            this.SunnyButton.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.SunnyButton.BackColor = System.Drawing.Color.White;
-            this.SunnyButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("SunnyButton.BackgroundImage")));
-            this.SunnyButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.SunnyButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.SunnyButton.Font = new System.Drawing.Font("Bahnschrift Light", 13F);
-            this.SunnyButton.ForeColor = System.Drawing.Color.Black;
-            this.helpProvider1.SetHelpKeyword(this.SunnyButton, "анкеты");
-            this.SunnyButton.Location = new System.Drawing.Point(255, 361);
-            this.SunnyButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.SunnyButton.Name = "SunnyButton";
-            this.helpProvider1.SetShowHelp(this.SunnyButton, true);
-            this.SunnyButton.Size = new System.Drawing.Size(398, 151);
-            this.SunnyButton.TabIndex = 5;
-            this.SunnyButton.Text = "Весна";
-            this.SunnyButton.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.SunnyButton.UseVisualStyleBackColor = false;
-            this.SunnyButton.Click += new System.EventHandler(this.SunnyButton_Click);
+            this.SpringButton.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.SpringButton.BackColor = System.Drawing.Color.White;
+            this.SpringButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("SpringButton.BackgroundImage")));
+            this.SpringButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.SpringButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.SpringButton.Font = new System.Drawing.Font("Bahnschrift Light", 13F);
+            this.SpringButton.ForeColor = System.Drawing.Color.Black;
+            this.helpProvider1.SetHelpKeyword(this.SpringButton, "анкеты");
+            this.SpringButton.Location = new System.Drawing.Point(264, 330);
+            this.SpringButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.SpringButton.Name = "SpringButton";
+            this.helpProvider1.SetShowHelp(this.SpringButton, true);
+            this.SpringButton.Size = new System.Drawing.Size(398, 151);
+            this.SpringButton.TabIndex = 5;
+            this.SpringButton.Text = "Весна";
+            this.SpringButton.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.SpringButton.UseVisualStyleBackColor = false;
+            this.SpringButton.Click += new System.EventHandler(this.SunnyButton_Click);
             // 
-            // WindyButton
+            // FallButton
             // 
-            this.WindyButton.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.WindyButton.BackColor = System.Drawing.Color.White;
-            this.WindyButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("WindyButton.BackgroundImage")));
-            this.WindyButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.WindyButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.WindyButton.Font = new System.Drawing.Font("Bahnschrift Light", 13F);
-            this.WindyButton.ForeColor = System.Drawing.Color.Black;
-            this.helpProvider1.SetHelpKeyword(this.WindyButton, "анкеты");
-            this.helpProvider1.SetHelpNavigator(this.WindyButton, System.Windows.Forms.HelpNavigator.TopicId);
-            this.WindyButton.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.WindyButton.Location = new System.Drawing.Point(705, 361);
-            this.WindyButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.WindyButton.Name = "WindyButton";
-            this.helpProvider1.SetShowHelp(this.WindyButton, true);
-            this.WindyButton.Size = new System.Drawing.Size(398, 151);
-            this.WindyButton.TabIndex = 6;
-            this.WindyButton.Text = "Осень";
-            this.WindyButton.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.WindyButton.UseVisualStyleBackColor = false;
-            this.WindyButton.Click += new System.EventHandler(this.WindyButton_Click);
+            this.FallButton.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.FallButton.BackColor = System.Drawing.Color.White;
+            this.FallButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("FallButton.BackgroundImage")));
+            this.FallButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.FallButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.FallButton.Font = new System.Drawing.Font("Bahnschrift Light", 13F);
+            this.FallButton.ForeColor = System.Drawing.Color.Black;
+            this.helpProvider1.SetHelpKeyword(this.FallButton, "анкеты");
+            this.helpProvider1.SetHelpNavigator(this.FallButton, System.Windows.Forms.HelpNavigator.TopicId);
+            this.FallButton.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.FallButton.Location = new System.Drawing.Point(714, 330);
+            this.FallButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.FallButton.Name = "FallButton";
+            this.helpProvider1.SetShowHelp(this.FallButton, true);
+            this.FallButton.Size = new System.Drawing.Size(398, 151);
+            this.FallButton.TabIndex = 6;
+            this.FallButton.Text = "Осень";
+            this.FallButton.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.FallButton.UseVisualStyleBackColor = false;
+            this.FallButton.Click += new System.EventHandler(this.WindyButton_Click);
             // 
             // helpProvider1
             // 
@@ -151,7 +151,7 @@
             // 
             this.button5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button5.BackgroundImage")));
             this.button5.Font = new System.Drawing.Font("Bahnschrift Light", 8F);
-            this.button5.Location = new System.Drawing.Point(126, 22);
+            this.button5.Location = new System.Drawing.Point(126, 21);
             this.button5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(104, 26);
@@ -179,7 +179,7 @@
             this.BackButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BackButton.BackgroundImage")));
             this.BackButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.BackButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.BackButton.Location = new System.Drawing.Point(255, 563);
+            this.BackButton.Location = new System.Drawing.Point(264, 535);
             this.BackButton.Name = "BackButton";
             this.BackButton.Size = new System.Drawing.Size(226, 82);
             this.BackButton.TabIndex = 18;
@@ -194,7 +194,7 @@
             this.AgainButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.AgainButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.AgainButton.Font = new System.Drawing.Font("Bahnschrift Light", 13F);
-            this.AgainButton.Location = new System.Drawing.Point(564, 563);
+            this.AgainButton.Location = new System.Drawing.Point(574, 535);
             this.AgainButton.Name = "AgainButton";
             this.AgainButton.Size = new System.Drawing.Size(226, 82);
             this.AgainButton.TabIndex = 20;
@@ -209,7 +209,7 @@
             this.ForwardButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("ForwardButton.BackgroundImage")));
             this.ForwardButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ForwardButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.ForwardButton.Location = new System.Drawing.Point(864, 563);
+            this.ForwardButton.Location = new System.Drawing.Point(886, 535);
             this.ForwardButton.Name = "ForwardButton";
             this.ForwardButton.Size = new System.Drawing.Size(226, 82);
             this.ForwardButton.TabIndex = 21;
@@ -225,9 +225,9 @@
             this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.label1.Font = new System.Drawing.Font("Bahnschrift Light", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(255, 22);
+            this.label1.Location = new System.Drawing.Point(264, 21);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(848, 67);
+            this.label1.Size = new System.Drawing.Size(848, 63);
             this.label1.TabIndex = 22;
             this.label1.Text = "Ответьте, пожалуйста, на вопрос:\r\n3) Какое сейчас время года?";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -236,8 +236,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(170)))), ((int)(((byte)(221)))));
-            this.ClientSize = new System.Drawing.Size(1249, 665);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(153)))), ((int)(((byte)(204)))));
+            this.ClientSize = new System.Drawing.Size(1178, 624);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.ForwardButton);
             this.Controls.Add(this.AgainButton);
@@ -245,15 +245,17 @@
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.help_button);
-            this.Controls.Add(this.WindyButton);
-            this.Controls.Add(this.SunnyButton);
-            this.Controls.Add(this.RainButton);
-            this.Controls.Add(this.SnowButton);
+            this.Controls.Add(this.FallButton);
+            this.Controls.Add(this.SpringButton);
+            this.Controls.Add(this.WinterButton);
+            this.Controls.Add(this.SummerButton);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.helpProvider1.SetHelpKeyword(this, "45");
             this.helpProvider1.SetHelpNavigator(this, System.Windows.Forms.HelpNavigator.TopicId);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "AppForm3";
             this.helpProvider1.SetShowHelp(this, true);
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Form2";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.AppForm4_Load);
@@ -262,10 +264,10 @@
         }
 
         #endregion
-        private System.Windows.Forms.Button SnowButton;
-        private System.Windows.Forms.Button RainButton;
-        private System.Windows.Forms.Button SunnyButton;
-        private System.Windows.Forms.Button WindyButton;
+        private System.Windows.Forms.Button SummerButton;
+        private System.Windows.Forms.Button WinterButton;
+        private System.Windows.Forms.Button SpringButton;
+        private System.Windows.Forms.Button FallButton;
         private System.Windows.Forms.HelpProvider helpProvider1;
         private System.Windows.Forms.Button help_button;
         private System.Windows.Forms.Button button5;

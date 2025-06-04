@@ -49,13 +49,13 @@
             this.GreetingTextBox.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.helpProvider1.SetHelpKeyword(this.GreetingTextBox, "13");
             this.helpProvider1.SetHelpNavigator(this.GreetingTextBox, System.Windows.Forms.HelpNavigator.TopicId);
-            this.GreetingTextBox.Location = new System.Drawing.Point(85, 231);
+            this.GreetingTextBox.Location = new System.Drawing.Point(96, 289);
             this.GreetingTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.GreetingTextBox.Multiline = true;
             this.GreetingTextBox.Name = "GreetingTextBox";
             this.GreetingTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
             this.helpProvider1.SetShowHelp(this.GreetingTextBox, true);
-            this.GreetingTextBox.Size = new System.Drawing.Size(1030, 121);
+            this.GreetingTextBox.Size = new System.Drawing.Size(1158, 150);
             this.GreetingTextBox.TabIndex = 1;
             this.GreetingTextBox.Text = "Привет! Нас зовут Аня и Леся, и сегодня мы будем твоими проводниками в мир стиля!" +
     "\r\nСейчас мы научим тебя, как пользоваться системой,\r\nа затем, подберем тебе потр" +
@@ -68,10 +68,10 @@
             this.help_button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(102)))), ((int)(((byte)(153)))));
             this.help_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.help_button.ForeColor = System.Drawing.Color.Black;
-            this.help_button.Location = new System.Drawing.Point(37, 21);
+            this.help_button.Location = new System.Drawing.Point(42, 26);
             this.help_button.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.help_button.Name = "help_button";
-            this.help_button.Size = new System.Drawing.Size(68, 63);
+            this.help_button.Size = new System.Drawing.Size(76, 79);
             this.help_button.TabIndex = 0;
             this.help_button.Text = "?";
             this.help_button.UseVisualStyleBackColor = false;
@@ -80,10 +80,10 @@
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("Bahnschrift Light", 8F);
-            this.button2.Location = new System.Drawing.Point(126, 53);
+            this.button2.Location = new System.Drawing.Point(142, 66);
             this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(104, 31);
+            this.button2.Size = new System.Drawing.Size(117, 39);
             this.button2.TabIndex = 3;
             this.button2.Text = "Указатель";
             this.button2.UseVisualStyleBackColor = true;
@@ -94,10 +94,10 @@
             this.GoButton.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.GoButton.BackColor = System.Drawing.Color.White;
             this.GoButton.Font = new System.Drawing.Font("Bahnschrift", 12F);
-            this.GoButton.Location = new System.Drawing.Point(488, 402);
+            this.GoButton.Location = new System.Drawing.Point(549, 502);
             this.GoButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.GoButton.Name = "GoButton";
-            this.GoButton.Size = new System.Drawing.Size(272, 63);
+            this.GoButton.Size = new System.Drawing.Size(306, 79);
             this.GoButton.TabIndex = 4;
             this.GoButton.Text = "Поехали!";
             this.GoButton.UseVisualStyleBackColor = false;
@@ -106,10 +106,10 @@
             // button4
             // 
             this.button4.Font = new System.Drawing.Font("Bahnschrift Light", 8F);
-            this.button4.Location = new System.Drawing.Point(126, 22);
+            this.button4.Location = new System.Drawing.Point(142, 28);
             this.button4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(104, 26);
+            this.button4.Size = new System.Drawing.Size(117, 32);
             this.button4.TabIndex = 5;
             this.button4.Text = "Поиск";
             this.button4.UseVisualStyleBackColor = true;
@@ -117,11 +117,11 @@
             // 
             // StartScreen
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(153)))), ((int)(((byte)(204)))));
-            this.ClientSize = new System.Drawing.Size(1182, 628);
+            this.ClientSize = new System.Drawing.Size(1330, 785);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.GoButton);
             this.Controls.Add(this.button2);

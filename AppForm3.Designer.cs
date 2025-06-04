@@ -62,7 +62,7 @@
             this.SummerButton.Text = "Лето";
             this.SummerButton.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             this.SummerButton.UseVisualStyleBackColor = false;
-            this.SummerButton.Click += new System.EventHandler(this.SnowButton_Click);
+            this.SummerButton.Click += new System.EventHandler(this.SummerButton_Click);
             // 
             // WinterButton
             // 
@@ -83,7 +83,7 @@
             this.WinterButton.Text = "Зима";
             this.WinterButton.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             this.WinterButton.UseVisualStyleBackColor = false;
-            this.WinterButton.Click += new System.EventHandler(this.RainButton_Click);
+            this.WinterButton.Click += new System.EventHandler(this.WinterButton_Click);
             // 
             // SpringButton
             // 
@@ -104,7 +104,7 @@
             this.SpringButton.Text = "Весна";
             this.SpringButton.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             this.SpringButton.UseVisualStyleBackColor = false;
-            this.SpringButton.Click += new System.EventHandler(this.SunnyButton_Click);
+            this.SpringButton.Click += new System.EventHandler(this.SpringButton_Click);
             // 
             // FallButton
             // 
@@ -127,7 +127,7 @@
             this.FallButton.Text = "Осень";
             this.FallButton.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             this.FallButton.UseVisualStyleBackColor = false;
-            this.FallButton.Click += new System.EventHandler(this.WindyButton_Click);
+            this.FallButton.Click += new System.EventHandler(this.AutumnButton_Click);
             // 
             // helpProvider1
             // 

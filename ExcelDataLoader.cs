@@ -17,7 +17,7 @@ namespace AcademicYearProject
                 throw new FileNotFoundException("Файл базы данных не найден!");
             }
 
-            ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
+            ExcelPackage.License.SetNonCommercialOrganization("некоммерческое использование");
 
             using (var package = new ExcelPackage(fileInfo))
             {

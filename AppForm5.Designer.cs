@@ -60,10 +60,10 @@
             this.help_button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(102)))), ((int)(((byte)(153)))));
             this.help_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.help_button.ForeColor = System.Drawing.Color.Black;
-            this.help_button.Location = new System.Drawing.Point(37, 21);
+            this.help_button.Location = new System.Drawing.Point(42, 26);
             this.help_button.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.help_button.Name = "help_button";
-            this.help_button.Size = new System.Drawing.Size(68, 63);
+            this.help_button.Size = new System.Drawing.Size(76, 79);
             this.help_button.TabIndex = 9;
             this.help_button.Text = "?";
             this.help_button.UseVisualStyleBackColor = false;
@@ -72,10 +72,10 @@
             // 
             this.button5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button5.BackgroundImage")));
             this.button5.Font = new System.Drawing.Font("Bahnschrift Light", 8F);
-            this.button5.Location = new System.Drawing.Point(126, 21);
+            this.button5.Location = new System.Drawing.Point(142, 26);
             this.button5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(104, 26);
+            this.button5.Size = new System.Drawing.Size(117, 32);
             this.button5.TabIndex = 10;
             this.button5.Text = "Поиск";
             this.button5.UseVisualStyleBackColor = true;
@@ -83,10 +83,10 @@
             // button6
             // 
             this.button6.Font = new System.Drawing.Font("Bahnschrift Light", 8F);
-            this.button6.Location = new System.Drawing.Point(126, 53);
+            this.button6.Location = new System.Drawing.Point(142, 66);
             this.button6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(104, 31);
+            this.button6.Size = new System.Drawing.Size(117, 39);
             this.button6.TabIndex = 12;
             this.button6.Text = "Указатель";
             this.button6.UseVisualStyleBackColor = true;
@@ -100,9 +100,9 @@
             this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.label1.Font = new System.Drawing.Font("Bahnschrift Light", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(264, 21);
+            this.label1.Location = new System.Drawing.Point(297, 26);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(848, 63);
+            this.label1.Size = new System.Drawing.Size(954, 78);
             this.label1.TabIndex = 24;
             this.label1.Text = "Ответьте, пожалуйста, на вопрос:\r\n5) Какое у вас настроение?";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -114,13 +114,14 @@
             this.ActiveButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ActiveButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.ActiveButton.Font = new System.Drawing.Font("Bahnschrift Light", 13F);
-            this.ActiveButton.Location = new System.Drawing.Point(264, 122);
+            this.ActiveButton.Location = new System.Drawing.Point(297, 152);
             this.ActiveButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ActiveButton.Name = "ActiveButton";
-            this.ActiveButton.Size = new System.Drawing.Size(264, 82);
+            this.ActiveButton.Size = new System.Drawing.Size(297, 102);
             this.ActiveButton.TabIndex = 25;
             this.ActiveButton.Text = "Активное";
             this.ActiveButton.UseVisualStyleBackColor = false;
+            this.ActiveButton.Click += new System.EventHandler(this.ActiveButton_Click);
             // 
             // RainButton
             // 
@@ -131,7 +132,7 @@
             this.RainButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.RainButton.Font = new System.Drawing.Font("Bahnschrift Light", 13F);
             this.RainButton.ForeColor = System.Drawing.Color.Black;
-            this.RainButton.Location = new System.Drawing.Point(714, 122);
+            this.RainButton.Location = new System.Drawing.Point(803, 152);
             this.RainButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.RainButton.Name = "RainButton";
             this.RainButton.Size = new System.Drawing.Size(0, 0);
@@ -149,7 +150,7 @@
             this.SunnyButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.SunnyButton.Font = new System.Drawing.Font("Bahnschrift Light", 13F);
             this.SunnyButton.ForeColor = System.Drawing.Color.Black;
-            this.SunnyButton.Location = new System.Drawing.Point(264, 226);
+            this.SunnyButton.Location = new System.Drawing.Point(297, 282);
             this.SunnyButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.SunnyButton.Name = "SunnyButton";
             this.SunnyButton.Size = new System.Drawing.Size(0, 0);
@@ -167,7 +168,7 @@
             this.WindyButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.WindyButton.Font = new System.Drawing.Font("Bahnschrift Light", 13F);
             this.WindyButton.ForeColor = System.Drawing.Color.Black;
-            this.WindyButton.Location = new System.Drawing.Point(714, 356);
+            this.WindyButton.Location = new System.Drawing.Point(803, 445);
             this.WindyButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.WindyButton.Name = "WindyButton";
             this.WindyButton.Size = new System.Drawing.Size(0, 0);
@@ -183,9 +184,10 @@
             this.BackButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BackButton.BackgroundImage")));
             this.BackButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.BackButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.BackButton.Location = new System.Drawing.Point(264, 535);
+            this.BackButton.Location = new System.Drawing.Point(297, 669);
+            this.BackButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.BackButton.Name = "BackButton";
-            this.BackButton.Size = new System.Drawing.Size(226, 82);
+            this.BackButton.Size = new System.Drawing.Size(254, 102);
             this.BackButton.TabIndex = 29;
             this.BackButton.UseVisualStyleBackColor = false;
             this.BackButton.Click += new System.EventHandler(this.BackButton_Click);
@@ -198,9 +200,10 @@
             this.AgainButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.AgainButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.AgainButton.Font = new System.Drawing.Font("Bahnschrift Light", 13F);
-            this.AgainButton.Location = new System.Drawing.Point(582, 535);
+            this.AgainButton.Location = new System.Drawing.Point(655, 669);
+            this.AgainButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.AgainButton.Name = "AgainButton";
-            this.AgainButton.Size = new System.Drawing.Size(226, 82);
+            this.AgainButton.Size = new System.Drawing.Size(254, 102);
             this.AgainButton.TabIndex = 30;
             this.AgainButton.Text = "Пройти заново";
             this.AgainButton.UseVisualStyleBackColor = false;
@@ -213,9 +216,10 @@
             this.ForwardButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("ForwardButton.BackgroundImage")));
             this.ForwardButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ForwardButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.ForwardButton.Location = new System.Drawing.Point(886, 535);
+            this.ForwardButton.Location = new System.Drawing.Point(997, 669);
+            this.ForwardButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.ForwardButton.Name = "ForwardButton";
-            this.ForwardButton.Size = new System.Drawing.Size(226, 82);
+            this.ForwardButton.Size = new System.Drawing.Size(254, 102);
             this.ForwardButton.TabIndex = 31;
             this.ForwardButton.UseVisualStyleBackColor = false;
             this.ForwardButton.Click += new System.EventHandler(this.ForwardButton_Click);
@@ -227,13 +231,14 @@
             this.CozyButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.CozyButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.CozyButton.Font = new System.Drawing.Font("Bahnschrift Light", 13F);
-            this.CozyButton.Location = new System.Drawing.Point(264, 325);
+            this.CozyButton.Location = new System.Drawing.Point(297, 406);
             this.CozyButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.CozyButton.Name = "CozyButton";
-            this.CozyButton.Size = new System.Drawing.Size(264, 82);
+            this.CozyButton.Size = new System.Drawing.Size(297, 102);
             this.CozyButton.TabIndex = 32;
             this.CozyButton.Text = "Уютное";
             this.CozyButton.UseVisualStyleBackColor = false;
+            this.CozyButton.Click += new System.EventHandler(this.CozyButton_Click);
             // 
             // CalmButton
             // 
@@ -242,13 +247,14 @@
             this.CalmButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.CalmButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.CalmButton.Font = new System.Drawing.Font("Bahnschrift Light", 13F);
-            this.CalmButton.Location = new System.Drawing.Point(264, 226);
+            this.CalmButton.Location = new System.Drawing.Point(297, 282);
             this.CalmButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.CalmButton.Name = "CalmButton";
-            this.CalmButton.Size = new System.Drawing.Size(264, 82);
+            this.CalmButton.Size = new System.Drawing.Size(297, 102);
             this.CalmButton.TabIndex = 33;
             this.CalmButton.Text = "Обычное/спокойное";
             this.CalmButton.UseVisualStyleBackColor = false;
+            this.CalmButton.Click += new System.EventHandler(this.CalmButton_Click);
             // 
             // DaringButton
             // 
@@ -257,13 +263,14 @@
             this.DaringButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.DaringButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.DaringButton.Font = new System.Drawing.Font("Bahnschrift Light", 13F);
-            this.DaringButton.Location = new System.Drawing.Point(264, 425);
+            this.DaringButton.Location = new System.Drawing.Point(297, 531);
             this.DaringButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.DaringButton.Name = "DaringButton";
-            this.DaringButton.Size = new System.Drawing.Size(264, 82);
+            this.DaringButton.Size = new System.Drawing.Size(297, 102);
             this.DaringButton.TabIndex = 34;
             this.DaringButton.Text = "Дерзкое";
             this.DaringButton.UseVisualStyleBackColor = false;
+            this.DaringButton.Click += new System.EventHandler(this.DaringButton_Click);
             // 
             // button4
             // 
@@ -273,7 +280,7 @@
             this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button4.Font = new System.Drawing.Font("Bahnschrift Light", 13F);
-            this.button4.Location = new System.Drawing.Point(559, 122);
+            this.button4.Location = new System.Drawing.Point(629, 152);
             this.button4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(0, 0);
@@ -290,7 +297,7 @@
             this.button7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button7.Font = new System.Drawing.Font("Bahnschrift Light", 13F);
-            this.button7.Location = new System.Drawing.Point(839, 122);
+            this.button7.Location = new System.Drawing.Point(944, 152);
             this.button7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(0, 0);
@@ -306,13 +313,14 @@
             this.RelaxedButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.RelaxedButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.RelaxedButton.Font = new System.Drawing.Font("Bahnschrift Light", 13F);
-            this.RelaxedButton.Location = new System.Drawing.Point(559, 122);
+            this.RelaxedButton.Location = new System.Drawing.Point(629, 152);
             this.RelaxedButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.RelaxedButton.Name = "RelaxedButton";
-            this.RelaxedButton.Size = new System.Drawing.Size(264, 82);
+            this.RelaxedButton.Size = new System.Drawing.Size(297, 102);
             this.RelaxedButton.TabIndex = 37;
             this.RelaxedButton.Text = "Расслабленное";
             this.RelaxedButton.UseVisualStyleBackColor = false;
+            this.RelaxedButton.Click += new System.EventHandler(this.RelaxedButton_Click);
             // 
             // ShackledButton
             // 
@@ -321,13 +329,14 @@
             this.ShackledButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ShackledButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.ShackledButton.Font = new System.Drawing.Font("Bahnschrift Light", 13F);
-            this.ShackledButton.Location = new System.Drawing.Point(848, 122);
+            this.ShackledButton.Location = new System.Drawing.Point(954, 152);
             this.ShackledButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ShackledButton.Name = "ShackledButton";
-            this.ShackledButton.Size = new System.Drawing.Size(264, 82);
+            this.ShackledButton.Size = new System.Drawing.Size(297, 102);
             this.ShackledButton.TabIndex = 38;
             this.ShackledButton.Text = "Закрыться от всех";
             this.ShackledButton.UseVisualStyleBackColor = false;
+            this.ShackledButton.Click += new System.EventHandler(this.ShackledButton_Click);
             // 
             // BrightButton
             // 
@@ -336,13 +345,14 @@
             this.BrightButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.BrightButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.BrightButton.Font = new System.Drawing.Font("Bahnschrift Light", 13F);
-            this.BrightButton.Location = new System.Drawing.Point(559, 226);
+            this.BrightButton.Location = new System.Drawing.Point(629, 282);
             this.BrightButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BrightButton.Name = "BrightButton";
-            this.BrightButton.Size = new System.Drawing.Size(264, 82);
+            this.BrightButton.Size = new System.Drawing.Size(297, 102);
             this.BrightButton.TabIndex = 39;
             this.BrightButton.Text = "Яркое";
             this.BrightButton.UseVisualStyleBackColor = false;
+            this.BrightButton.Click += new System.EventHandler(this.BrightButton_Click);
             // 
             // RomanticButton
             // 
@@ -351,13 +361,14 @@
             this.RomanticButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.RomanticButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.RomanticButton.Font = new System.Drawing.Font("Bahnschrift Light", 13F);
-            this.RomanticButton.Location = new System.Drawing.Point(848, 226);
+            this.RomanticButton.Location = new System.Drawing.Point(954, 282);
             this.RomanticButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.RomanticButton.Name = "RomanticButton";
-            this.RomanticButton.Size = new System.Drawing.Size(264, 82);
+            this.RomanticButton.Size = new System.Drawing.Size(297, 102);
             this.RomanticButton.TabIndex = 40;
             this.RomanticButton.Text = "Романтичное";
             this.RomanticButton.UseVisualStyleBackColor = false;
+            this.RomanticButton.Click += new System.EventHandler(this.RomanticButton_Click);
             // 
             // StrictButton
             // 
@@ -366,13 +377,14 @@
             this.StrictButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.StrictButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.StrictButton.Font = new System.Drawing.Font("Bahnschrift Light", 13F);
-            this.StrictButton.Location = new System.Drawing.Point(559, 325);
+            this.StrictButton.Location = new System.Drawing.Point(629, 406);
             this.StrictButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.StrictButton.Name = "StrictButton";
-            this.StrictButton.Size = new System.Drawing.Size(264, 82);
+            this.StrictButton.Size = new System.Drawing.Size(297, 102);
             this.StrictButton.TabIndex = 41;
             this.StrictButton.Text = "Строгое";
             this.StrictButton.UseVisualStyleBackColor = false;
+            this.StrictButton.Click += new System.EventHandler(this.StrictButton_Click);
             // 
             // LuxuriousButton
             // 
@@ -381,13 +393,14 @@
             this.LuxuriousButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.LuxuriousButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.LuxuriousButton.Font = new System.Drawing.Font("Bahnschrift Light", 13F);
-            this.LuxuriousButton.Location = new System.Drawing.Point(559, 425);
+            this.LuxuriousButton.Location = new System.Drawing.Point(629, 531);
             this.LuxuriousButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.LuxuriousButton.Name = "LuxuriousButton";
-            this.LuxuriousButton.Size = new System.Drawing.Size(264, 82);
+            this.LuxuriousButton.Size = new System.Drawing.Size(297, 102);
             this.LuxuriousButton.TabIndex = 42;
             this.LuxuriousButton.Text = "Роскошное";
             this.LuxuriousButton.UseVisualStyleBackColor = false;
+            this.LuxuriousButton.Click += new System.EventHandler(this.LuxuriousButton_Click);
             // 
             // EleganceButton
             // 
@@ -396,13 +409,14 @@
             this.EleganceButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.EleganceButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.EleganceButton.Font = new System.Drawing.Font("Bahnschrift Light", 13F);
-            this.EleganceButton.Location = new System.Drawing.Point(848, 325);
+            this.EleganceButton.Location = new System.Drawing.Point(954, 406);
             this.EleganceButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.EleganceButton.Name = "EleganceButton";
-            this.EleganceButton.Size = new System.Drawing.Size(264, 82);
+            this.EleganceButton.Size = new System.Drawing.Size(297, 102);
             this.EleganceButton.TabIndex = 43;
             this.EleganceButton.Text = "Элегантное";
             this.EleganceButton.UseVisualStyleBackColor = false;
+            this.EleganceButton.Click += new System.EventHandler(this.EleganceButton_Click);
             // 
             // RestrainedButton
             // 
@@ -411,20 +425,21 @@
             this.RestrainedButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.RestrainedButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.RestrainedButton.Font = new System.Drawing.Font("Bahnschrift Light", 13F);
-            this.RestrainedButton.Location = new System.Drawing.Point(848, 425);
+            this.RestrainedButton.Location = new System.Drawing.Point(954, 531);
             this.RestrainedButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.RestrainedButton.Name = "RestrainedButton";
-            this.RestrainedButton.Size = new System.Drawing.Size(264, 82);
+            this.RestrainedButton.Size = new System.Drawing.Size(297, 102);
             this.RestrainedButton.TabIndex = 44;
             this.RestrainedButton.Text = "Сдержанное";
             this.RestrainedButton.UseVisualStyleBackColor = false;
+            this.RestrainedButton.Click += new System.EventHandler(this.RestrainedButton_Click);
             // 
             // AppForm5
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(153)))), ((int)(((byte)(204)))));
-            this.ClientSize = new System.Drawing.Size(1178, 624);
+            this.ClientSize = new System.Drawing.Size(1325, 780);
             this.Controls.Add(this.RestrainedButton);
             this.Controls.Add(this.EleganceButton);
             this.Controls.Add(this.LuxuriousButton);
@@ -450,6 +465,7 @@
             this.Controls.Add(this.button5);
             this.Controls.Add(this.help_button);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "AppForm5";
             this.Text = "AppForm5";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;

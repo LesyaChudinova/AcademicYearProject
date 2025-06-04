@@ -12,12 +12,15 @@ namespace AcademicYearProject
 {
     public partial class AppForm4 : Form
     {
+        private AppState appState;
+        private Button selectedWeatherButton = null;
         private AppForm3 appForm3;
         private AppForm5 appForm5;
         private InstructionForm instructionForm;
-        public AppForm4()
+        public AppForm4(AppState state)
         {
             InitializeComponent();
+            appState = state;
         }
 
         private void AppForm4_Load(object sender, EventArgs e)
@@ -28,7 +31,7 @@ namespace AcademicYearProject
         private void ForwardButton_Click(object sender, EventArgs e)
         {
             if (appForm5 == null)
-                appForm5 = new AppForm5();
+                appForm5 = new AppForm5(appState);
             appForm5.Show();
             this.Close();            
         }
@@ -36,7 +39,7 @@ namespace AcademicYearProject
         private void BackButton_Click(object sender, EventArgs e)
         {
             if (appForm3 == null)
-                appForm3 = new AppForm3();
+                appForm3 = new AppForm3(appState);
             appForm3.Show();
             this.Close();            
         }
@@ -47,6 +50,70 @@ namespace AcademicYearProject
                 instructionForm = new InstructionForm();
             instructionForm.Show();
             this.Close();
+        }
+
+        private void SunnyButton_Click(object sender, EventArgs e)
+        {
+            var button = (Button)sender;
+
+            if (selectedWeatherButton != null)
+            {
+                selectedWeatherButton.BackColor = SystemColors.Control;
+                selectedWeatherButton.ForeColor = SystemColors.ControlText;
+            }
+
+            button.BackColor = Color.LightBlue;
+            selectedWeatherButton = button;
+
+            appState.Weather = "солнечно";
+        }
+
+        private void SnowButton_Click(object sender, EventArgs e)
+        {
+            var button = (Button)sender;
+
+            if (selectedWeatherButton != null)
+            {
+                selectedWeatherButton.BackColor = SystemColors.Control;
+                selectedWeatherButton.ForeColor = SystemColors.ControlText;
+            }
+
+            button.BackColor = Color.LightBlue;
+            selectedWeatherButton = button;
+
+            appState.Weather = "снег";
+        }
+
+        private void RainButton_Click(object sender, EventArgs e)
+        {
+            var button = (Button)sender;
+
+            if (selectedWeatherButton != null)
+            {
+                selectedWeatherButton.BackColor = SystemColors.Control;
+                selectedWeatherButton.ForeColor = SystemColors.ControlText;
+            }
+
+            button.BackColor = Color.LightBlue;
+            selectedWeatherButton = button;
+
+            appState.Weather = "дождь";
+        }
+
+        private void WindyButton_Click(object sender, EventArgs e)
+        {
+            var button = (Button)sender;
+
+            if (selectedWeatherButton != null)
+            {
+                selectedWeatherButton.BackColor = SystemColors.Control;
+                selectedWeatherButton.ForeColor = SystemColors.ControlText;
+            }
+
+            button.BackColor = Color.LightBlue;
+            selectedWeatherButton = button;
+
+            appState.Weather = "ветренно";
         }
     }
 }

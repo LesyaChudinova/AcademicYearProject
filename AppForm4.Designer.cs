@@ -47,10 +47,10 @@
             this.help_button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(102)))), ((int)(((byte)(153)))));
             this.help_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.help_button.ForeColor = System.Drawing.Color.Black;
-            this.help_button.Location = new System.Drawing.Point(37, 21);
+            this.help_button.Location = new System.Drawing.Point(42, 26);
             this.help_button.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.help_button.Name = "help_button";
-            this.help_button.Size = new System.Drawing.Size(68, 63);
+            this.help_button.Size = new System.Drawing.Size(76, 79);
             this.help_button.TabIndex = 8;
             this.help_button.Text = "?";
             this.help_button.UseVisualStyleBackColor = false;
@@ -59,10 +59,10 @@
             // 
             this.button5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button5.BackgroundImage")));
             this.button5.Font = new System.Drawing.Font("Bahnschrift Light", 8F);
-            this.button5.Location = new System.Drawing.Point(126, 21);
+            this.button5.Location = new System.Drawing.Point(142, 26);
             this.button5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(104, 26);
+            this.button5.Size = new System.Drawing.Size(117, 32);
             this.button5.TabIndex = 10;
             this.button5.Text = "Поиск";
             this.button5.UseVisualStyleBackColor = true;
@@ -70,10 +70,10 @@
             // button6
             // 
             this.button6.Font = new System.Drawing.Font("Bahnschrift Light", 8F);
-            this.button6.Location = new System.Drawing.Point(126, 53);
+            this.button6.Location = new System.Drawing.Point(142, 66);
             this.button6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(104, 31);
+            this.button6.Size = new System.Drawing.Size(117, 39);
             this.button6.TabIndex = 11;
             this.button6.Text = "Указатель";
             this.button6.UseVisualStyleBackColor = true;
@@ -86,14 +86,15 @@
             this.SunnyButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.SunnyButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.SunnyButton.Font = new System.Drawing.Font("Bahnschrift Light", 13F);
-            this.SunnyButton.Location = new System.Drawing.Point(264, 120);
+            this.SunnyButton.Location = new System.Drawing.Point(297, 150);
             this.SunnyButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.SunnyButton.Name = "SunnyButton";
-            this.SunnyButton.Size = new System.Drawing.Size(398, 151);
+            this.SunnyButton.Size = new System.Drawing.Size(448, 189);
             this.SunnyButton.TabIndex = 12;
             this.SunnyButton.Text = "Солнечно";
             this.SunnyButton.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             this.SunnyButton.UseVisualStyleBackColor = false;
+            this.SunnyButton.Click += new System.EventHandler(this.SunnyButton_Click);
             // 
             // SnowButton
             // 
@@ -104,14 +105,15 @@
             this.SnowButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.SnowButton.Font = new System.Drawing.Font("Bahnschrift Light", 13F);
             this.SnowButton.ForeColor = System.Drawing.Color.Black;
-            this.SnowButton.Location = new System.Drawing.Point(714, 120);
+            this.SnowButton.Location = new System.Drawing.Point(803, 150);
             this.SnowButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.SnowButton.Name = "SnowButton";
-            this.SnowButton.Size = new System.Drawing.Size(398, 151);
+            this.SnowButton.Size = new System.Drawing.Size(448, 189);
             this.SnowButton.TabIndex = 13;
             this.SnowButton.Text = "Снежно";
             this.SnowButton.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             this.SnowButton.UseVisualStyleBackColor = false;
+            this.SnowButton.Click += new System.EventHandler(this.SnowButton_Click);
             // 
             // RainButton
             // 
@@ -122,14 +124,15 @@
             this.RainButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.RainButton.Font = new System.Drawing.Font("Bahnschrift Light", 13F);
             this.RainButton.ForeColor = System.Drawing.Color.Black;
-            this.RainButton.Location = new System.Drawing.Point(264, 330);
+            this.RainButton.Location = new System.Drawing.Point(297, 412);
             this.RainButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.RainButton.Name = "RainButton";
-            this.RainButton.Size = new System.Drawing.Size(398, 151);
+            this.RainButton.Size = new System.Drawing.Size(448, 189);
             this.RainButton.TabIndex = 14;
             this.RainButton.Text = "Дождливо";
             this.RainButton.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             this.RainButton.UseVisualStyleBackColor = false;
+            this.RainButton.Click += new System.EventHandler(this.RainButton_Click);
             // 
             // WindyButton
             // 
@@ -140,14 +143,15 @@
             this.WindyButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.WindyButton.Font = new System.Drawing.Font("Bahnschrift Light", 13F);
             this.WindyButton.ForeColor = System.Drawing.Color.Black;
-            this.WindyButton.Location = new System.Drawing.Point(714, 330);
+            this.WindyButton.Location = new System.Drawing.Point(803, 412);
             this.WindyButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.WindyButton.Name = "WindyButton";
-            this.WindyButton.Size = new System.Drawing.Size(398, 151);
+            this.WindyButton.Size = new System.Drawing.Size(448, 189);
             this.WindyButton.TabIndex = 15;
             this.WindyButton.Text = "Ветренно";
             this.WindyButton.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             this.WindyButton.UseVisualStyleBackColor = false;
+            this.WindyButton.Click += new System.EventHandler(this.WindyButton_Click);
             // 
             // BackButton
             // 
@@ -156,9 +160,10 @@
             this.BackButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BackButton.BackgroundImage")));
             this.BackButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.BackButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.BackButton.Location = new System.Drawing.Point(264, 535);
+            this.BackButton.Location = new System.Drawing.Point(297, 669);
+            this.BackButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.BackButton.Name = "BackButton";
-            this.BackButton.Size = new System.Drawing.Size(226, 82);
+            this.BackButton.Size = new System.Drawing.Size(254, 102);
             this.BackButton.TabIndex = 19;
             this.BackButton.UseVisualStyleBackColor = false;
             this.BackButton.Click += new System.EventHandler(this.BackButton_Click);
@@ -171,9 +176,10 @@
             this.AgainButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.AgainButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.AgainButton.Font = new System.Drawing.Font("Bahnschrift Light", 13F);
-            this.AgainButton.Location = new System.Drawing.Point(577, 535);
+            this.AgainButton.Location = new System.Drawing.Point(649, 669);
+            this.AgainButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.AgainButton.Name = "AgainButton";
-            this.AgainButton.Size = new System.Drawing.Size(226, 82);
+            this.AgainButton.Size = new System.Drawing.Size(254, 102);
             this.AgainButton.TabIndex = 21;
             this.AgainButton.Text = "Пройти заново";
             this.AgainButton.UseVisualStyleBackColor = false;
@@ -186,9 +192,10 @@
             this.ForwardButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("ForwardButton.BackgroundImage")));
             this.ForwardButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ForwardButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.ForwardButton.Location = new System.Drawing.Point(886, 535);
+            this.ForwardButton.Location = new System.Drawing.Point(997, 669);
+            this.ForwardButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.ForwardButton.Name = "ForwardButton";
-            this.ForwardButton.Size = new System.Drawing.Size(226, 82);
+            this.ForwardButton.Size = new System.Drawing.Size(254, 102);
             this.ForwardButton.TabIndex = 22;
             this.ForwardButton.UseVisualStyleBackColor = false;
             this.ForwardButton.Click += new System.EventHandler(this.ForwardButton_Click);
@@ -202,19 +209,19 @@
             this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.label1.Font = new System.Drawing.Font("Bahnschrift Light", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(264, 21);
+            this.label1.Location = new System.Drawing.Point(297, 26);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(848, 63);
+            this.label1.Size = new System.Drawing.Size(954, 78);
             this.label1.TabIndex = 23;
             this.label1.Text = "Ответьте, пожалуйста, на вопрос:\r\n4) Какая сейчас погода?";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // AppForm4
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(153)))), ((int)(((byte)(204)))));
-            this.ClientSize = new System.Drawing.Size(1178, 624);
+            this.ClientSize = new System.Drawing.Size(1325, 780);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.ForwardButton);
             this.Controls.Add(this.AgainButton);
@@ -227,6 +234,7 @@
             this.Controls.Add(this.button5);
             this.Controls.Add(this.help_button);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "AppForm4";
             this.Text = "AppForm4";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;

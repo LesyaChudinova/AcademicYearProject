@@ -114,8 +114,15 @@
     <Compile Include="AppForm7.Designer.cs">
       <DependentUpon>AppForm7.cs</DependentUpon>
     </Compile>
+    <Compile Include="AppState.cs" />
     <Compile Include="BinaryTree.cs" />
     <Compile Include="ExcelDataLoader.cs" />
+    <Compile Include="ResultForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ResultForm.Designer.cs">
+      <DependentUpon>ResultForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="InstructionForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -165,6 +172,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="InstructionForm.resx">
       <DependentUpon>InstructionForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ResultForm.resx">
+      <DependentUpon>ResultForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="StartForm.resx">
       <DependentUpon>StartForm.cs</DependentUpon>

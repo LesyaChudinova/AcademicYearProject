@@ -98,7 +98,7 @@ namespace AcademicYearProject
             button.BackColor = Color.LightBlue;
             selectedOccasionButton = button;
 
-            appState.Occasion = "пвседневный";
+            appState.Occasion = "повседневный";
         }
     }
 }

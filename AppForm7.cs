@@ -163,6 +163,10 @@ namespace AcademicYearProject
                 return;
             }
 
+            MessageBox.Show($"Ищем: \nПол={appState.Gender}, \nВозраст={appState.AgeGroup}, \nПогода ={ appState.Weather}, \nСезон={appState.Season}, \nНастроение={appState.Mood}, \nСлучай={appState.Occasion}, \nСтиль = {appState.Style}");
+            var allItems = outfitTree.FindByCriteria(o => true);
+            MessageBox.Show($"Всего элементов: {allItems.Count}");
+
             // Поиск по критериям
             appState.RecommendedOutfits = outfitTree.FindByCriteria(o =>
                 (string.IsNullOrEmpty(appState.Gender) || o.MatchesCriteria("Gender", appState.Gender)) &&
@@ -175,9 +179,15 @@ namespace AcademicYearProject
             ).ToList();
 
             // Переход на форму с результатами
-            var resultForm = new ResultForm(appState);
-            resultForm.Show();
-            this.Close();
+            if (appState.RecommendedOutfits.Any())
+            {
+                new ResultForm(appState).Show();
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Ничего не найдено. Попробуйте изменить критерии.");
+            }
         }
     }
 }

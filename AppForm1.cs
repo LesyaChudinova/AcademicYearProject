@@ -38,7 +38,7 @@ namespace AcademicYearProject
             button.BackColor = Color.LightBlue;
             selectedGenderButton = button;
 
-            appState.Gender = button.Text;
+            appState.Gender = "ж";
         }
         
 
@@ -57,7 +57,7 @@ namespace AcademicYearProject
             button.BackColor = Color.LightBlue;
             selectedGenderButton = button;
 
-            appState.Gender = button.Text;
+            appState.Gender = "м";
 
         }
 

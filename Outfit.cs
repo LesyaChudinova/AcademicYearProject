@@ -54,12 +54,29 @@ namespace AcademicYearProject
 
         public bool MatchesCriteria(string propertyName, string searchValue)
         {
-            var propertyValues = GetSplitValues(propertyName);
-            var searchValues = searchValue.Split(new[] { '/' }, StringSplitOptions.RemoveEmptyEntries)
-                                         .Select(x => x.Trim())
-                                         .ToList();
+            if (string.IsNullOrEmpty(searchValue))
+                return true;
 
-            return propertyValues.Any(pv => searchValues.Any(sv => pv.Equals(sv, StringComparison.OrdinalIgnoreCase)));
+            // Получаем значение свойства (например, o.Gender)
+            var property = this.GetType().GetProperty(propertyName);
+            if (property == null) return false;
+
+            string propertyValue = property.GetValue(this)?.ToString();
+            if (string.IsNullOrEmpty(propertyValue))
+                return false;
+
+            // Разделяем оба значения (и из таблицы, и поисковое)
+            var propertyValues = propertyValue.Split(new[] { '/' }, StringSplitOptions.RemoveEmptyEntries)
+                                        .Select(x => x.Trim())
+                                        .ToList();
+
+            var searchValues = searchValue.Split(new[] { '/' }, StringSplitOptions.RemoveEmptyEntries)
+                                     .Select(x => x.Trim())
+                                     .ToList();
+
+            // Ищем хотя бы одно совпадение
+            return propertyValues.Any(p => searchValues.Any(s =>
+                   string.Equals(p, s, StringComparison.OrdinalIgnoreCase)));
         }
     }
 }

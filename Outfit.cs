@@ -39,44 +39,46 @@ namespace AcademicYearProject
             return $"{Name} \n(Слой: {Layer}\nПол: {Gender}\nВозрастная категория: {AgeGroup}\nНастроение: {Mood}\nНазначение: {Occasion}\nСтль: {Style}\nВремя года: {Season}\nПогода: {Weather})";
         }
 
-        public List<string> GetSplitValues(string propertyName)
-        {
-            var property = GetType().GetProperty(propertyName);
-            if (property == null) return new List<string>();
-
-            string value = property.GetValue(this) as string;
-            if (string.IsNullOrEmpty(value)) return new List<string>();
-
-            return value.Split(new[] { '/' }, StringSplitOptions.RemoveEmptyEntries)
-                        .Select(x => x.Trim())
-                        .ToList();
-        }
-
         public bool MatchesCriteria(string propertyName, string searchValue)
         {
             if (string.IsNullOrEmpty(searchValue))
                 return true;
 
-            // Получаем значение свойства (например, o.Gender)
             var property = this.GetType().GetProperty(propertyName);
-            if (property == null) return false;
+            if (property == null)
+            {
+                // Для отладки
+                Console.WriteLine($"Свойство {propertyName} не найдено");
+                return false;
+            }
 
             string propertyValue = property.GetValue(this)?.ToString();
             if (string.IsNullOrEmpty(propertyValue))
+            {
+                Console.WriteLine($"Значение свойства {propertyName} пустое");
                 return false;
+            }
 
-            // Разделяем оба значения (и из таблицы, и поисковое)
-            var propertyValues = propertyValue.Split(new[] { '/' }, StringSplitOptions.RemoveEmptyEntries)
-                                        .Select(x => x.Trim())
-                                        .ToList();
+            // Нормализация и разделение значений
+            var propertyValues = propertyValue
+                .Split(new[] { '/', ',', ';', '|' }, StringSplitOptions.RemoveEmptyEntries)
+                .Select(x => x.Trim().ToLowerInvariant())
+                .ToList();
 
-            var searchValues = searchValue.Split(new[] { '/' }, StringSplitOptions.RemoveEmptyEntries)
-                                     .Select(x => x.Trim())
-                                     .ToList();
+            var searchValues = searchValue
+                .Split(new[] { '/', ',', ';', '|' }, StringSplitOptions.RemoveEmptyEntries)
+                .Select(x => x.Trim().ToLowerInvariant())
+                .ToList();
 
-            // Ищем хотя бы одно совпадение
-            return propertyValues.Any(p => searchValues.Any(s =>
-                   string.Equals(p, s, StringComparison.OrdinalIgnoreCase)));
+            // Добавим отладочный вывод
+            Console.WriteLine($"Поиск по {propertyName}:");
+            Console.WriteLine($"Значения в записи: {string.Join("|", propertyValues)}");
+            Console.WriteLine($"Искомые значения: {string.Join("|", searchValues)}");
+
+            // Более гибкое сравнение
+            return propertyValues.Any(p =>
+                   searchValues.Any(s =>
+                       p.Contains(s) || s.Contains(p)));
         }
     }
 }

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static AcademicYearProject.OutfitTree;
 
 namespace AcademicYearProject
 {
@@ -16,7 +17,11 @@ namespace AcademicYearProject
         private OutfitTree outfitTree;
         private Button selectedStyleButton = null;
         private AppForm6 appForm6;
+        private ResultForm resultForm;
         private InstructionForm instructionForm;
+        public int currentOutfitIndex = 0;
+        public List<OutfitCombo> filteredOutfitCombos = new List<OutfitCombo>();
+        public Func<Outfit, bool> criteria;
 
         public AppForm7(AppState state)
         {
@@ -156,37 +161,44 @@ namespace AcademicYearProject
 
         private void ForwardButton_Click_1(object sender, EventArgs e)
         {
-
-            if (outfitTree == null)
+            try
             {
-                MessageBox.Show("Данные не загружены!");
-                return;
-            }
+                if (outfitTree == null)
+                {
+                    MessageBox.Show("Данные не загружены!");
+                    return;
+                }
 
-            MessageBox.Show($"Ищем: \nПол={appState.Gender}, \nВозраст={appState.AgeGroup}, \nПогода ={ appState.Weather}, \nСезон={appState.Season}, \nНастроение={appState.Mood}, \nСлучай={appState.Occasion}, \nСтиль = {appState.Style}");
-            var allItems = outfitTree.FindByCriteria(o => true);
-            MessageBox.Show($"Всего элементов: {allItems.Count}");
+                var criteria = new Func<Outfit, bool>(o =>
+                    (string.IsNullOrEmpty(appState.Gender) || o.MatchesCriteria("Gender", appState.Gender)) &&
+                    (string.IsNullOrEmpty(appState.AgeGroup) || o.MatchesCriteria("AgeGroup", appState.AgeGroup)) &&
+                    (string.IsNullOrEmpty(appState.Mood) || o.MatchesCriteria("Mood", appState.Mood)) &&
+                    (string.IsNullOrEmpty(appState.Occasion) || o.MatchesCriteria("Occasion", appState.Occasion)) &&
+                    (string.IsNullOrEmpty(appState.Style) || o.MatchesCriteria("Style", appState.Style)) &&
+                    (string.IsNullOrEmpty(appState.Season) || o.MatchesCriteria("Season", appState.Season)) &&
+                    (string.IsNullOrEmpty(appState.Weather) || o.MatchesCriteria("Weather", appState.Weather)));
 
-            // Поиск по критериям
-            appState.RecommendedOutfits = outfitTree.FindByCriteria(o =>
-                (string.IsNullOrEmpty(appState.Gender) || o.MatchesCriteria("Gender", appState.Gender)) &&
-                (string.IsNullOrEmpty(appState.AgeGroup) || o.MatchesCriteria("AgeGroup", appState.AgeGroup)) &&
-                (string.IsNullOrEmpty(appState.Mood) || o.MatchesCriteria("Mood", appState.Mood)) &&
-                (string.IsNullOrEmpty(appState.Occasion) || o.MatchesCriteria("Occasion", appState.Occasion)) &&
-                (string.IsNullOrEmpty(appState.Style) || o.MatchesCriteria("Style", appState.Style)) &&
-                (string.IsNullOrEmpty(appState.Season) || o.MatchesCriteria("Season", appState.Season)) &&
-                (string.IsNullOrEmpty(appState.Weather) || o.MatchesCriteria("Weather", appState.Weather))
-            ).ToList();
+                // Генерируем комбинации ДО создания формы
+                var filteredOutfitCombos = outfitTree.GenerateRandomOutfitsFromFiltered(criteria, 10);
 
-            // Переход на форму с результатами
-            if (appState.RecommendedOutfits.Any())
-            {
-                new ResultForm(appState).Show();
+                if (!filteredOutfitCombos.Any())
+                {
+                    MessageBox.Show("Ничего не найдено. Попробуйте изменить критерии.");
+                    return;
+                }
+
+                // Передаём данные в ResultForm
+                appState.FilteredOutfitCombos = filteredOutfitCombos;
+                appState.CurrentComboIndex = 0;
+
+                var resultForm = new ResultForm(appState, filteredOutfitCombos);
+                resultForm.Show();
                 this.Close();
             }
-            else
+            
+            catch (Exception ex)
             {
-                MessageBox.Show("Ничего не найдено. Попробуйте изменить критерии.");
+                MessageBox.Show($"Ошибка: {ex.Message}");
             }
         }
     }

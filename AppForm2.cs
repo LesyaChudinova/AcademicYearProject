@@ -58,7 +58,7 @@ namespace AcademicYearProject
             button.BackColor = Color.LightBlue;
             selectedAgeButton = button;
 
-            appState.AgeGroup = "м";
+            appState.AgeGroup = "ю";
         }
 
         private void AdultsButton_Click(object sender, EventArgs e)

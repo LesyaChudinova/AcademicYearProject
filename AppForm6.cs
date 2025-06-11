@@ -52,53 +52,34 @@ namespace AcademicYearProject
             instructionForm.Show();
             this.Close();
         }
+        private void SelectButton(Button button, ref Button selectedButton, string result)
+        {
+            if (selectedButton != null)
+            {
+                selectedButton.FlatAppearance.BorderSize = 0;
+            }
+
+            button.FlatStyle = FlatStyle.Flat;
+            button.FlatAppearance.BorderColor = Color.Red;
+            button.FlatAppearance.BorderSize = 3;
+
+            selectedButton = button;
+            appState.Occasion = result;
+        }
 
         private void ClassicButton_Click(object sender, EventArgs e)
         {
-            Button button = (Button)sender;
-
-            if (selectedOccasionButton != null)
-            {
-                selectedOccasionButton.BackColor = SystemColors.Control;
-                selectedOccasionButton.ForeColor = SystemColors.ControlText;
-            }
-
-            button.BackColor = Color.LightBlue;
-            selectedOccasionButton = button;
-
-            appState.Occasion = "классический";
+            SelectButton((Button)sender, ref selectedOccasionButton, "классический");
         }
 
         private void SportsButton_Click(object sender, EventArgs e)
         {
-            Button button = (Button)sender;
-
-            if (selectedOccasionButton != null)
-            {
-                selectedOccasionButton.BackColor = SystemColors.Control;
-                selectedOccasionButton.ForeColor = SystemColors.ControlText;
-            }
-
-            button.BackColor = Color.LightBlue;
-            selectedOccasionButton = button;
-
-            appState.Occasion = "спортивный";
+            SelectButton((Button)sender, ref selectedOccasionButton, "спортивный");
         }
 
         private void UsualDayButton_Click(object sender, EventArgs e)
         {
-            Button button = (Button)sender;
-
-            if (selectedOccasionButton != null)
-            {
-                selectedOccasionButton.BackColor = SystemColors.Control;
-                selectedOccasionButton.ForeColor = SystemColors.ControlText;
-            }
-
-            button.BackColor = Color.LightBlue;
-            selectedOccasionButton = button;
-
-            appState.Occasion = "повседневный";
+            SelectButton((Button)sender, ref selectedOccasionButton, "повседневный");
         }
     }
 }

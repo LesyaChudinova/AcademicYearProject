@@ -35,8 +35,21 @@ namespace AcademicYearProject
         {
 
         }
+        private void SelectButton(Button button, ref Button selectedButton, string result)
+        {
+            if (selectedButton != null)
+            {
+                selectedButton.FlatAppearance.BorderSize = 0;
+            }
 
-    
+            button.FlatStyle = FlatStyle.Flat;
+            button.FlatAppearance.BorderColor = Color.Red;
+            button.FlatAppearance.BorderSize = 3;
+
+            selectedButton = button;
+            appState.Style = result;
+        }
+
         private void BackButton_Click(object sender, EventArgs e)
         {
             if (appForm6 == null)
@@ -55,82 +68,27 @@ namespace AcademicYearProject
 
         private void CasualButton_Click(object sender, EventArgs e)
         {
-            Button button = (Button)sender;
-
-            if (selectedStyleButton != null)
-            {
-                selectedStyleButton.BackColor = SystemColors.Control;
-                selectedStyleButton.ForeColor = SystemColors.ControlText;
-            }
-
-            button.BackColor = Color.LightBlue;
-            selectedStyleButton = button;
-
-            appState.Style = "кэжуал";
+            SelectButton((Button)sender, ref selectedStyleButton, "кэжуал");
         }
 
         private void GrangeButton_Click(object sender, EventArgs e)
         {
-            Button button = (Button)sender;
-
-            if (selectedStyleButton != null)
-            {
-                selectedStyleButton.BackColor = SystemColors.Control;
-                selectedStyleButton.ForeColor = SystemColors.ControlText;
-            }
-
-            button.BackColor = Color.LightBlue;
-            selectedStyleButton = button;
-
-            appState.Style = "гранж";
+            SelectButton((Button)sender, ref selectedStyleButton, "гранж");
         }
 
         private void RomanticButton_Click(object sender, EventArgs e)
         {
-            Button button = (Button)sender;
-
-            if (selectedStyleButton != null)
-            {
-                selectedStyleButton.BackColor = SystemColors.Control;
-                selectedStyleButton.ForeColor = SystemColors.ControlText;
-            }
-
-            button.BackColor = Color.LightBlue;
-            selectedStyleButton = button;
-
-            appState.Style = "романтический";
+            SelectButton((Button)sender, ref selectedStyleButton, "романтический");
         }
 
         private void BusinessButton_Click(object sender, EventArgs e)
         {
-            Button button = (Button)sender;
-
-            if (selectedStyleButton != null)
-            {
-                selectedStyleButton.BackColor = SystemColors.Control;
-                selectedStyleButton.ForeColor = SystemColors.ControlText;
-            }
-
-            button.BackColor = Color.LightBlue;
-            selectedStyleButton = button;
-
-            appState.Style = "деловой";
+            SelectButton((Button)sender, ref selectedStyleButton, "деловой");
         }
 
         private void SportsButton_Click(object sender, EventArgs e)
         {
-            Button button = (Button)sender;
-
-            if (selectedStyleButton != null)
-            {
-                selectedStyleButton.BackColor = SystemColors.Control;
-                selectedStyleButton.ForeColor = SystemColors.ControlText;
-            }
-
-            button.BackColor = Color.LightBlue;
-            selectedStyleButton = button;
-
-            appState.Style = "спортивный";
+            SelectButton((Button)sender, ref selectedStyleButton, "спортивный");
         }
 
         private void LoadData()
@@ -165,7 +123,7 @@ namespace AcademicYearProject
             {
                 if (outfitTree == null)
                 {
-                    MessageBox.Show("Данные не загружены!");
+                    MessageBox.Show("Приносим извинения!\nСкорее всего, в настоящее время ведется работа над информационной базой, \nпоэтому данные временно не загружены. Возвращайтесь позже!");
                     return;
                 }
 
@@ -178,7 +136,6 @@ namespace AcademicYearProject
                     (string.IsNullOrEmpty(appState.Season) || o.MatchesCriteria("Season", appState.Season)) &&
                     (string.IsNullOrEmpty(appState.Weather) || o.MatchesCriteria("Weather", appState.Weather)));
 
-                // Генерируем комбинации ДО создания формы
                 var filteredOutfitCombos = outfitTree.GenerateRandomOutfitsFromFiltered(criteria, 10);
 
                 if (!filteredOutfitCombos.Any())

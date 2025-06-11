@@ -65,7 +65,7 @@
             // 
             // help_button
             // 
-            this.help_button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(102)))), ((int)(((byte)(153)))));
+            this.help_button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(153)))), ((int)(((byte)(153)))));
             this.help_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.help_button.ForeColor = System.Drawing.Color.Black;
             this.help_button.Location = new System.Drawing.Point(42, 26);
@@ -120,7 +120,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(153)))), ((int)(((byte)(204)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
             this.ClientSize = new System.Drawing.Size(1330, 785);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.GoButton);

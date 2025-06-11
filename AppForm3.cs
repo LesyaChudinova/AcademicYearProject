@@ -19,6 +19,20 @@ namespace AcademicYearProject
         private AppForm2 appForm2;
         private InstructionForm instructionForm;
 
+        private void SelectButton(Button button, ref Button selectedButton, string result)
+        {
+            if (selectedButton != null)
+            {
+                selectedButton.FlatAppearance.BorderSize = 0;
+            }
+
+            button.FlatStyle = FlatStyle.Flat;
+            button.FlatAppearance.BorderColor = Color.Red;
+            button.FlatAppearance.BorderSize = 3;
+
+            selectedButton = button;
+            appState.Season = result;
+        }
         public AppForm3(AppState state)
         {
             InitializeComponent();
@@ -51,66 +65,22 @@ namespace AcademicYearProject
 
         private void SummerButton_Click(object sender, EventArgs e)
         {
-            var button = (Button)sender;
-
-            if (selectedSeasonButton != null)
-            {
-                selectedSeasonButton.BackColor = SystemColors.Control;
-                selectedSeasonButton.ForeColor = SystemColors.ControlText;
-            }
-
-            button.BackColor = Color.LightBlue;
-            selectedSeasonButton = button;
-
-            appState.Season = "лето";
+            SelectButton((Button)sender, ref selectedSeasonButton, "лето");
         }
 
         private void WinterButton_Click(object sender, EventArgs e)
         {
-            var button = (Button)sender;
-
-            if (selectedSeasonButton != null)
-            {
-                selectedSeasonButton.BackColor = SystemColors.Control;
-                selectedSeasonButton.ForeColor = SystemColors.ControlText;
-            }
-
-            button.BackColor = Color.LightBlue;
-            selectedSeasonButton = button;
-
-            appState.Season = "зима";
+            SelectButton((Button)sender, ref selectedSeasonButton, "зима");
         }
 
         private void SpringButton_Click(object sender, EventArgs e)
         {
-            var button = (Button)sender;
-
-            if (selectedSeasonButton != null)
-            {
-                selectedSeasonButton.BackColor = SystemColors.Control;
-                selectedSeasonButton.ForeColor = SystemColors.ControlText;
-            }
-
-            button.BackColor = Color.LightBlue;
-            selectedSeasonButton = button;
-
-            appState.Season = "весна";
+            SelectButton((Button)sender, ref selectedSeasonButton, "весна");
         }
 
         private void AutumnButton_Click(object sender, EventArgs e)
         {
-            var button = (Button)sender;
-
-            if (selectedSeasonButton != null)
-            {
-                selectedSeasonButton.BackColor = SystemColors.Control;
-                selectedSeasonButton.ForeColor = SystemColors.ControlText;
-            }
-
-            button.BackColor = Color.LightBlue;
-            selectedSeasonButton = button;
-
-            appState.Season = "осень";
+            SelectButton((Button)sender, ref selectedSeasonButton, "осень");
         }
 
         private void ForwardButton_Click(object sender, EventArgs e)

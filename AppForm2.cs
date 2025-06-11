@@ -22,7 +22,22 @@ namespace AcademicYearProject
         {
             InitializeComponent();
             appState = state;
-        }              
+        }
+
+        private void SelectButton(Button button, ref Button selectedButton, string result)
+        {
+            if (selectedButton != null)
+            {
+                selectedButton.FlatAppearance.BorderSize = 0;
+            }
+
+            button.FlatStyle = FlatStyle.Flat;
+            button.FlatAppearance.BorderColor = Color.Red;
+            button.FlatAppearance.BorderSize = 3;
+
+            selectedButton = button;
+            appState.AgeGroup = result;
+        }
 
         private void AppForm2_Load(object sender, EventArgs e)
         {
@@ -31,66 +46,22 @@ namespace AcademicYearProject
 
         private void TeenagersButton_Click(object sender, EventArgs e)
         {
-            var button = (Button)sender;
-
-            if (selectedAgeButton != null)
-            {
-                selectedAgeButton.BackColor = SystemColors.Control;
-                selectedAgeButton.ForeColor = SystemColors.ControlText;
-            }
-
-            button.BackColor = Color.LightBlue;
-            selectedAgeButton = button;
-
-            appState.AgeGroup = "п";
+            SelectButton((Button)sender, ref selectedAgeButton, "п");
         }
 
         private void YoungstearsButton_Click(object sender, EventArgs e)
         {
-            var button = (Button)sender;
-
-            if (selectedAgeButton != null)
-            {
-                selectedAgeButton.BackColor = SystemColors.Control;
-                selectedAgeButton.ForeColor = SystemColors.ControlText;
-            }
-
-            button.BackColor = Color.LightBlue;
-            selectedAgeButton = button;
-
-            appState.AgeGroup = "ю";
+            SelectButton((Button)sender, ref selectedAgeButton, "ю");
         }
 
         private void AdultsButton_Click(object sender, EventArgs e)
         {
-            var button = (Button)sender;
-
-            if (selectedAgeButton != null)
-            {
-                selectedAgeButton.BackColor = SystemColors.Control;
-                selectedAgeButton.ForeColor = SystemColors.ControlText;
-            }
-
-            button.BackColor = Color.LightBlue;
-            selectedAgeButton = button;
-
-            appState.AgeGroup = "в";
+            SelectButton((Button)sender, ref selectedAgeButton, "в");
         }
 
         private void OlderButton_Click(object sender, EventArgs e)
         {
-            var button = (Button)sender;
-
-            if (selectedAgeButton != null)
-            {
-                selectedAgeButton.BackColor = SystemColors.Control;
-                selectedAgeButton.ForeColor = SystemColors.ControlText;
-            }
-
-            button.BackColor = Color.LightBlue;
-            selectedAgeButton = button;
-
-            appState.AgeGroup = "з";
+            SelectButton((Button)sender, ref selectedAgeButton, "з");
         }
 
         private void ForwardButton_Click(object sender, EventArgs e)

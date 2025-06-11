@@ -17,48 +17,36 @@ namespace AcademicYearProject
         private AppForm2 appForm2;
         private InstructionForm instructionForm;
         private Button selectedGenderButton = null;
+       
         public AppForm1(AppState state = null)
         {
             InitializeComponent();
             appState = state ?? new AppState();
-        }                 
+        }
+        private void SelectButton(Button button, ref Button selectedButton, string result)
+        {
+            if (selectedButton != null)
+            {
+                selectedButton.FlatAppearance.BorderSize = 0;
+            }
+
+            button.FlatStyle = FlatStyle.Flat;
+            button.FlatAppearance.BorderColor = Color.Red;
+            button.FlatAppearance.BorderSize = 3;
+
+            selectedButton = button;
+            appState.Gender = result;
+        }
 
         private void Women_Click(object sender, EventArgs e)
         {
-            var button = (Button)sender;
-
-            // Сбрасываем предыдущий выбор
-            if (selectedGenderButton != null)
-            {
-                selectedGenderButton.BackColor = SystemColors.Control;
-                selectedGenderButton.ForeColor = SystemColors.ControlText;
-            }
-
-            // Устанавливаем новый выбор
-            button.BackColor = Color.LightBlue;
-            selectedGenderButton = button;
-
-            appState.Gender = "ж";
+            SelectButton((Button)sender, ref selectedGenderButton, "ж");
         }
         
 
         private void Men_Click(object sender, EventArgs e)
         {
-            var button = (Button)sender;
-
-            // Сбрасываем предыдущий выбор
-            if (selectedGenderButton != null)
-            {
-                selectedGenderButton.BackColor = SystemColors.Control;
-                selectedGenderButton.ForeColor = SystemColors.ControlText;
-            }
-
-            // Устанавливаем новый выбор
-            button.BackColor = Color.LightBlue;
-            selectedGenderButton = button;
-
-            appState.Gender = "м";
-
+            SelectButton((Button)sender, ref selectedGenderButton, "м");
         }
 
         private void ForwardButton_Click(object sender, EventArgs e)

@@ -51,69 +51,39 @@ namespace AcademicYearProject
             instructionForm.Show();
             this.Close();
         }
+        private void SelectButton(Button button, ref Button selectedButton, string result)
+        {
+            if (selectedButton != null)
+            {
+                selectedButton.FlatAppearance.BorderSize = 0;
+            }
+
+            button.FlatStyle = FlatStyle.Flat;
+            button.FlatAppearance.BorderColor = Color.Red;
+            button.FlatAppearance.BorderSize = 3;
+
+            selectedButton = button;
+            appState.Weather = result;
+        }
 
         private void SunnyButton_Click(object sender, EventArgs e)
         {
-            var button = (Button)sender;
-
-            if (selectedWeatherButton != null)
-            {
-                selectedWeatherButton.BackColor = SystemColors.Control;
-                selectedWeatherButton.ForeColor = SystemColors.ControlText;
-            }
-
-            button.BackColor = Color.LightBlue;
-            selectedWeatherButton = button;
-
-            appState.Weather = "солнечно";
+            SelectButton((Button)sender, ref selectedWeatherButton, "солнечно");
         }
 
         private void SnowButton_Click(object sender, EventArgs e)
         {
-            var button = (Button)sender;
-
-            if (selectedWeatherButton != null)
-            {
-                selectedWeatherButton.BackColor = SystemColors.Control;
-                selectedWeatherButton.ForeColor = SystemColors.ControlText;
-            }
-
-            button.BackColor = Color.LightBlue;
-            selectedWeatherButton = button;
-
-            appState.Weather = "снег";
+            SelectButton((Button)sender, ref selectedWeatherButton, "снег");
         }
 
         private void RainButton_Click(object sender, EventArgs e)
         {
-            var button = (Button)sender;
-
-            if (selectedWeatherButton != null)
-            {
-                selectedWeatherButton.BackColor = SystemColors.Control;
-                selectedWeatherButton.ForeColor = SystemColors.ControlText;
-            }
-
-            button.BackColor = Color.LightBlue;
-            selectedWeatherButton = button;
-
-            appState.Weather = "дождь";
+            SelectButton((Button)sender, ref selectedWeatherButton, "дождь");
         }
 
         private void WindyButton_Click(object sender, EventArgs e)
         {
-            var button = (Button)sender;
-
-            if (selectedWeatherButton != null)
-            {
-                selectedWeatherButton.BackColor = SystemColors.Control;
-                selectedWeatherButton.ForeColor = SystemColors.ControlText;
-            }
-
-            button.BackColor = Color.LightBlue;
-            selectedWeatherButton = button;
-
-            appState.Weather = "ветренно";
+            SelectButton((Button)sender, ref selectedWeatherButton, "ветренно");
         }
     }
 }

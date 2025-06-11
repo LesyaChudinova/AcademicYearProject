@@ -52,196 +52,79 @@ namespace AcademicYearProject
             this.Close();
         }
 
-        private void ActiveButton_Click(object sender, EventArgs e)
+        private void SelectButton(Button button, ref Button selectedButton, string result)
         {
-            Button button = (Button)sender;
-
-            if (selectedMoodButton != null)
+            if (selectedButton != null)
             {
-                selectedMoodButton.BackColor = SystemColors.Control;
-                selectedMoodButton.ForeColor = SystemColors.ControlText;
+                selectedButton.FlatAppearance.BorderSize = 0;
             }
 
-            button.BackColor = Color.LightBlue;
-            selectedMoodButton = button;
+            button.FlatStyle = FlatStyle.Flat;
+            button.FlatAppearance.BorderColor = Color.Red;
+            button.FlatAppearance.BorderSize = 3;
 
-            appState.Mood = "активное";
+            selectedButton = button;
+            appState.Mood = result;
+        }
+
+        private void ActiveButton_Click(object sender, EventArgs e)
+        {
+            SelectButton((Button)sender, ref selectedMoodButton, "активное");
         }
 
         private void RelaxedButton_Click(object sender, EventArgs e)
         {
-            Button button = (Button)sender;
-
-            if (selectedMoodButton != null)
-            {
-                selectedMoodButton.BackColor = SystemColors.Control;
-                selectedMoodButton.ForeColor = SystemColors.ControlText;
-            }
-
-            button.BackColor = Color.LightBlue;
-            selectedMoodButton = button;
-
-            appState.Mood = "расслабленное";
+            SelectButton((Button)sender, ref selectedMoodButton, "расслабленное");
         }
 
         private void ShackledButton_Click(object sender, EventArgs e)
         {
-            Button button = (Button)sender;
-
-            if (selectedMoodButton != null)
-            {
-                selectedMoodButton.BackColor = SystemColors.Control;
-                selectedMoodButton.ForeColor = SystemColors.ControlText;
-            }
-
-            button.BackColor = Color.LightBlue;
-            selectedMoodButton = button;
-
-            appState.Mood = "закрыться от всех";
+            SelectButton((Button)sender, ref selectedMoodButton, "закрыться от всех");
         }
 
         private void CalmButton_Click(object sender, EventArgs e)
         {
-            Button button = (Button)sender;
-
-            if (selectedMoodButton != null)
-            {
-                selectedMoodButton.BackColor = SystemColors.Control;
-                selectedMoodButton.ForeColor = SystemColors.ControlText;
-            }
-
-            button.BackColor = Color.LightBlue;
-            selectedMoodButton = button;
-
-            appState.Mood = "обычное";
+            SelectButton((Button)sender, ref selectedMoodButton, "обычное");
         }
 
         private void BrightButton_Click(object sender, EventArgs e)
         {
-            Button button = (Button)sender;
-
-            if (selectedMoodButton != null)
-            {
-                selectedMoodButton.BackColor = SystemColors.Control;
-                selectedMoodButton.ForeColor = SystemColors.ControlText;
-            }
-
-            button.BackColor = Color.LightBlue;
-            selectedMoodButton = button;
-
-            appState.Mood = "яркое";
+            SelectButton((Button)sender, ref selectedMoodButton, "яркое");
         }
 
         private void RomanticButton_Click(object sender, EventArgs e)
         {
-            Button button = (Button)sender;
-
-            if (selectedMoodButton != null)
-            {
-                selectedMoodButton.BackColor = SystemColors.Control;
-                selectedMoodButton.ForeColor = SystemColors.ControlText;
-            }
-
-            button.BackColor = Color.LightBlue;
-            selectedMoodButton = button;
-
-            appState.Mood = "романтичное";
+            SelectButton((Button)sender, ref selectedMoodButton, "романтичное");
         }
 
         private void CozyButton_Click(object sender, EventArgs e)
         {
-            Button button = (Button)sender;
-
-            if (selectedMoodButton != null)
-            {
-                selectedMoodButton.BackColor = SystemColors.Control;
-                selectedMoodButton.ForeColor = SystemColors.ControlText;
-            }
-
-            button.BackColor = Color.LightBlue;
-            selectedMoodButton = button;
-
-            appState.Mood = "уютное";
+            SelectButton((Button)sender, ref selectedMoodButton, "уютное");
         }
 
         private void StrictButton_Click(object sender, EventArgs e)
         {
-            Button button = (Button)sender;
-
-            if (selectedMoodButton != null)
-            {
-                selectedMoodButton.BackColor = SystemColors.Control;
-                selectedMoodButton.ForeColor = SystemColors.ControlText;
-            }
-
-            button.BackColor = Color.LightBlue;
-            selectedMoodButton = button;
-
-            appState.Mood = "строгое";
+            SelectButton((Button)sender, ref selectedMoodButton, "строгое");
         }
 
         private void EleganceButton_Click(object sender, EventArgs e)
         {
-            Button button = (Button)sender;
-
-            if (selectedMoodButton != null)
-            {
-                selectedMoodButton.BackColor = SystemColors.Control;
-                selectedMoodButton.ForeColor = SystemColors.ControlText;
-            }
-
-            button.BackColor = Color.LightBlue;
-            selectedMoodButton = button;
-
-            appState.Mood = "элегантное";
+            SelectButton((Button)sender, ref selectedMoodButton, "элегантное");
         }
 
         private void DaringButton_Click(object sender, EventArgs e)
         {
-            Button button = (Button)sender;
-
-            if (selectedMoodButton != null)
-            {
-                selectedMoodButton.BackColor = SystemColors.Control;
-                selectedMoodButton.ForeColor = SystemColors.ControlText;
-            }
-
-            button.BackColor = Color.LightBlue;
-            selectedMoodButton = button;
-
-            appState.Mood = "дерзкое";
+            SelectButton((Button)sender, ref selectedMoodButton, "дерзкое");
         }
 
         private void LuxuriousButton_Click(object sender, EventArgs e)
         {
-            Button button = (Button)sender;
-
-            if (selectedMoodButton != null)
-            {
-                selectedMoodButton.BackColor = SystemColors.Control;
-                selectedMoodButton.ForeColor = SystemColors.ControlText;
-            }
-
-            button.BackColor = Color.LightBlue;
-            selectedMoodButton = button;
-
-            appState.Mood = "роскошное";
+            SelectButton((Button)sender, ref selectedMoodButton, "роскошное");
         }
 
         private void RestrainedButton_Click(object sender, EventArgs e)
         {
-            Button button = (Button)sender;
-
-            if (selectedMoodButton != null)
-            {
-                selectedMoodButton.BackColor = SystemColors.Control;
-                selectedMoodButton.ForeColor = SystemColors.ControlText;
-            }
-
-            button.BackColor = Color.LightBlue;
-            selectedMoodButton = button;
-
-            appState.Mood = "сдержанное";
+            SelectButton((Button)sender, ref selectedMoodButton, "сдержанное");
         }
     }
 }

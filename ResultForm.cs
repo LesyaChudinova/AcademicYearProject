@@ -11,15 +11,12 @@ namespace AcademicYearProject
     public partial class ResultForm : Form
     {
         private readonly AppState appState;
-        private readonly OutfitTree outfitTree;
-        private AppForm7 appForm7;
-        private InstructionForm instructionForm;
         private readonly List<OutfitCombo> outfitCombos;
         private int currentComboIndex = 0;
 
         public ResultForm(AppState state, List<OutfitCombo> combos)
         {
-            InitializeComponent();
+            InitializeComponent(); // Инициализация кнопок навигации
 
             appState = state ?? throw new ArgumentNullException(nameof(state));
             outfitCombos = combos ?? throw new ArgumentNullException(nameof(combos));
@@ -34,84 +31,74 @@ namespace AcademicYearProject
             DisplayCurrentCombo();
         }
 
-        private void ResultForm_Load(object sender, EventArgs e)
-        {
-
-        }
 
         private void DisplayCurrentCombo()
         {
             try
             {
-                // Проверка на null и пустую коллекцию
-                if (appState?.FilteredOutfitCombos == null || !appState.FilteredOutfitCombos.Any())
+                if (outfitCombos == null || !outfitCombos.Any())
                 {
                     lblOutfitName.Text = "Нет доступных комплектов";
                     lblTopInfo.Text = string.Empty;
                     lblBottomInfo.Text = string.Empty;
                     lblPageInfo.Text = "0 из 0";
-                    pictureBox1.Image = null; // Запасное изображение
+                    pictureBox1.Image = null;
                     linkPinterest.Visible = false;
                     return;
                 }
 
-                // Корректировка индекса, если он вышел за границы
-                currentComboIndex = (currentComboIndex < 0) ? 0 :
-                   (currentComboIndex >= appState.FilteredOutfitCombos.Count) ?
-                   appState.FilteredOutfitCombos.Count - 1 :
-                   currentComboIndex;
+                // Корректировка индекса
+                currentComboIndex = Math.Max(0, Math.Min(currentComboIndex, outfitCombos.Count - 1));
 
-                var combo = appState.FilteredOutfitCombos[currentComboIndex];
+                var combo = outfitCombos[currentComboIndex];
 
-                // Проверка элементов комплекта
                 if (combo?.Top == null || combo?.Bottom == null)
                 {
                     lblOutfitName.Text = "Ошибка: неполные данные комплекта";
                     return;
                 }
 
-                // Отображение основной информации
+                // Обновление информации
                 lblOutfitName.Text = $"{combo.Top.Name} + {combo.Bottom.Name}";
                 lblTopInfo.Text = FormatOutfitInfo(combo.Top);
                 lblBottomInfo.Text = FormatOutfitInfo(combo.Bottom);
-                lblPageInfo.Text = $"{currentComboIndex + 1} из {appState.FilteredOutfitCombos.Count}";
+                lblPageInfo.Text = $"{currentComboIndex + 1} из {outfitCombos.Count}";
 
-                // Загрузка изображения с обработкой ошибок
+                // Загрузка изображения
                 LoadOutfitImage(combo);
 
-                // Настройка Pinterest ссылки
+                // Настройка ссылки Pinterest
                 SetupPinterestLink(combo);
+
             }
             catch (Exception ex)
             {
-                // Логирование ошибки
                 Debug.WriteLine($"Ошибка в DisplayCurrentCombo: {ex.Message}");
-
-                // Отображение информации об ошибке
                 lblOutfitName.Text = "Ошибка отображения данных";
                 pictureBox1.Image = null;
             }
         }
 
-        // Вспомогательные методы:
 
         private string FormatOutfitInfo(Outfit outfit)
         {
             if (outfit == null) return "Нет данных";
 
             return $@"Название: {outfit.Name}
-            Слой: {outfit.Layer}
-            Часть тела: {outfit.BodyPart}
-            Пол: {outfit.Gender}
-            Возраст: {outfit.AgeGroup}
-            Стиль: {outfit.Style}
-            Сезон: {outfit.Season}";
+                Слой: {outfit.Layer}
+                Часть тела: {outfit.BodyPart}
+                Пол: {outfit.Gender}
+                Возраст: {outfit.AgeGroup}
+                Стиль: {outfit.Style}
+                Сезон: {outfit.Season}";
         }
 
         private void LoadOutfitImage(OutfitCombo combo)
         {
             try
             {
+                pictureBox1.Image = null; // Сброс изображения перед загрузкой
+
                 if (!string.IsNullOrWhiteSpace(combo.ImageUrl))
                 {
                     pictureBox1.LoadAsync(combo.ImageUrl);
@@ -120,10 +107,6 @@ namespace AcademicYearProject
                         if (e.Error != null)
                             pictureBox1.Image = null;
                     };
-                }
-                else
-                {
-                    pictureBox1.Image = null;
                 }
             }
             catch
@@ -135,10 +118,10 @@ namespace AcademicYearProject
         private void SetupPinterestLink(OutfitCombo combo)
         {
             linkPinterest.Links.Clear();
-            linkPinterest.Visible = !string.IsNullOrWhiteSpace(combo.PinterestLink);
 
-            if (linkPinterest.Visible)
+            if (!string.IsNullOrWhiteSpace(combo.PinterestLink))
             {
+                linkPinterest.Visible = true;
                 linkPinterest.Text = "Посмотреть похожие образы на Pinterest";
                 linkPinterest.Links.Add(new LinkLabel.Link
                 {
@@ -146,27 +129,49 @@ namespace AcademicYearProject
                     Description = $"Поиск: {combo.Top.Name} + {combo.Bottom.Name}"
                 });
             }
+            else
+            {
+                linkPinterest.Visible = false;
+            }
         }
-        private void StyleControls()
-        {
-            this.BackColor = Color.White;
-            this.Font = new Font("Segoe UI", 9);
-
-            lblOutfitName.Font = new Font("Segoe UI", 14, FontStyle.Bold);
-            lblOutfitName.ForeColor = Color.DarkSlateBlue;
-/*
-            btnPrev.BackColor = Color.LightSteelBlue;
-            btnNext.BackColor = Color.LightSteelBlue;*/
-
-            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox1.BorderStyle = BorderStyle.FixedSingle;
-        }
-
 
         private void linkPinterest_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Process.Start(e.Link.LinkData.ToString());
+            try
+            {
+                Process.Start(e.Link.LinkData.ToString());
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Не удалось открыть ссылку: {ex.Message}");
+            }
         }
 
+        private void ResultForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (outfitCombos.Count == 0) return;
+
+            currentComboIndex++;
+            if (currentComboIndex >= outfitCombos.Count)
+                currentComboIndex = 0; // Циклический переход
+
+            DisplayCurrentCombo();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if (outfitCombos.Count == 0) return;
+
+            currentComboIndex--;
+            if (currentComboIndex < 0)
+                currentComboIndex = outfitCombos.Count - 1; // Циклический переход
+
+            DisplayCurrentCombo();
+        }
     }
 }

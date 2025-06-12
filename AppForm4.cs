@@ -30,6 +30,13 @@ namespace AcademicYearProject
 
         private void ForwardButton_Click(object sender, EventArgs e)
         {
+
+            if (string.IsNullOrEmpty(appState.Weather))
+            {
+                MessageBox.Show("Пожалуйста, выберите погоду");
+                return;
+            }
+
             if (appForm5 == null)
                 appForm5 = new AppForm5(appState);
             appForm5.Show();

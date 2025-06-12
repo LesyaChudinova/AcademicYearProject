@@ -85,6 +85,13 @@ namespace AcademicYearProject
 
         private void ForwardButton_Click(object sender, EventArgs e)
         {
+
+            if (string.IsNullOrEmpty(appState.Season))
+            {
+                MessageBox.Show("Пожалуйста, выберите сезон");
+                return;
+            }
+
             if (appForm4 == null)
                 appForm4 = new AppForm4(appState);
             appForm4.Show();

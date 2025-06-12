@@ -66,6 +66,13 @@ namespace AcademicYearProject
 
         private void ForwardButton_Click(object sender, EventArgs e)
         {
+
+            if (string.IsNullOrEmpty(appState.AgeGroup))
+            {
+                MessageBox.Show("Пожалуйста, выберите возрастную группу");
+                return;
+            }
+
             if (appForm3 == null)
                 appForm3 = new AppForm3(appState);
             appForm3.Show();

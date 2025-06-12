@@ -119,6 +119,13 @@ namespace AcademicYearProject
 
         private void ForwardButton_Click_1(object sender, EventArgs e)
         {
+
+            if (string.IsNullOrEmpty(appState.Style))
+            {
+                MessageBox.Show("Пожалуйста, выберите предпочитаемый стиль");
+                return;
+            }
+
             try
             {
                 if (outfitTree == null)

@@ -30,6 +30,13 @@ namespace AcademicYearProject
 
         private void ForwardButton_Click(object sender, EventArgs e)
         {
+
+            if (string.IsNullOrEmpty(appState.Mood))
+            {
+                MessageBox.Show("Пожалуйста, выберите ваше настроение");
+                return;
+            }
+
             if (appForm6 == null)
                 appForm6 = new AppForm6(appState);
             appForm6.Show();

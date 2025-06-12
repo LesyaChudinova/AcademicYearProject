@@ -31,6 +31,12 @@ namespace AcademicYearProject
 
         private void ForwardButton_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrEmpty(appState.Occasion))
+            {
+                MessageBox.Show("Пожалуйста, выберите, есть ли сегодня мероприятие");
+                return;
+            }
+
             if (appForm7 == null)
                 appForm7 = new AppForm7(appState);
             appForm7.Show();

@@ -1,12 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Net.NetworkInformation;
 using System.Windows.Forms;
 
 namespace AcademicYearProject
 {
     public class OutfitTree : BinaryTree<int, Outfit>
     {
+        public AppState appState;
+        public OutfitTree(AppState appState)
+        {
+            this.appState = appState ?? throw new ArgumentNullException(nameof(appState));
+        }
+
         // Добавим методы, специфичные для работы с одеждой
         private Random random = new Random();
         public List<Outfit> FindByCriteria(Func<Outfit, bool> predicate)
@@ -41,49 +49,106 @@ namespace AcademicYearProject
             public override string ToString() => $"{Top.Name} + {Bottom.Name}";
         }
 
-        public List<OutfitCombo> GenerateRandomOutfitsFromFiltered(Func<Outfit, bool> criteria, int count)
+        public List<OutfitCombo> GenerateRandomOutfitsFromFiltered(Func<Outfit, bool> criteria, string gender, int count)
         {
-            var tops = FindByCriteria(o => criteria(o) && o.BodyPart == "верх");
-            var bottoms = FindByCriteria(o => criteria(o) && o.BodyPart == "низ");
+            var result = new List<OutfitCombo>();
+            string genderPrefix = GetGenderPrefix(gender);
 
-            if (!tops.Any() || !bottoms.Any())
-                return new List<OutfitCombo>();
+            var tops = FindByCriteria(o => criteria(o) && o.BodyPart == "верх").Distinct().ToList();
+            var bottoms = FindByCriteria(o => criteria(o) && o.BodyPart == "низ").Distinct().ToList();
+            var fullOutfits = FindByCriteria(o => criteria(o) && o.BodyPart == "всё").Distinct().ToList();
 
-            var combinations = new List<OutfitCombo>();
-            var usedPairs = new HashSet<(int, int)>();
+            // Генерация комбинаций верх+низ
+            var possibleCombinations = (from top in tops
+                                        from bottom in bottoms
+                                        select new { top, bottom }).ToList();
 
-            while (combinations.Count < count && usedPairs.Count < tops.Count * bottoms.Count)
+            // Перемешиваем и берем не более count/2 комбинаций
+            var randomCombinations = possibleCombinations
+                .OrderBy(x => random.Next())
+                .Take(Math.Min(count / 2, possibleCombinations.Count))
+                .ToList();
+
+            foreach (var combo in randomCombinations)
             {
-                var top = tops[random.Next(tops.Count)];
-                var bottom = bottoms[random.Next(bottoms.Count)];
-                var pair = (top.Id, bottom.Id);
-
-                if (!usedPairs.Contains(pair))
+                result.Add(new OutfitCombo
                 {
-                    usedPairs.Add(pair);
-                    combinations.Add(new OutfitCombo
-                    {
-                        Top = top,
-                        Bottom = bottom,
-                        ImageUrl = GetImageUrl(top, bottom),
-                        PinterestLink = GetPinterestLink(top, bottom)
-                    });
-                }
+                    Top = combo.top,
+                    Bottom = combo.bottom,
+                    ImageUrl = GenerateImageUrl(combo.top, combo.bottom, genderPrefix),
+                    PinterestLink = GeneratePinterestLink(combo.top, combo.bottom, gender)
+                });
             }
 
-            return combinations;
+            // Добавляем цельные образы
+            foreach (var outfit in fullOutfits.OrderBy(x => random.Next()).Take(count - result.Count))
+            {
+                result.Add(new OutfitCombo
+                {
+                    Top = outfit,
+                    Bottom = null,
+                    ImageUrl = GenerateImageUrl(outfit, null, genderPrefix),
+                    PinterestLink = GeneratePinterestLink(outfit, null, gender)
+                });
+            }
+
+            return result.OrderBy(x => random.Next()).ToList();
         }
 
-        private string GetImageUrl(Outfit top, Outfit bottom)
+        public static string GetGenderPrefix(string gender)
         {
-            // Реализация поиска изображения (можно заменить на реальный API)
-            return $"https://example.com/images/{top.Name.ToLower()}_{bottom.Name.ToLower()}.jpg";
+            return string.IsNullOrEmpty(gender)
+                ? ""
+                : (gender == "м" ? "м_" : "ж_");
         }
 
-        private string GetPinterestLink(Outfit top, Outfit bottom)
+        public static string GenerateImageUrl(Outfit top, Outfit bottom, string genderPrefix)
         {
-            // Формирование ссылки на поиск в Pinterest
-            return $"https://pinterest.com/search/pins/?q={Uri.EscapeDataString($"{top.Name} {bottom.Name} fashion outfit")}";
+            if (top == null)
+                return string.Empty;
+
+            return bottom == null
+                ? Path.Combine("Images", $"{genderPrefix.ToLower()}{top.Name.ToLower()}.jpg")
+                : Path.Combine("Images", $"{genderPrefix.ToLower()}{bottom.Name.ToLower()}_{top.Name.ToLower()}.jpg");
+        }
+
+        public static string GeneratePinterestLink(Outfit top, Outfit bottom, string gender)
+        {
+            try
+            {
+                if (top == null)
+                    return "https://www.pinterest.com/";
+
+                string genderTerm = "";
+                if (!string.IsNullOrEmpty(gender))
+                {
+                    string lowerGender = gender.ToLower();
+                    if (lowerGender == "м")
+                    {
+                        genderTerm = " men's";
+                    }
+                    else if (lowerGender == "ж")
+                    {
+                        genderTerm = " women's";
+                    }
+                }
+
+                string searchQuery = bottom == null
+                    ? $"{top.Name}{genderTerm} outfit fashion"         
+                    : $"{top.Name} {bottom.Name}{genderTerm} fashion";  
+
+                searchQuery = searchQuery
+                    .Replace("  ", " ")      
+                    .Trim()                 
+                    .ToLower();               
+
+                string encodedQuery = Uri.EscapeDataString(searchQuery);
+                return $"https://www.pinterest.com/search/pins/?q={encodedQuery}&rs=typed";
+            }
+            catch
+            {
+                return "https://www.pinterest.com/";
+            }
         }
     }
 }

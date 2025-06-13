@@ -50,19 +50,22 @@ namespace AcademicYearProject
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(42, 235);
+            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.pictureBox1.Location = new System.Drawing.Point(42, 232);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(372, 446);
+            this.pictureBox1.Size = new System.Drawing.Size(507, 486);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
             // lblTopInfo
             // 
+            this.lblTopInfo.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lblTopInfo.AutoSize = true;
             this.lblTopInfo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
             this.lblTopInfo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblTopInfo.Font = new System.Drawing.Font("Bahnschrift Light", 10F);
-            this.lblTopInfo.Location = new System.Drawing.Point(971, 392);
+            this.lblTopInfo.Location = new System.Drawing.Point(894, 366);
             this.lblTopInfo.Name = "lblTopInfo";
             this.lblTopInfo.Size = new System.Drawing.Size(64, 26);
             this.lblTopInfo.TabIndex = 2;
@@ -70,10 +73,11 @@ namespace AcademicYearProject
             // 
             // lblBottomInfo
             // 
+            this.lblBottomInfo.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblBottomInfo.AutoSize = true;
             this.lblBottomInfo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblBottomInfo.Font = new System.Drawing.Font("Bahnschrift Light", 10F);
-            this.lblBottomInfo.Location = new System.Drawing.Point(665, 390);
+            this.lblBottomInfo.Location = new System.Drawing.Point(578, 366);
             this.lblBottomInfo.Name = "lblBottomInfo";
             this.lblBottomInfo.Size = new System.Drawing.Size(64, 26);
             this.lblBottomInfo.TabIndex = 3;
@@ -82,22 +86,24 @@ namespace AcademicYearProject
             // linkPinterest
             // 
             this.linkPinterest.ActiveLinkColor = System.Drawing.Color.Brown;
+            this.linkPinterest.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.linkPinterest.AutoSize = true;
             this.linkPinterest.BackColor = System.Drawing.Color.White;
             this.linkPinterest.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.linkPinterest.DisabledLinkColor = System.Drawing.Color.Black;
             this.linkPinterest.Font = new System.Drawing.Font("Bahnschrift Light", 11F);
             this.linkPinterest.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(0)))), ((int)(((byte)(68)))));
-            this.linkPinterest.Location = new System.Drawing.Point(440, 625);
+            this.linkPinterest.Location = new System.Drawing.Point(383, 606);
             this.linkPinterest.Name = "linkPinterest";
-            this.linkPinterest.Size = new System.Drawing.Size(886, 56);
+            this.linkPinterest.Size = new System.Drawing.Size(883, 56);
             this.linkPinterest.TabIndex = 4;
             this.linkPinterest.TabStop = true;
-            this.linkPinterest.Text = "Нажмите на эту ссылку, чтобы увидеть, как можно этот образ красиво стилизовать!\r\n" +
-    "Она приведет вас к реферансам на пинтересте, бережно подобранных нами для вас";
+            this.linkPinterest.Text = "Нажмите на эту ссылку, чтобы увидеть, как можно этот образ красиво стилизовать! \r" +
+    "\nОна приведет вас к реферансам на пинтересте, которыми вы сможете вдохновиться";
             this.linkPinterest.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.linkPinterest.UseMnemonic = false;
             this.linkPinterest.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.linkPinterest.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkPinterest_LinkClicked_1);
             // 
             // button6
             // 
@@ -139,6 +145,7 @@ namespace AcademicYearProject
             // 
             // lblPageInfo
             // 
+            this.lblPageInfo.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.lblPageInfo.AutoSize = true;
             this.lblPageInfo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblPageInfo.Font = new System.Drawing.Font("Bahnschrift Light", 10F);
@@ -150,85 +157,89 @@ namespace AcademicYearProject
             // 
             // label1
             // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label1.BackColor = System.Drawing.Color.White;
             this.label1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label1.Cursor = System.Windows.Forms.Cursors.Default;
             this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.label1.Font = new System.Drawing.Font("Bahnschrift Light", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(372, 9);
+            this.label1.Location = new System.Drawing.Point(312, 26);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(954, 78);
+            this.label1.Size = new System.Drawing.Size(954, 95);
             this.label1.TabIndex = 22;
             this.label1.Text = "Мы подобрали вам чудесные результаты!";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label2
             // 
-            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.BackColor = System.Drawing.Color.White;
             this.label2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label2.Cursor = System.Windows.Forms.Cursors.Default;
             this.label2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.label2.Font = new System.Drawing.Font("Bahnschrift Light", 12F);
-            this.label2.Location = new System.Drawing.Point(42, 177);
+            this.label2.Location = new System.Drawing.Point(42, 155);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(372, 37);
+            this.label2.Size = new System.Drawing.Size(372, 54);
             this.label2.TabIndex = 23;
             this.label2.Text = "Вариант образа:";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label3
             // 
-            this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label3.BackColor = System.Drawing.Color.White;
             this.label3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label3.Cursor = System.Windows.Forms.Cursors.Default;
             this.label3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.label3.Font = new System.Drawing.Font("Bahnschrift Light", 12F);
-            this.label3.Location = new System.Drawing.Point(615, 319);
+            this.label3.Location = new System.Drawing.Point(555, 249);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(711, 37);
+            this.label3.Size = new System.Drawing.Size(711, 54);
             this.label3.TabIndex = 24;
             this.label3.Text = "Он действительно соответствует вашим пожеланиям:";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblOutfitName
             // 
-            this.lblOutfitName.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblOutfitName.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lblOutfitName.BackColor = System.Drawing.Color.White;
             this.lblOutfitName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblOutfitName.Cursor = System.Windows.Forms.Cursors.Default;
             this.lblOutfitName.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.lblOutfitName.Font = new System.Drawing.Font("Bahnschrift Light", 12F);
-            this.lblOutfitName.Location = new System.Drawing.Point(615, 177);
+            this.lblOutfitName.Location = new System.Drawing.Point(555, 155);
             this.lblOutfitName.Name = "lblOutfitName";
-            this.lblOutfitName.Size = new System.Drawing.Size(711, 37);
+            this.lblOutfitName.Size = new System.Drawing.Size(711, 54);
             this.lblOutfitName.TabIndex = 25;
             this.lblOutfitName.Text = "текст";
             this.lblOutfitName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblOutfitName.Click += new System.EventHandler(this.lblOutfitName_Click);
             // 
             // button1
             // 
-            this.button1.Font = new System.Drawing.Font("Bahnschrift Light", 8F);
+            this.button1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.button1.AutoSize = true;
+            this.button1.Font = new System.Drawing.Font("Bahnschrift Light", 10F);
             this.button1.ForeColor = System.Drawing.Color.Black;
-            this.button1.Location = new System.Drawing.Point(918, 728);
+            this.button1.Location = new System.Drawing.Point(858, 734);
             this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(408, 32);
+            this.button1.Size = new System.Drawing.Size(408, 49);
             this.button1.TabIndex = 26;
             this.button1.Text = "Следующий вариант образа -->";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // button2
             // 
-            this.button2.Font = new System.Drawing.Font("Bahnschrift Light", 8F);
+            this.button2.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.button2.AutoSize = true;
+            this.button2.Font = new System.Drawing.Font("Bahnschrift Light", 10F);
             this.button2.ForeColor = System.Drawing.Color.Black;
-            this.button2.Location = new System.Drawing.Point(42, 728);
+            this.button2.Location = new System.Drawing.Point(42, 734);
             this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(408, 32);
+            this.button2.Size = new System.Drawing.Size(408, 49);
             this.button2.TabIndex = 27;
             this.button2.Text = "<-- Предыдущий вариант образа";
             this.button2.UseVisualStyleBackColor = true;
@@ -239,13 +250,13 @@ namespace AcademicYearProject
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            this.ClientSize = new System.Drawing.Size(1412, 928);
+            this.ClientSize = new System.Drawing.Size(1353, 826);
+            this.Controls.Add(this.lblOutfitName);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.lblOutfitName);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.lblPageInfo);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.button5);
@@ -257,7 +268,6 @@ namespace AcademicYearProject
             this.Name = "ResultForm";
             this.Text = "Form1";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.Load += new System.EventHandler(this.ResultForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

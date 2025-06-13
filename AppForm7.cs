@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -27,7 +28,7 @@ namespace AcademicYearProject
         {
             InitializeComponent();
             appState = state;
-            outfitTree = new OutfitTree();
+            outfitTree = new OutfitTree(appState);
             LoadData();
         }
 
@@ -119,7 +120,7 @@ namespace AcademicYearProject
 
         private void ForwardButton_Click_1(object sender, EventArgs e)
         {
-
+            // Проверка выбранного стиля
             if (string.IsNullOrEmpty(appState.Style))
             {
                 MessageBox.Show("Пожалуйста, выберите предпочитаемый стиль");
@@ -128,42 +129,116 @@ namespace AcademicYearProject
 
             try
             {
+                // Проверка загруженности данных
                 if (outfitTree == null)
                 {
-                    MessageBox.Show("Приносим извинения!\nСкорее всего, в настоящее время ведется работа над информационной базой, \nпоэтому данные временно не загружены. Возвращайтесь позже!");
+                    ShowServiceUnavailableMessage();
                     return;
                 }
 
-                var criteria = new Func<Outfit, bool>(o =>
-                    (string.IsNullOrEmpty(appState.Gender) || o.MatchesCriteria("Gender", appState.Gender)) &&
-                    (string.IsNullOrEmpty(appState.AgeGroup) || o.MatchesCriteria("AgeGroup", appState.AgeGroup)) &&
-                    (string.IsNullOrEmpty(appState.Mood) || o.MatchesCriteria("Mood", appState.Mood)) &&
-                    (string.IsNullOrEmpty(appState.Occasion) || o.MatchesCriteria("Occasion", appState.Occasion)) &&
-                    (string.IsNullOrEmpty(appState.Style) || o.MatchesCriteria("Style", appState.Style)) &&
-                    (string.IsNullOrEmpty(appState.Season) || o.MatchesCriteria("Season", appState.Season)) &&
-                    (string.IsNullOrEmpty(appState.Weather) || o.MatchesCriteria("Weather", appState.Weather)));
 
-                var filteredOutfitCombos = outfitTree.GenerateRandomOutfitsFromFiltered(criteria, 10);
+                // Создаем критерии поиска
+                var criteria = CreateSearchCriteria();
 
-                if (!filteredOutfitCombos.Any())
+                var filteredOutfitCombos = outfitTree.GenerateRandomOutfitsFromFiltered(criteria, appState.Gender, 20);
+
+                // Генерируем комплекты одежды
+                var outfitCombos = GenerateOutfitCombinations(criteria, 20);
+
+                if (!outfitCombos.Any())
                 {
-                    MessageBox.Show("Ничего не найдено. Попробуйте изменить критерии.");
+                    ShowNoResultsMessage();
                     return;
                 }
 
-                // Передаём данные в ResultForm
-                appState.FilteredOutfitCombos = filteredOutfitCombos;
-                appState.CurrentComboIndex = 0;
-
-                var resultForm = new ResultForm(appState, filteredOutfitCombos);
-                resultForm.Show();
-                this.Close();
+                // Открываем форму с результатами
+                OpenResultsForm(outfitCombos);
             }
-            
             catch (Exception ex)
             {
-                MessageBox.Show($"Ошибка: {ex.Message}");
+                HandleError(ex);
             }
+        }
+
+        // Вспомогательные методы:
+
+        private void ShowServiceUnavailableMessage()
+        {
+            MessageBox.Show("Приносим извинения!\nСкорее всего, в настоящее время ведется работа над информационной базой, \nпоэтому данные временно не загружены. Возвращайтесь позже!");
+        }
+
+        private Func<Outfit, bool> CreateSearchCriteria()
+        {
+            return o =>
+            {
+                bool matches = true;
+
+                if (!string.IsNullOrEmpty(appState.Gender))
+                    matches &= o.MatchesCriteria("Gender", appState.Gender);
+
+                if (!string.IsNullOrEmpty(appState.AgeGroup))
+                    matches &= o.MatchesCriteria("AgeGroup", appState.AgeGroup);
+
+                if (!string.IsNullOrEmpty(appState.Mood))
+                    matches &= o.MatchesCriteria("Mood", appState.Mood);
+
+                if (!string.IsNullOrEmpty(appState.Occasion))
+                    matches &= o.MatchesCriteria("Occasion", appState.Occasion);
+
+                if (!string.IsNullOrEmpty(appState.Style))
+                    matches &= o.MatchesCriteria("Style", appState.Style);
+
+                if (!string.IsNullOrEmpty(appState.Season))
+                    matches &= o.MatchesCriteria("Season", appState.Season);
+
+                if (!string.IsNullOrEmpty(appState.Weather))
+                    matches &= o.MatchesCriteria("Weather", appState.Weather);
+
+                return matches;
+            };
+        }
+
+        private List<OutfitCombo> GenerateOutfitCombinations(Func<Outfit, bool> criteria, int count)
+        {
+            var combos = outfitTree.GenerateRandomOutfitsFromFiltered(criteria, appState.Gender, count);
+
+            // Добавляем логирование для отладки
+            Debug.WriteLine($"Сгенерировано {combos.Count} комплектов:");
+            foreach (var combo in combos)
+            {
+                Debug.WriteLine($"- {combo.Top?.Name} + {combo.Bottom?.Name}");
+            }
+
+            return combos;
+        }
+
+        private void ShowNoResultsMessage()
+        {
+            MessageBox.Show("К сожалению, по вашим критериям ничего не найдено.\nПопробуйте изменить параметры поиска.");
+        }
+
+        private void OpenResultsForm(List<OutfitCombo> outfitCombos)
+        {
+            appState.FilteredOutfitCombos = outfitCombos;
+            appState.CurrentComboIndex = 0;
+
+            var resultForm = new ResultForm(appState, outfitCombos)
+            {
+                StartPosition = FormStartPosition.CenterParent
+            };
+
+            this.Hide();
+            resultForm.ShowDialog();
+            this.Close();
+        }
+
+        private void HandleError(Exception ex)
+        {
+            Debug.WriteLine($"Ошибка: {ex.ToString()}");
+            MessageBox.Show($"Произошла непредвиденная ошибка: {ex.Message}\nПопробуйте еще раз или обратитесь в поддержку.",
+                           "Ошибка",
+                           MessageBoxButtons.OK,
+                           MessageBoxIcon.Error);
         }
     }
 }

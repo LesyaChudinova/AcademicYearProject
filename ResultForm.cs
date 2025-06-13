@@ -3,8 +3,11 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
+using System.IO;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 using static AcademicYearProject.OutfitTree;
+
 
 namespace AcademicYearProject
 {
@@ -16,8 +19,8 @@ namespace AcademicYearProject
 
         public ResultForm(AppState state, List<OutfitCombo> combos)
         {
-            InitializeComponent(); // Инициализация кнопок навигации
-
+            InitializeComponent();
+            Environment.CurrentDirectory = Application.StartupPath;
             appState = state ?? throw new ArgumentNullException(nameof(state));
             outfitCombos = combos ?? throw new ArgumentNullException(nameof(combos));
 
@@ -28,58 +31,62 @@ namespace AcademicYearProject
                 return;
             }
 
-            DisplayCurrentCombo();
+            DisplayCurrentCombo(state);
         }
 
 
-        private void DisplayCurrentCombo()
+        private void DisplayCurrentCombo(AppState appState)
         {
+            if (outfitCombos == null || !outfitCombos.Any())
+            {
+                ResetDisplay();
+                return;
+            }
+
+            var combo = outfitCombos[currentComboIndex];
+
+            // Обновляем текст
+            lblOutfitName.Text = combo.Bottom == null
+                ? combo.Top.Name
+                : $"{combo.Top.Name} + {combo.Bottom.Name}";
+
+            lblTopInfo.Text = FormatOutfitInfo(combo.Top);
+            lblBottomInfo.Text = combo.Bottom != null
+                ? FormatOutfitInfo(combo.Bottom)
+                : "Цельный предмет одежды";
+
+            // Обновляем изображение
+            string imageUrl = GenerateImageUrl(combo.Top, combo.Bottom, GetGenderPrefix(appState.Gender));
+            string fullImagePath = Path.Combine(Application.StartupPath, imageUrl); // Полный путь
+           
             try
             {
-                if (outfitCombos == null || !outfitCombos.Any())
+                if (File.Exists(fullImagePath))
                 {
-                    lblOutfitName.Text = "Нет доступных комплектов";
-                    lblTopInfo.Text = string.Empty;
-                    lblBottomInfo.Text = string.Empty;
-                    lblPageInfo.Text = "0 из 0";
-                    pictureBox1.Image = null;
-                    linkPinterest.Visible = false;
-                    return;
+                    pictureBox1.Image?.Dispose(); // Освобождаем старое изображение
+                    pictureBox1.Image = Image.FromFile(fullImagePath);
                 }
-
-                // Корректировка индекса
-                currentComboIndex = Math.Max(0, Math.Min(currentComboIndex, outfitCombos.Count - 1));
-
-                var combo = outfitCombos[currentComboIndex];
-
-                if (combo?.Top == null || combo?.Bottom == null)
+                else
                 {
-                    lblOutfitName.Text = "Ошибка: неполные данные комплекта";
-                    return;
+                    pictureBox1.Image = null; // Или изображение-заглушка
+                    Debug.WriteLine($"Файл не найден: {fullImagePath}"); // Вывод в консоль отладки
                 }
-
-                // Обновление информации
-                lblOutfitName.Text = $"{combo.Top.Name} + {combo.Bottom.Name}";
-                lblTopInfo.Text = FormatOutfitInfo(combo.Top);
-                lblBottomInfo.Text = FormatOutfitInfo(combo.Bottom);
-                lblPageInfo.Text = $"{currentComboIndex + 1} из {outfitCombos.Count}";
-
-                // Загрузка изображения
-                LoadOutfitImage(combo);
-
-                // Настройка ссылки Pinterest
-                SetupPinterestLink(combo);
-
             }
             catch (Exception ex)
             {
-                Debug.WriteLine($"Ошибка в DisplayCurrentCombo: {ex.Message}");
-                lblOutfitName.Text = "Ошибка отображения данных";
+                MessageBox.Show($"Ошибка загрузки изображения: {ex.Message}");
                 pictureBox1.Image = null;
             }
+
+            // Обновляем ссылку
+            string pinterestLink = GeneratePinterestLink(combo.Top, combo.Bottom, appState.Gender);
+            linkPinterest.Links.Clear();
+            linkPinterest.Links.Add(0, linkPinterest.Text.Length, pinterestLink);
+
+            // Обновляем счетчик
+            lblPageInfo.Text = $"{currentComboIndex + 1} из {outfitCombos.Count}";
         }
-
-
+       
         private string FormatOutfitInfo(Outfit outfit)
         {
             if (outfit == null) return "Нет данных";
@@ -93,53 +100,55 @@ namespace AcademicYearProject
                 Сезон: {outfit.Season}";
         }
 
-        private void LoadOutfitImage(OutfitCombo combo)
+        private void ResultForm_Load(object sender, EventArgs e)
         {
-            try
-            {
-                pictureBox1.Image = null; // Сброс изображения перед загрузкой
 
-                if (!string.IsNullOrWhiteSpace(combo.ImageUrl))
-                {
-                    pictureBox1.LoadAsync(combo.ImageUrl);
-                    pictureBox1.LoadCompleted += (s, e) =>
-                    {
-                        if (e.Error != null)
-                            pictureBox1.Image = null;
-                    };
-                }
-            }
-            catch
-            {
-                pictureBox1.Image = null;
-            }
         }
 
-        private void SetupPinterestLink(OutfitCombo combo)
-        {
-            linkPinterest.Links.Clear();
 
-            if (!string.IsNullOrWhiteSpace(combo.PinterestLink))
+        private void ResetDisplay()
+        {
+            lblOutfitName.Text = "Нет данных";
+            lblTopInfo.Text = string.Empty;
+            lblBottomInfo.Text = string.Empty;
+            pictureBox1.Image = null;
+            linkPinterest.Text = string.Empty;
+            lblPageInfo.Text = "0 из 0";
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+
+            if (outfitCombos.Count == 0) return;
+            
+            currentComboIndex = (currentComboIndex + 1) % outfitCombos.Count;
+
+            // Обновляем все компоненты
+            DisplayCurrentCombo(appState);
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+            if (outfitCombos.Count == 0) return;
+
+            // Уменьшаем индекс с проверкой на выход за границы
+            currentComboIndex = (currentComboIndex - 1 + outfitCombos.Count) % outfitCombos.Count;
+
+            // Обновляем все компоненты
+            DisplayCurrentCombo(appState);
+        }
+
+        private void linkPinterest_LinkClicked_1(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            if (e.Link?.LinkData == null) return;
+
+            try
             {
-                linkPinterest.Visible = true;
-                linkPinterest.Text = "Посмотреть похожие образы на Pinterest";
-                linkPinterest.Links.Add(new LinkLabel.Link
+                Process.Start(new ProcessStartInfo(e.Link.LinkData.ToString())
                 {
-                    LinkData = combo.PinterestLink,
-                    Description = $"Поиск: {combo.Top.Name} + {combo.Bottom.Name}"
+                    UseShellExecute = true
                 });
-            }
-            else
-            {
-                linkPinterest.Visible = false;
-            }
-        }
-
-        private void linkPinterest_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            try
-            {
-                Process.Start(e.Link.LinkData.ToString());
             }
             catch (Exception ex)
             {
@@ -147,31 +156,9 @@ namespace AcademicYearProject
             }
         }
 
-        private void ResultForm_Load(object sender, EventArgs e)
+        private void lblOutfitName_Click(object sender, EventArgs e)
         {
 
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            if (outfitCombos.Count == 0) return;
-
-            currentComboIndex++;
-            if (currentComboIndex >= outfitCombos.Count)
-                currentComboIndex = 0; // Циклический переход
-
-            DisplayCurrentCombo();
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            if (outfitCombos.Count == 0) return;
-
-            currentComboIndex--;
-            if (currentComboIndex < 0)
-                currentComboIndex = outfitCombos.Count - 1; // Циклический переход
-
-            DisplayCurrentCombo();
         }
     }
 }

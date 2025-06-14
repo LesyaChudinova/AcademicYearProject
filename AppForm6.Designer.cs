@@ -97,7 +97,7 @@
             // ClassicButton
             // 
             this.ClassicButton.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.ClassicButton.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.ClassicButton.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClassicButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("ClassicButton.BackgroundImage")));
             this.ClassicButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ClassicButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
@@ -107,8 +107,8 @@
             this.ClassicButton.Name = "ClassicButton";
             this.ClassicButton.Size = new System.Drawing.Size(448, 189);
             this.ClassicButton.TabIndex = 22;
-            this.ClassicButton.Text = "Да,\r\nв классическом стиле";
-            this.ClassicButton.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.ClassicButton.Text = "Да, в классическом стиле";
+            this.ClassicButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.ClassicButton.UseVisualStyleBackColor = false;
             this.ClassicButton.Click += new System.EventHandler(this.ClassicButton_Click);
             // 
@@ -126,8 +126,8 @@
             this.SportsButton.Name = "SportsButton";
             this.SportsButton.Size = new System.Drawing.Size(448, 189);
             this.SportsButton.TabIndex = 23;
-            this.SportsButton.Text = "Да,\r\nв спортивном стиле\r\n";
-            this.SportsButton.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.SportsButton.Text = "Да, в спортивном стиле\r\n";
+            this.SportsButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.SportsButton.UseVisualStyleBackColor = false;
             this.SportsButton.Click += new System.EventHandler(this.SportsButton_Click);
             // 
@@ -146,7 +146,7 @@
             this.UsualDayButton.Size = new System.Drawing.Size(448, 189);
             this.UsualDayButton.TabIndex = 24;
             this.UsualDayButton.Text = "Нет, обычный день";
-            this.UsualDayButton.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.UsualDayButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.UsualDayButton.UseVisualStyleBackColor = false;
             this.UsualDayButton.Click += new System.EventHandler(this.UsualDayButton_Click);
             // 

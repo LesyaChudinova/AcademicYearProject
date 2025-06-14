@@ -151,7 +151,7 @@
             this.OlderButton.Name = "OlderButton";
             this.OlderButton.Size = new System.Drawing.Size(448, 189);
             this.OlderButton.TabIndex = 16;
-            this.OlderButton.Text = "больше 50 лет";
+            this.OlderButton.Text = "50+ лет";
             this.OlderButton.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             this.OlderButton.UseVisualStyleBackColor = false;
             this.OlderButton.Click += new System.EventHandler(this.OlderButton_Click);

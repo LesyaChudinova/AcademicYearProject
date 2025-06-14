@@ -145,6 +145,7 @@
     <Compile Include="OutfitTree.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Transitions.cs" />
     <Compile Include="TreePoint.cs" />
     <EmbeddedResource Include="AppForm1.resx">
       <DependentUpon>AppForm1.cs</DependentUpon>

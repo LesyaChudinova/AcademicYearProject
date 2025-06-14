@@ -102,7 +102,7 @@
             this.CasualButton.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.CasualButton.BackColor = System.Drawing.Color.White;
             this.CasualButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("CasualButton.BackgroundImage")));
-            this.CasualButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.CasualButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.CasualButton.Font = new System.Drawing.Font("Bahnschrift Light", 13F);
             this.CasualButton.ForeColor = System.Drawing.Color.Black;
             this.CasualButton.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
@@ -112,8 +112,8 @@
             this.CasualButton.Size = new System.Drawing.Size(439, 150);
             this.CasualButton.TabIndex = 22;
             this.CasualButton.Text = "Кэжуал";
-            this.CasualButton.TextAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.CasualButton.UseVisualStyleBackColor = false;
+            this.CasualButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.CasualButton.UseVisualStyleBackColor = true;
             this.CasualButton.Click += new System.EventHandler(this.CasualButton_Click);
             // 
             // GrangeButton
@@ -121,17 +121,15 @@
             this.GrangeButton.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.GrangeButton.BackColor = System.Drawing.Color.White;
             this.GrangeButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("GrangeButton.BackgroundImage")));
-            this.GrangeButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.GrangeButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.GrangeButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.GrangeButton.Font = new System.Drawing.Font("Bahnschrift Light", 13F);
-            this.GrangeButton.ForeColor = System.Drawing.Color.White;
+            this.GrangeButton.ForeColor = System.Drawing.Color.Black;
             this.GrangeButton.Location = new System.Drawing.Point(812, 128);
             this.GrangeButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.GrangeButton.Name = "GrangeButton";
             this.GrangeButton.Size = new System.Drawing.Size(439, 150);
             this.GrangeButton.TabIndex = 23;
             this.GrangeButton.Text = "Гранж";
-            this.GrangeButton.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             this.GrangeButton.UseVisualStyleBackColor = false;
             this.GrangeButton.Click += new System.EventHandler(this.GrangeButton_Click);
             // 
@@ -140,6 +138,7 @@
             this.RomanticButton.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.RomanticButton.BackColor = System.Drawing.Color.White;
             this.RomanticButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("RomanticButton.BackgroundImage")));
+            this.RomanticButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.RomanticButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.RomanticButton.Font = new System.Drawing.Font("Bahnschrift Light", 13F);
             this.RomanticButton.ForeColor = System.Drawing.Color.Black;
@@ -149,7 +148,6 @@
             this.RomanticButton.Size = new System.Drawing.Size(438, 150);
             this.RomanticButton.TabIndex = 24;
             this.RomanticButton.Text = "Романтический";
-            this.RomanticButton.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             this.RomanticButton.UseVisualStyleBackColor = false;
             this.RomanticButton.Click += new System.EventHandler(this.RomanticButton_Click);
             // 
@@ -168,7 +166,6 @@
             this.BusinessButton.Size = new System.Drawing.Size(439, 150);
             this.BusinessButton.TabIndex = 25;
             this.BusinessButton.Text = "Деловой";
-            this.BusinessButton.TextAlign = System.Drawing.ContentAlignment.BottomRight;
             this.BusinessButton.UseVisualStyleBackColor = false;
             this.BusinessButton.Click += new System.EventHandler(this.BusinessButton_Click);
             // 
@@ -224,6 +221,7 @@
             this.SportsButton.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.SportsButton.BackColor = System.Drawing.Color.White;
             this.SportsButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("SportsButton.BackgroundImage")));
+            this.SportsButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.SportsButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.SportsButton.Font = new System.Drawing.Font("Bahnschrift Light", 13F);
             this.SportsButton.ForeColor = System.Drawing.Color.Black;
@@ -233,7 +231,6 @@
             this.SportsButton.Size = new System.Drawing.Size(438, 149);
             this.SportsButton.TabIndex = 29;
             this.SportsButton.Text = "Спортивный/хип-хоп";
-            this.SportsButton.TextAlign = System.Drawing.ContentAlignment.TopRight;
             this.SportsButton.UseVisualStyleBackColor = false;
             this.SportsButton.Click += new System.EventHandler(this.SportsButton_Click);
             // 
@@ -242,6 +239,7 @@
             this.GlamourousButton.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.GlamourousButton.BackColor = System.Drawing.Color.White;
             this.GlamourousButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("GlamourousButton.BackgroundImage")));
+            this.GlamourousButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.GlamourousButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.GlamourousButton.Font = new System.Drawing.Font("Bahnschrift Light", 13F);
             this.GlamourousButton.ForeColor = System.Drawing.Color.Black;
@@ -252,7 +250,6 @@
             this.GlamourousButton.Size = new System.Drawing.Size(439, 149);
             this.GlamourousButton.TabIndex = 30;
             this.GlamourousButton.Text = "Гламур";
-            this.GlamourousButton.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             this.GlamourousButton.UseVisualStyleBackColor = false;
             // 
             // AppForm7

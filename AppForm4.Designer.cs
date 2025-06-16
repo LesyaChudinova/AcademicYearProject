@@ -150,12 +150,13 @@
             this.WindyButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.WindyButton.Font = new System.Drawing.Font("Bahnschrift Light", 13F);
             this.WindyButton.ForeColor = System.Drawing.Color.Black;
+            this.WindyButton.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
             this.WindyButton.Location = new System.Drawing.Point(803, 412);
             this.WindyButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.WindyButton.Name = "WindyButton";
             this.WindyButton.Size = new System.Drawing.Size(448, 189);
             this.WindyButton.TabIndex = 15;
-            this.WindyButton.Text = "Ветренно";
+            this.WindyButton.Text = "Ветрено";
             this.WindyButton.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             this.WindyButton.UseVisualStyleBackColor = false;
             this.WindyButton.Click += new System.EventHandler(this.WindyButton_Click);

@@ -15,7 +15,7 @@ namespace AcademicYearProject
     {
         private AppState appState;
         private AppForm2 appForm2;
-        private InstructionForm instructionForm;
+        private AInstructionForm instructionForm;
         private Button selectedGenderButton = null;
        
         public AppForm1(AppState state = null)
@@ -66,7 +66,7 @@ namespace AcademicYearProject
         private void BackButton_Click(object sender, EventArgs e)
         {
             if (instructionForm == null)
-                instructionForm = new InstructionForm();
+                instructionForm = new AInstructionForm();
             instructionForm.Show();
             this.Close();
         }
@@ -74,7 +74,7 @@ namespace AcademicYearProject
         private void AgainButton_Click(object sender, EventArgs e)
         {
             if (instructionForm == null)
-                instructionForm = new InstructionForm();
+                instructionForm = new AInstructionForm();
             instructionForm.Show();
             this.Close();
         }

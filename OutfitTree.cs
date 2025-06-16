@@ -2,8 +2,6 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Net.NetworkInformation;
-using System.Windows.Forms;
 
 namespace AcademicYearProject
 {
@@ -15,7 +13,6 @@ namespace AcademicYearProject
             this.appState = appState ?? throw new ArgumentNullException(nameof(appState));
         }
 
-        // Добавим методы, специфичные для работы с одеждой
         private Random random = new Random();
         public List<Outfit> FindByCriteria(Func<Outfit, bool> predicate)
         {
@@ -38,7 +35,6 @@ namespace AcademicYearProject
             FindByCriteria(node.Right, predicate, results);
         }
 
-        // Метод для генерации полных образов (комбинации верх+низ)
         public class OutfitCombo
         {
             public Outfit Top { get; set; }
@@ -58,12 +54,10 @@ namespace AcademicYearProject
             var bottoms = FindByCriteria(o => criteria(o) && o.BodyPart == "низ").Distinct().ToList();
             var fullOutfits = FindByCriteria(o => criteria(o) && o.BodyPart == "всё").Distinct().ToList();
 
-            // Генерация комбинаций верх+низ
             var possibleCombinations = (from top in tops
                                         from bottom in bottoms
                                         select new { top, bottom }).ToList();
 
-            // Перемешиваем и берем не более count/2 комбинаций
             var randomCombinations = possibleCombinations
                 .OrderBy(x => random.Next())
                 .Take(Math.Min(count / 2, possibleCombinations.Count))
@@ -80,7 +74,6 @@ namespace AcademicYearProject
                 });
             }
 
-            // Добавляем цельные образы
             foreach (var outfit in fullOutfits.OrderBy(x => random.Next()).Take(count - result.Count))
             {
                 result.Add(new OutfitCombo

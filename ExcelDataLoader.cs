@@ -29,13 +29,12 @@ namespace AcademicYearProject
 
                 int rowCount = worksheet.Dimension.Rows;
 
-                // Начинаем с 2 строки, так как первая - заголовки
                 for (int row = 2; row <= rowCount; row++)
                 {
                     try
                     {
                         var outfit = new Outfit(
-                            id: row - 1, // Используем номер строки как ID
+                            id: row - 1,
                             name: GetCellValue(worksheet, row, 1),
                             layer: GetMultiValues(worksheet, row, 2),
                             bodyPart: GetMultiValues(worksheet, row, 3),
@@ -60,20 +59,18 @@ namespace AcademicYearProject
             return items;
         }
 
-        private string GetCellValue(ExcelWorksheet worksheet, int row, int col)
+        public string GetCellValue(ExcelWorksheet worksheet, int row, int col)
         {
             var cell = worksheet.Cells[row, col];
             return cell.Text?.Trim() ?? string.Empty;
         }
 
-        private string GetMultiValues(ExcelWorksheet worksheet, int row, int col)
+        public string GetMultiValues(ExcelWorksheet worksheet, int row, int col)
         {
             string value = GetCellValue(worksheet, row, col);
 
-            // Заменяем переносы строк и множественные пробелы
             value = value.Replace("\n", "/").Replace("  ", " ").Trim();
 
-            // Удаляем лишние пробелы вокруг слэшей
             value = System.Text.RegularExpressions.Regex.Replace(value, @"\s*/\s*", "/");
 
             return value;

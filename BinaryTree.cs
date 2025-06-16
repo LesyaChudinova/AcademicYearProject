@@ -9,13 +9,7 @@ namespace AcademicYearProject
         public int count; //счетчик
         public int Count => count; //свойство для счетчика
 
-        public ICollection<TKey> Keys => throw new NotImplementedException();
-
-        public ICollection<TValue> Values => throw new NotImplementedException();
-
-        public TValue this[TKey key] { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-
-        private static int GetHeight(TreePoint<TKey, TValue> node) //полуаем высоту дерева
+        public static int GetHeight(TreePoint<TKey, TValue> node) //полуаем высоту дерева
         {
             if (node == null) return 0;
             return 1 + Math.Max(GetHeight(node.Left), GetHeight(node.Right)); //левое поддерево, правое поддерево и корень

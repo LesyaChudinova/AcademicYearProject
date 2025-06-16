@@ -3,11 +3,11 @@ using System.Windows.Forms;
 
 namespace AcademicYearProject
 {
-    public partial class InstructionForm : Form
+    public partial class AInstructionForm : Form
     {
         private AppForm1 appForm1;
 
-        public InstructionForm()
+        public AInstructionForm()
         {
             InitializeComponent();
         }

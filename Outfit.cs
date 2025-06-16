@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using System;
+﻿using System;
 using System.Linq;
 
 namespace AcademicYearProject
@@ -47,7 +46,6 @@ namespace AcademicYearProject
             var property = this.GetType().GetProperty(propertyName);
             if (property == null)
             {
-                // Для отладки
                 Console.WriteLine($"Свойство {propertyName} не найдено");
                 return false;
             }
@@ -59,7 +57,6 @@ namespace AcademicYearProject
                 return false;
             }
 
-            // Нормализация и разделение значений
             var propertyValues = propertyValue
                 .Split(new[] { '/', ',', ';', '|' }, StringSplitOptions.RemoveEmptyEntries)
                 .Select(x => x.Trim().ToLowerInvariant())
@@ -70,12 +67,10 @@ namespace AcademicYearProject
                 .Select(x => x.Trim().ToLowerInvariant())
                 .ToList();
 
-            // Добавим отладочный вывод
             Console.WriteLine($"Поиск по {propertyName}:");
             Console.WriteLine($"Значения в записи: {string.Join("|", propertyValues)}");
             Console.WriteLine($"Искомые значения: {string.Join("|", searchValues)}");
 
-            // Более гибкое сравнение
             return propertyValues.Any(p =>
                    searchValues.Any(s =>
                        p.Contains(s) || s.Contains(p)));

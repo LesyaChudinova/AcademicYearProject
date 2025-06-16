@@ -95,7 +95,7 @@ namespace AcademicYearProject
             return count + CountByKey(node.Left, key) + CountByKey(node.Right, key); //рекурсивно проходим по поддеревьям
         } //в результате получим количество найденных элементов с нужным ключом
 
-        public void PrintVansByKey(TreePoint<TKey, TValue> node, int key) //добавила потом - чтобы подробно информацию всю вывести,
+        public void PrintOutfitsByKey(TreePoint<TKey, TValue> node, int key) //добавила потом - чтобы подробно информацию всю вывести,
                                                                           //параметры - узел и искомый ключ. Пригодится только при выполнении задания, просто для удобства своего
 
         {
@@ -106,8 +106,8 @@ namespace AcademicYearProject
                 Console.WriteLine($"- {node.Value}"); //находим - значит выводим значение
             }
 
-            PrintVansByKey(node.Left, key); //и так рекурсивно по всему дереву
-            PrintVansByKey(node.Right, key);
+            PrintOutfitsByKey(node.Left, key); //и так рекурсивно по всему дереву
+            PrintOutfitsByKey(node.Right, key);
         }
 
         //вывод дерева более красиво
@@ -224,7 +224,6 @@ namespace AcademicYearProject
             return rightChild; //а если левый поворот, то наоборот, правый
         }
 
-        //функция удаления - на дополнительный балл
         public TreePoint<TKey, TValue> Remove(TreePoint<TKey, TValue> node, TKey key) //тоже сначала функция рекурсивная
         {
             if (node == null) return null;

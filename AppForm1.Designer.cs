@@ -38,6 +38,7 @@
             this.BackButton = new System.Windows.Forms.Button();
             this.AgainButton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.helpProvider1 = new System.Windows.Forms.HelpProvider();
             this.SuspendLayout();
             // 
             // help_button
@@ -52,6 +53,7 @@
             this.help_button.TabIndex = 8;
             this.help_button.Text = "?";
             this.help_button.UseVisualStyleBackColor = false;
+            this.help_button.Click += new System.EventHandler(this.help_button_Click);
             // 
             // button5
             // 
@@ -64,6 +66,7 @@
             this.button5.TabIndex = 10;
             this.button5.Text = "Поиск";
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // button6
             // 
@@ -75,6 +78,7 @@
             this.button6.TabIndex = 11;
             this.button6.Text = "Указатель";
             this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // Women
             // 
@@ -176,6 +180,10 @@
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
+            // helpProvider1
+            // 
+            this.helpProvider1.HelpNamespace = "Help.chm";
+            // 
             // AppForm1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -192,8 +200,11 @@
             this.Controls.Add(this.button5);
             this.Controls.Add(this.help_button);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.helpProvider1.SetHelpKeyword(this, "Аннотация");
+            this.helpProvider1.SetHelpNavigator(this, System.Windows.Forms.HelpNavigator.Find);
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "AppForm1";
+            this.helpProvider1.SetShowHelp(this, true);
             this.Text = "AppForm2";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.AppForm1_Load);
@@ -211,5 +222,6 @@
         private System.Windows.Forms.Button BackButton;
         private System.Windows.Forms.Button AgainButton;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.HelpProvider helpProvider1;
     }
 }

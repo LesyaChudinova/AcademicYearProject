@@ -30,6 +30,7 @@ namespace AcademicYearProject
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ResultForm));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblTopInfo = new System.Windows.Forms.Label();
             this.lblBottomInfo = new System.Windows.Forms.Label();
@@ -52,6 +53,8 @@ namespace AcademicYearProject
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
+            this.helpProvider1 = new System.Windows.Forms.HelpProvider();
+            this.AgainButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -135,6 +138,7 @@ namespace AcademicYearProject
             this.button6.TabIndex = 16;
             this.button6.Text = "Указатель";
             this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // button5
             // 
@@ -150,6 +154,7 @@ namespace AcademicYearProject
             this.button5.TabIndex = 15;
             this.button5.Text = "Поиск";
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // help_button
             // 
@@ -172,7 +177,7 @@ namespace AcademicYearProject
             this.lblPageInfo.AutoSize = true;
             this.lblPageInfo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblPageInfo.Font = new System.Drawing.Font("Bahnschrift Light", 10F);
-            this.lblPageInfo.Location = new System.Drawing.Point(560, 44);
+            this.lblPageInfo.Location = new System.Drawing.Point(471, 44);
             this.lblPageInfo.Name = "lblPageInfo";
             this.lblPageInfo.Size = new System.Drawing.Size(64, 26);
             this.lblPageInfo.TabIndex = 17;
@@ -252,10 +257,10 @@ namespace AcademicYearProject
             this.button1.AutoSize = true;
             this.button1.Font = new System.Drawing.Font("Bahnschrift Light", 10F);
             this.button1.ForeColor = System.Drawing.Color.Black;
-            this.button1.Location = new System.Drawing.Point(793, 33);
+            this.button1.Location = new System.Drawing.Point(772, 33);
             this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(390, 49);
+            this.button1.Size = new System.Drawing.Size(411, 49);
             this.button1.TabIndex = 26;
             this.button1.Text = "Следующий вариант образа -->";
             this.button1.UseVisualStyleBackColor = true;
@@ -270,7 +275,7 @@ namespace AcademicYearProject
             this.button2.Location = new System.Drawing.Point(3, 33);
             this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(389, 49);
+            this.button2.Size = new System.Drawing.Size(409, 49);
             this.button2.TabIndex = 27;
             this.button2.Text = "<-- Предыдущий вариант образа";
             this.button2.UseVisualStyleBackColor = true;
@@ -350,13 +355,15 @@ namespace AcademicYearProject
             // 
             // tableLayoutPanel7
             // 
-            this.tableLayoutPanel7.ColumnCount = 3;
-            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel7.Controls.Add(this.button1, 2, 0);
+            this.tableLayoutPanel7.ColumnCount = 4;
+            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 35F));
+            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15F));
+            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15F));
+            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 35F));
+            this.tableLayoutPanel7.Controls.Add(this.AgainButton, 2, 0);
             this.tableLayoutPanel7.Controls.Add(this.lblPageInfo, 1, 0);
             this.tableLayoutPanel7.Controls.Add(this.button2, 0, 0);
+            this.tableLayoutPanel7.Controls.Add(this.button1, 3, 0);
             this.tableLayoutPanel7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel7.Location = new System.Drawing.Point(3, 590);
             this.tableLayoutPanel7.Name = "tableLayoutPanel7";
@@ -417,6 +424,31 @@ namespace AcademicYearProject
             this.tableLayoutPanel8.TabIndex = 30;
             this.tableLayoutPanel8.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel8_Paint);
             // 
+            // helpProvider1
+            // 
+            this.helpProvider1.HelpNamespace = "Help.chm";
+            // 
+            // AgainButton
+            // 
+            this.AgainButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.AgainButton.AutoSize = true;
+            this.AgainButton.BackColor = System.Drawing.Color.White;
+            this.AgainButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("AgainButton.BackgroundImage")));
+            this.AgainButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.AgainButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.AgainButton.Font = new System.Drawing.Font("Bahnschrift Light", 10F);
+            this.helpProvider1.SetHelpKeyword(this.AgainButton, "Аннотация");
+            this.helpProvider1.SetHelpNavigator(this.AgainButton, System.Windows.Forms.HelpNavigator.Find);
+            this.AgainButton.Location = new System.Drawing.Point(595, 33);
+            this.AgainButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.AgainButton.Name = "AgainButton";
+            this.helpProvider1.SetShowHelp(this.AgainButton, true);
+            this.AgainButton.Size = new System.Drawing.Size(171, 48);
+            this.AgainButton.TabIndex = 28;
+            this.AgainButton.Text = "Пройти заново";
+            this.AgainButton.UseVisualStyleBackColor = false;
+            this.AgainButton.Click += new System.EventHandler(this.AgainButton_Click);
+            // 
             // ResultForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -472,5 +504,7 @@ namespace AcademicYearProject
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel6;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel7;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel8;
+        private System.Windows.Forms.HelpProvider helpProvider1;
+        private System.Windows.Forms.Button AgainButton;
     }
 }

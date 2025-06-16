@@ -39,6 +39,7 @@
             this.BackButton = new System.Windows.Forms.Button();
             this.AgainButton = new System.Windows.Forms.Button();
             this.ForwardButton = new System.Windows.Forms.Button();
+            this.helpProvider1 = new System.Windows.Forms.HelpProvider();
             this.SuspendLayout();
             // 
             // help_button
@@ -53,6 +54,7 @@
             this.help_button.TabIndex = 10;
             this.help_button.Text = "?";
             this.help_button.UseVisualStyleBackColor = false;
+            this.help_button.Click += new System.EventHandler(this.help_button_Click);
             // 
             // button5
             // 
@@ -66,18 +68,23 @@
             this.button5.TabIndex = 12;
             this.button5.Text = "Поиск";
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // button6
             // 
             this.button6.Font = new System.Drawing.Font("Bahnschrift Light", 8F);
             this.button6.ForeColor = System.Drawing.Color.Black;
+            this.helpProvider1.SetHelpKeyword(this.button6, "Аннотация");
+            this.helpProvider1.SetHelpNavigator(this.button6, System.Windows.Forms.HelpNavigator.Find);
             this.button6.Location = new System.Drawing.Point(142, 66);
             this.button6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button6.Name = "button6";
+            this.helpProvider1.SetShowHelp(this.button6, true);
             this.button6.Size = new System.Drawing.Size(117, 39);
             this.button6.TabIndex = 13;
             this.button6.Text = "Указатель";
             this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // label1
             // 
@@ -197,6 +204,10 @@
             this.ForwardButton.UseVisualStyleBackColor = false;
             this.ForwardButton.Click += new System.EventHandler(this.ForwardButton_Click);
             // 
+            // helpProvider1
+            // 
+            this.helpProvider1.HelpNamespace = "Help.chm";
+            // 
             // AppForm6
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -235,5 +246,6 @@
         private System.Windows.Forms.Button BackButton;
         private System.Windows.Forms.Button AgainButton;
         private System.Windows.Forms.Button ForwardButton;
+        private System.Windows.Forms.HelpProvider helpProvider1;
     }
 }

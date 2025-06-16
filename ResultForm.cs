@@ -14,6 +14,7 @@ namespace AcademicYearProject
     public partial class ResultForm : Form
     {
         private readonly AppState appState;
+        private InstructionForm instructionForm;
         private readonly List<OutfitCombo> outfitCombos;
         private int currentComboIndex = 0;
 
@@ -45,7 +46,6 @@ namespace AcademicYearProject
 
             var combo = outfitCombos[currentComboIndex];
 
-            // Обновляем текст
             lblOutfitName.Text = combo.Bottom == null
                 ? combo.Top.Name
                 : $"{combo.Top.Name} + {combo.Bottom.Name}";
@@ -55,21 +55,20 @@ namespace AcademicYearProject
                 ? FormatOutfitInfo(combo.Bottom)
                 : "Цельный предмет одежды";
 
-            // Обновляем изображение
             string imageUrl = GenerateImageUrl(combo.Top, combo.Bottom, GetGenderPrefix(appState.Gender));
-            string fullImagePath = Path.Combine(Application.StartupPath, imageUrl); // Полный путь
+            string fullImagePath = Path.Combine(Application.StartupPath, imageUrl); 
            
             try
             {
                 if (File.Exists(fullImagePath))
                 {
-                    pictureBox1.Image?.Dispose(); // Освобождаем старое изображение
+                    pictureBox1.Image?.Dispose();
                     pictureBox1.Image = Image.FromFile(fullImagePath);
                 }
                 else
                 {
-                    pictureBox1.Image = null; // Или изображение-заглушка
-                    Debug.WriteLine($"Файл не найден: {fullImagePath}"); // Вывод в консоль отладки
+                    pictureBox1.Image = null; 
+                    Debug.WriteLine($"Файл не найден: {fullImagePath}"); 
                 }
             }
             catch (Exception ex)
@@ -78,12 +77,10 @@ namespace AcademicYearProject
                 pictureBox1.Image = null;
             }
 
-            // Обновляем ссылку
             string pinterestLink = GeneratePinterestLink(combo.Top, combo.Bottom, appState.Gender);
             linkPinterest.Links.Clear();
             linkPinterest.Links.Add(0, linkPinterest.Text.Length, pinterestLink);
 
-            // Обновляем счетчик
             lblPageInfo.Text = $"{currentComboIndex + 1} из {outfitCombos.Count}";
         }
        
@@ -188,12 +185,31 @@ namespace AcademicYearProject
 
         private void help_button_Click(object sender, EventArgs e)
         {
-
+            Help.ShowHelp(this, "Help.chm");
         }
 
         private void tableLayoutPanel8_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            HelpNavigator navigator = HelpNavigator.Find;
+            Help.ShowHelp(this, "Help.chm", navigator, "Аннотация");
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            Help.ShowHelpIndex(this, "Help.chm");
+        }
+
+        private void AgainButton_Click(object sender, EventArgs e)
+        {
+            if (instructionForm == null)
+                instructionForm = new InstructionForm();
+            instructionForm.Show();
+            this.Close();
         }
     }
 }

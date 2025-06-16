@@ -93,5 +93,21 @@ namespace AcademicYearProject
         {
 
         }
+
+        private void help_button_Click(object sender, EventArgs e)
+        {
+            Help.ShowHelp(this, "Help.chm");
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            Help.ShowHelpIndex(this, "Help.chm");
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            HelpNavigator navigator = HelpNavigator.Find;
+            Help.ShowHelp(this, "Help.chm", navigator, "Аннотация");
+        }
     }
 }

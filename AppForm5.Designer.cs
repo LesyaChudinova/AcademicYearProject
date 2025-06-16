@@ -53,6 +53,7 @@
             this.LuxuriousButton = new System.Windows.Forms.Button();
             this.EleganceButton = new System.Windows.Forms.Button();
             this.RestrainedButton = new System.Windows.Forms.Button();
+            this.helpProvider1 = new System.Windows.Forms.HelpProvider();
             this.SuspendLayout();
             // 
             // help_button
@@ -67,6 +68,7 @@
             this.help_button.TabIndex = 9;
             this.help_button.Text = "?";
             this.help_button.UseVisualStyleBackColor = false;
+            this.help_button.Click += new System.EventHandler(this.help_button_Click);
             // 
             // button5
             // 
@@ -79,17 +81,22 @@
             this.button5.TabIndex = 10;
             this.button5.Text = "Поиск";
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // button6
             // 
             this.button6.Font = new System.Drawing.Font("Bahnschrift Light", 8F);
+            this.helpProvider1.SetHelpKeyword(this.button6, "Аннтация");
+            this.helpProvider1.SetHelpNavigator(this.button6, System.Windows.Forms.HelpNavigator.Find);
             this.button6.Location = new System.Drawing.Point(142, 66);
             this.button6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button6.Name = "button6";
+            this.helpProvider1.SetShowHelp(this.button6, true);
             this.button6.Size = new System.Drawing.Size(117, 39);
             this.button6.TabIndex = 12;
             this.button6.Text = "Указатель";
             this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // label1
             // 
@@ -434,6 +441,10 @@
             this.RestrainedButton.UseVisualStyleBackColor = false;
             this.RestrainedButton.Click += new System.EventHandler(this.RestrainedButton_Click);
             // 
+            // helpProvider1
+            // 
+            this.helpProvider1.HelpNamespace = "Help.chm";
+            // 
             // AppForm5
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -500,5 +511,6 @@
         private System.Windows.Forms.Button LuxuriousButton;
         private System.Windows.Forms.Button EleganceButton;
         private System.Windows.Forms.Button RestrainedButton;
+        private System.Windows.Forms.HelpProvider helpProvider1;
     }
 }

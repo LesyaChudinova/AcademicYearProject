@@ -105,7 +105,6 @@ namespace AcademicYearProject
                     return;
                 }
 
-                // Заполняем дерево
                 foreach (var outfit in outfits)
                 {
                     outfitTree.Add(outfit.Id, outfit);
@@ -120,7 +119,6 @@ namespace AcademicYearProject
 
         private void ForwardButton_Click_1(object sender, EventArgs e)
         {
-            // Проверка выбранного стиля
             if (string.IsNullOrEmpty(appState.Style))
             {
                 MessageBox.Show("Пожалуйста, выберите предпочитаемый стиль");
@@ -129,20 +127,16 @@ namespace AcademicYearProject
 
             try
             {
-                // Проверка загруженности данных
                 if (outfitTree == null)
                 {
                     ShowServiceUnavailableMessage();
                     return;
                 }
 
-
-                // Создаем критерии поиска
                 var criteria = CreateSearchCriteria();
 
                 var filteredOutfitCombos = outfitTree.GenerateRandomOutfitsFromFiltered(criteria, appState.Gender, 20);
 
-                // Генерируем комплекты одежды
                 var outfitCombos = GenerateOutfitCombinations(criteria, 20);
 
                 if (!outfitCombos.Any())
@@ -151,7 +145,6 @@ namespace AcademicYearProject
                     return;
                 }
 
-                // Открываем форму с результатами
                 OpenResultsForm(outfitCombos);
             }
             catch (Exception ex)
@@ -159,8 +152,6 @@ namespace AcademicYearProject
                 HandleError(ex);
             }
         }
-
-        // Вспомогательные методы:
 
         private void ShowServiceUnavailableMessage()
         {
@@ -202,7 +193,6 @@ namespace AcademicYearProject
         {
             var combos = outfitTree.GenerateRandomOutfitsFromFiltered(criteria, appState.Gender, count);
 
-            // Добавляем логирование для отладки
             Debug.WriteLine($"Сгенерировано {combos.Count} комплектов:");
             foreach (var combo in combos)
             {
@@ -239,6 +229,22 @@ namespace AcademicYearProject
                            "Ошибка",
                            MessageBoxButtons.OK,
                            MessageBoxIcon.Error);
+        }
+
+        private void help_button_Click(object sender, EventArgs e)
+        {
+            Help.ShowHelp(this, "Help.chm");
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            HelpNavigator navigator = HelpNavigator.Find;
+            Help.ShowHelp(this, "Help.chm", navigator, "Аннотация");
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            Help.ShowHelpIndex(this, "Help.chm");
         }
     }
 }

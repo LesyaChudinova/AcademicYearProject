@@ -29,23 +29,15 @@ namespace AcademicYearProject
 
         }
 
-
-        private void button1_Click_1(object sender, EventArgs e)
-        {
-            Help.ShowHelp(this, "Help.chm");
-        }
-
         private void GreetingTextBox_TextChanged(object sender, EventArgs e)
         {
 
         }
 
-        private void SkipInstruction_Click(object sender, EventArgs e)
+        private void button1_Click_1(object sender, EventArgs e)
         {
-            AppForm1 form1 = new AppForm1();
-            form1.Show();
+            Help.ShowHelp(this, "Help.chm");
         }
-
         private void button2_Click(object sender, EventArgs e)
         {
             Help.ShowHelpIndex(this, "Help.chm");
@@ -55,6 +47,12 @@ namespace AcademicYearProject
         {
             HelpNavigator navigator = HelpNavigator.Find;
             Help.ShowHelp(this, "Help.chm", navigator, "Аннотация");
+        }
+
+        private void SkipInstruction_Click(object sender, EventArgs e)
+        {
+            AppForm1 form1 = new AppForm1();
+            form1.Show();
         }
 
         private void startButton_Click(object sender, EventArgs e)

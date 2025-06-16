@@ -41,6 +41,7 @@
             this.AgainButton = new System.Windows.Forms.Button();
             this.ForwardButton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.helpProvider2 = new System.Windows.Forms.HelpProvider();
             this.SuspendLayout();
             // 
             // SummerButton
@@ -138,9 +139,12 @@
             this.help_button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(153)))), ((int)(((byte)(153)))));
             this.help_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.help_button.ForeColor = System.Drawing.Color.Black;
+            this.helpProvider1.SetHelpKeyword(this.help_button, "Аннотация");
+            this.helpProvider1.SetHelpNavigator(this.help_button, System.Windows.Forms.HelpNavigator.Find);
             this.help_button.Location = new System.Drawing.Point(42, 26);
             this.help_button.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.help_button.Name = "help_button";
+            this.helpProvider1.SetShowHelp(this.help_button, true);
             this.help_button.Size = new System.Drawing.Size(76, 79);
             this.help_button.TabIndex = 7;
             this.help_button.Text = "?";
@@ -235,6 +239,10 @@
             this.label1.Text = "Ответьте, пожалуйста, на вопрос:\r\n3) Какое сейчас время года?";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // helpProvider2
+            // 
+            this.helpProvider2.HelpNamespace = "Help.chm";
+            // 
             // AppForm3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -279,5 +287,6 @@
         private System.Windows.Forms.Button AgainButton;
         private System.Windows.Forms.Button ForwardButton;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.HelpProvider helpProvider2;
     }
 }

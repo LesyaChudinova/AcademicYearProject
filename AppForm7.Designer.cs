@@ -42,6 +42,7 @@
             this.ForwardButton = new System.Windows.Forms.Button();
             this.SportsButton = new System.Windows.Forms.Button();
             this.GlamourousButton = new System.Windows.Forms.Button();
+            this.helpProvider1 = new System.Windows.Forms.HelpProvider();
             this.SuspendLayout();
             // 
             // help_button
@@ -56,6 +57,7 @@
             this.help_button.TabIndex = 10;
             this.help_button.Text = "?";
             this.help_button.UseVisualStyleBackColor = false;
+            this.help_button.Click += new System.EventHandler(this.help_button_Click);
             // 
             // button5
             // 
@@ -69,6 +71,7 @@
             this.button5.TabIndex = 12;
             this.button5.Text = "Поиск";
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // button6
             // 
@@ -81,6 +84,7 @@
             this.button6.TabIndex = 13;
             this.button6.Text = "Указатель";
             this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // label1
             // 
@@ -252,6 +256,10 @@
             this.GlamourousButton.Text = "Гламур";
             this.GlamourousButton.UseVisualStyleBackColor = false;
             // 
+            // helpProvider1
+            // 
+            this.helpProvider1.HelpNamespace = "Help.chm";
+            // 
             // AppForm7
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -272,8 +280,11 @@
             this.Controls.Add(this.button5);
             this.Controls.Add(this.help_button);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.helpProvider1.SetHelpKeyword(this, "Аннотация");
+            this.helpProvider1.SetHelpNavigator(this, System.Windows.Forms.HelpNavigator.Find);
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "AppForm7";
+            this.helpProvider1.SetShowHelp(this, true);
             this.Text = "AppForm7";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.AppForm7_Load);
@@ -296,5 +307,6 @@
         private System.Windows.Forms.Button ForwardButton;
         private System.Windows.Forms.Button SportsButton;
         private System.Windows.Forms.Button GlamourousButton;
+        private System.Windows.Forms.HelpProvider helpProvider1;
     }
 }
